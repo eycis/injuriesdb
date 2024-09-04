@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import Head from '@/components/Head';
 import Body from '@/components/Body';
 import Login from '@/components/Login';
+import InjuryForm from '@/components/InjuryForm';
 
 const index = () => {
   
@@ -19,12 +20,15 @@ const index = () => {
   };
 
   return (
-    <div className="overflow-x-hidden">
+    <div className="flex flex-col min-h-screen overflow-scroll">
       <Head/>
+      <div className="mt-[8vh]">
       {/* <div>
       {isLoggedIn ? <Body /> : <Login onLogin={handleLogin} />}
       </div> */}
-      <Body/>
+      {/* <Body/> */}
+      <InjuryForm/>
+      </div>
     </div>
   )
 }
