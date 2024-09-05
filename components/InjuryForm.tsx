@@ -1,8 +1,35 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+
+const [formData, setFormData] = useState({
+  employer: '',
+  insurance: '',
+  name: '',
+  birthDate: '',
+  personalNumber: '',
+  address: '',
+  profession: '',
+  hoursWorked: '',
+  injuryDate: '',
+  injuryDescription: '',
+  injuredCount: '',
+  doctorVisit: '',
+  alcoholTest: '',
+  alcoholTestResult: '',
+  injuryType: '',
+  injuryCause: '',
+  activity: '',
+  location: '',
+  injuryEventDescription: '',
+  violation: '',
+  preventionMeasures: '',
+  witnessInfo: '',
+  supervisor: ''
+});
 
 const InjuryForm = () => {
   return (
-    <div className="bg-white p-8 max-w-4xl mx-auto mt-10 shadow-lg rounded-lg h-auto">
+    <div className="bg-white p-8 max-w-4xl mx-auto mt-10 pt-20 shadow-lg rounded-lg h-auto">
       <form>
         <div className="grid grid-cols-2 gap-4">
           <div>
@@ -13,7 +40,6 @@ const InjuryForm = () => {
             <label>Pojišťovna postiženého:</label>
             <input type="text" className="border w-full p-2 mb-4" placeholder="Evidenční číslo"/>
           </div>
-
           <div>
             <label>Jméno a příjmení postiženého:</label>
             <input type="text" className="border w-full p-2 mb-4" placeholder="Jméno"/>
@@ -22,7 +48,6 @@ const InjuryForm = () => {
             <label>Datum narození:</label>
             <input type="date" className="border w-full p-2 mb-4"/>
           </div>
-
           <div>
             <label>Osobní číslo:</label>
             <input type="text" className="border w-full p-2 mb-4" placeholder="Osobní číslo"/>
@@ -168,10 +193,11 @@ const InjuryForm = () => {
 
         <h3 className="text-lg font-semibold mt-6">Jméno a přijmení nadřízeného:</h3>
         <textarea className="border w-full p-2 mb-4" placeholder="Popis úrazu" rows={1}></textarea>
-
+        <Link to="/">
         <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
           Odeslat záznam
         </button>
+        </Link>
       </form>
     </div>
   );
