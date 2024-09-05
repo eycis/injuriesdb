@@ -1,32 +1,31 @@
 import React, { useEffect, useState } from 'react';
-import Head from '@/components/Head'; // Hlavička aplikace
-import Body from '@/components/Body'; // Hlavní stránka s tlačítky
-import InjuryForm from '@/components/InjuryForm'; // Stránka s formulářem
-import { useRouter } from 'next/router'; // Next.js Router
-
+import Head from '@/components/Head'; 
+import Body from '@/components/Body'; 
+import InjuryForm from '@/components/InjuryForm'; 
+import { useRouter } from 'next/router'; 
 const IndexPage = () => {
   const router = useRouter();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    const token = localStorage.getItem('token'); // Získání tokenu z localStorage
+    const token = localStorage.getItem('token'); 
     if (token) {
-      setIsLoggedIn(true); // Uživatele přihlásíme, pokud token existuje
+      setIsLoggedIn(true); 
     }
   }, []);
 
   const handleLogin = () => {
-    setIsLoggedIn(true); // Funkce pro přihlášení
+    setIsLoggedIn(true); 
   };
 
   return (
     <div className="overflow-x-hidden">
-      <Head /> {/* Hlavička */}
+      <Head /> 
       <div className="mt-[15vh]">
         {isLoggedIn ? (
-          <Body /> // Pokud je přihlášený, zobrazí Body komponentu
+          <Body /> 
         ) : (
-          <button onClick={handleLogin}>Přihlásit se</button> // Tlačítko pro přihlášení
+          <button onClick={handleLogin}>Přihlásit se</button>
         )}
       </div>
     </div>

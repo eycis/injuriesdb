@@ -10,12 +10,10 @@ const App = () => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    // Nastaví na true až po vykreslení na straně klienta
     setIsClient(true);
   }, []);
 
   if (!isClient) {
-    // Pokud nejsme na straně klienta, nevykreslíme Router
     return null;
   }
 

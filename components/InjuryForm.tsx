@@ -1,31 +1,31 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const [formData, setFormData] = useState({
-  employer: '',
-  insurance: '',
-  name: '',
-  birthDate: '',
-  personalNumber: '',
-  address: '',
-  profession: '',
-  hoursWorked: '',
-  injuryDate: '',
-  injuryDescription: '',
-  injuredCount: '',
-  doctorVisit: '',
-  alcoholTest: '',
-  alcoholTestResult: '',
-  injuryType: '',
-  injuryCause: '',
-  activity: '',
-  location: '',
-  injuryEventDescription: '',
-  violation: '',
-  preventionMeasures: '',
-  witnessInfo: '',
-  supervisor: ''
-});
+// const [formData, setFormData] = useState({
+//   employer: '',
+//   insurance: '',
+//   name: '',
+//   birthDate: '',
+//   personalNumber: '',
+//   address: '',
+//   profession: '',
+//   hoursWorked: '',
+//   injuryDate: '',
+//   injuryDescription: '',
+//   injuredCount: '',
+//   doctorVisit: '',
+//   alcoholTest: '',
+//   alcoholTestResult: '',
+//   injuryType: '',
+//   injuryCause: '',
+//   activity: '',
+//   location: '',
+//   injuryEventDescription: '',
+//   violation: '',
+//   preventionMeasures: '',
+//   witnessInfo: '',
+//   supervisor: ''
+// });
 
 const InjuryForm = () => {
   return (
@@ -34,7 +34,13 @@ const InjuryForm = () => {
         <div className="grid grid-cols-2 gap-4">
           <div>
             <label>Zaměstnavatel postiženého:</label>
-            <input type="text" className="border w-full p-2 mb-4" placeholder="Zaměstnavatel"/>
+            <input 
+              type="text" 
+              name = "employer"
+              className="border w-full p-2 mb-4"
+              //value = {formData.employer}
+              //onChange = {handleChange} 
+              placeholder="Zaměstnavatel"/>
           </div>
           <div>
             <label>Pojišťovna postiženého:</label>
