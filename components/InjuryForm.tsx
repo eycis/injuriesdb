@@ -72,7 +72,22 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
   };
 
   return (
-    <div className="bg-white p-8 max-w-4xl mx-auto mt-10 pt-20 shadow-lg rounded-lg h-auto">
+    <div className="bg-white max-w-4xl mx-auto mt-10 pt-20 shadow-lg rounded-lg h-auto">
+    <div className='mb-[2rem]'>
+      <button type="button" 
+        className="bg-blue-500 text-white py-2 px-4 mx-[2rem] w-[250px] rounded hover:bg-blue-700"
+        onClick = {() => window.print()}>
+        Vytisknout záznam
+      </button>
+      <button type="button" 
+        className="bg-blue-500 text-white py-2 px-4 mx-[1rem] w-[250px] rounded hover:bg-blue-700"
+        onClick = {handleExport}>
+        Exportovat do excelu
+      </button>
+      <button type="button" className="bg-blue-500 text-white py-2 px-4 mx-[1rem]  w-[250px] rounded hover:bg-blue-700">
+        Vytvořit záznam o úrazu
+      </button>
+    </div>
       <form>
         <div className="grid grid-cols-2 gap-4">
           <div>
@@ -368,25 +383,12 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
           onChange = {handleChange}
           value = {formData.supervisor}>
           </textarea>
-        <Link to="/">
-        <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
+      </form>
+      <Link to="/">
+        <button type="submit" className="bg-blue-500 text-white py-2 px-4 w-[250px] mb-[2rem] mt-[1rem] rounded hover:bg-blue-700">
           Odeslat záznam
         </button>
         </Link>
-        <button type="button" 
-          className="bg-blue-500 text-white py-2 px-4 mx-[2rem] rounded hover:bg-blue-700"
-          onClick = {() => window.print()}>
-          Vytisknout záznam
-        </button>
-        <button type="button" 
-          className="bg-blue-500 text-white py-2 px-4 mx-[1rem] rounded hover:bg-blue-700"
-          onClick = {handleExport}>
-          Exportovat do excelu
-        </button>
-        <button type="button" className="bg-blue-500 text-white py-2 px-4 mx-[1rem] rounded hover:bg-blue-700">
-          Vytvořit záznam o úrazu
-        </button>
-      </form>
     </div>
   );
 };
