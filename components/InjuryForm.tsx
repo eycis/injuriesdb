@@ -4,16 +4,29 @@ import { Link } from 'react-router-dom';
 
 interface FormData {
   employer: string;
-  insurance: string;
   name: string;
+  injuryDate: string;
+  injuryType: string;
   birthDate: string;
+  insurance: string;
+  witnessInfo: string;
   personalNumber: string;
   address: string;
-  profession: string;
+  position: string;
   hoursWorked: string;
-  injuryDate: string;
   injuryDescription: string;
-  witnessInfo: string;
+  injuryTime: string;
+  doctorVisit: string;
+  alcoholTest: string;
+  alcoholTestResult: string;
+  injuryCause: string;
+  activity: string;
+  location: string;
+  injuryEventDescription: string;
+  violation: string;
+  preventionMeasures: string;
+  supervisor: string;
+  numberOfInjuredPeople: string;
 }
 
 
@@ -28,9 +41,8 @@ const InjuryForm = () => {
     address: '',
     position: '',
     hoursWorked: '',
-    injuryDate: '',
+    injuryDateTime: '',
     injuryDescription: '',
-    injuryTime: '',
     doctorVisit: '',
     alcoholTest: '',
     alcoholTestResult: '',
@@ -64,14 +76,14 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
       <form>
         <div className="grid grid-cols-2 gap-4">
           <div>
-            <label>Zaměstnavatel postiženého:</label>
+            <label>Pobočka:</label>
             <input 
               type="text" 
               name = "employer"
               className="border w-full p-2 mb-4"
               value = {formData.employer}
               onChange = {handleChange} 
-              placeholder="Zaměstnavatel"/>
+              placeholder="Pobočka"/>
           </div>
           <div>
             <label>Pojišťovna postiženého:</label>
@@ -118,12 +130,12 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
               type="text" 
               className="border w-full p-2 mb-4" 
               placeholder="bydliště"
-              name = "Address"
+              name = "address"
               onChange = {handleChange}
               value = {formData.address}/>
           </div>
           <div>
-            <label>Profese:</label>
+            <label>Pracovní pozice:</label>
             <input 
               type="text" 
               className="border w-full p-2 mb-4" 
@@ -147,9 +159,9 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
             <input 
               type="datetime-local" 
               className="border w-full p-2 mb-4"
-              name = "injuryTime"
+              name = "injuryDateTime"
               onChange = {handleChange}
-              value = {formData.injuryTime}/>
+              value = {formData.injuryDateTime}/>
           </div>
         </div>
 
@@ -312,7 +324,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
           className="border w-full p-2 mb-4" 
           placeholder="Popis úrazu" 
           rows={4}
-          name = "injutyEventDescription"
+          name = "injuryEventDescription"
           onChange = {handleChange}
           value = {formData.injuryEventDescription}>
           </textarea>
@@ -332,7 +344,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
           className="border w-full p-2 mb-4" 
           placeholder="Popis úrazu" 
           rows={4}
-          name = "prevetionMeasures"
+          name = "preventionMeasures"
           onChange = {handleChange}
           value = {formData.preventionMeasures}>
           </textarea>
