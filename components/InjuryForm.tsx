@@ -13,6 +13,7 @@ interface FormData {
   hoursWorked: string;
   injuryDate: string;
   injuryDescription: string;
+  witnessInfo: string;
 }
 
 
@@ -25,11 +26,11 @@ const InjuryForm = () => {
     birthDate: '',
     personalNumber: '',
     address: '',
-    profession: '',
+    position: '',
     hoursWorked: '',
     injuryDate: '',
     injuryDescription: '',
-    injuredCount: '',
+    injuryTime: '',
     doctorVisit: '',
     alcoholTest: '',
     alcoholTestResult: '',
@@ -41,15 +42,18 @@ const InjuryForm = () => {
     violation: '',
     preventionMeasures: '',
     witnessInfo: '',
-    supervisor: ''
+    supervisor: '',
+    numberOfInjuredPeople: '',
   });
 
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
-  };
+const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value, type } = e.target;
+    
+    setFormData((prevState) => ({
+      ...prevState,
+      [name]: value,
+    }));
+};
 
   const handleExport = () => {
     exportToExcel([formData], 'InjuryRecords');
@@ -100,23 +104,52 @@ const InjuryForm = () => {
           </div>
           <div>
             <label>Osobní číslo:</label>
-            <input type="text" className="border w-full p-2 mb-4" placeholder="Osobní číslo"/>
+            <input 
+              type="text" 
+              className="border w-full p-2 mb-4" 
+              placeholder="Osobní číslo"
+              name = "personalNumber"
+              onChange = {handleChange}
+              value = {formData.personalNumber}/>
           </div>
           <div>
             <label>Bydliště postiženého:</label>
-            <input type="text" className="border w-full p-2 mb-4" placeholder="bydliště"/>
+            <input 
+              type="text" 
+              className="border w-full p-2 mb-4" 
+              placeholder="bydliště"
+              name = "Address"
+              onChange = {handleChange}
+              value = {formData.address}/>
           </div>
           <div>
             <label>Profese:</label>
-            <input type="text" className="border w-full p-2 mb-4" placeholder="Profese"/>
+            <input 
+              type="text" 
+              className="border w-full p-2 mb-4" 
+              placeholder="Position"
+              name = "position"
+              onChange = {handleChange}
+              value = {formData.position}/>
           </div>
           <div>
             <label>Od začátku směny odpracováno:</label>
-            <input type="text" className="border w-full p-2 mb-4" placeholder="Odpracované hodiny"/>
+            <input 
+              type="text" 
+              className="border w-full p-2 mb-4" 
+              placeholder="Odpracované hodiny"
+              name = "hoursWorked"
+              onChange = {handleChange}
+              value = {formData.hoursWorked}/>
           </div>
           <div>
             <label>Datum a čas úrazu:</label>
-            <input type="datetime-local" className="border w-full p-2 mb-4"/>
+            <input 
+              type="datetime-local" 
+              className="border w-full p-2 mb-4"
+              name = "injuryTime"
+              onChange = {handleChange}
+              value = {formData.injuryTime}/>
           </div>
         </div>
 
@@ -125,26 +158,57 @@ const InjuryForm = () => {
         <div className="grid grid-cols-4 gap-2">
           <div>
             <label>Počet zraněných osob:</label>
-            <input type="text" className="border w-full p-2 mb-4" placeholder=""/>
+            <input 
+              type="text" 
+              className="border w-full p-2 mb-4" 
+              placeholder=""
+              name = "numberOfInjuredPeople"
+              onChange = {handleChange}
+              value = {formData.numberOfInjuredPeople}/>
           </div>
           <div>
             <label>Ošetřen u lékaře:</label>
-            <input type="text" className="border w-full p-2 mb-4" placeholder="Ano/Ne"/>
+            <input 
+              type="text" 
+              className="border w-full p-2 mb-4" 
+              placeholder="Ano/Ne"
+              name = "doctorVisit"
+              onChange = {handleChange}
+              value = {formData.doctorVisit}/>
           </div>
           <div>
             <label>Zkouška na alkohol:</label>
-            <input type="text" className="border w-full p-2 mb-4" placeholder="Ano/Ne"/>
+            <input 
+              type="text" 
+              className="border w-full p-2 mb-4" 
+              placeholder="Ano/Ne"
+              name = "alcoholTest"
+              onChange = {handleChange}
+              value = {formData.alcoholTest}/>
           </div>
           <div>
             <label>Výsledek zkoušky:</label>
-            <input type="text" className="border w-full p-2 mb-4" placeholder=""/>
+            <input 
+              type="text" 
+              className="border w-full p-2 mb-4" 
+              placeholder="Výsledek"
+              name = "alcoholTestResult"
+              onChange = {handleChange}
+              value = {formData.alcoholTestResult}/>
           </div>
         </div>
 
         <h3 className="text-lg font-semibold mt-6 mb-3">Druh pracovního úrazu:</h3>
         <div className="grid grid-cols-2 gap-4">
           <label className="flex items-center">
-            <input type="checkbox" className="mr-2"/> Bez pracovní neschopnosti
+            <input 
+              type="checkbox" 
+              className="mr-2"
+              name = "noWorkAbsence"
+              //checked = {formData.noWorkAbsence}
+              //onChange = {handleChange}
+              /> 
+              Bez pracovní neschopnosti
           </label>
           <label className="flex items-center">
             <input type="checkbox" className="mr-2"/> S pracovní neschopností 3 kalendářních dnů
@@ -224,25 +288,74 @@ const InjuryForm = () => {
         </div>
 
         <h3 className="text-lg font-semibold mt-6 mb-3">Činnost, při níž k úrazu došlo:</h3>
-        <textarea className="border w-full p-2 mb-4" placeholder="Doplňte" rows={1}></textarea>
+        <textarea 
+          className="border w-full p-2 mb-4" 
+          placeholder="Doplňte" 
+          rows={1}
+          name = "activity"
+          onChange = {handleChange}
+          value = {formData.activity}>
+          </textarea>
 
         <h3 className="text-lg font-semibold mt-6">Místo úrazu:</h3>
-        <textarea className="border w-full p-2 mb-4" placeholder="Doplňte" rows={1}></textarea>
+        <textarea 
+          className="border w-full p-2 mb-4" 
+          placeholder="Doplňte" 
+          rows={1}
+          name = "location"
+          onChange = {handleChange}
+          value = {formData.location}>
+        </textarea>
 
         <h3 className="text-lg font-semibold mt-6">Popis úrazového děje:</h3>
-        <textarea className="border w-full p-2 mb-4" placeholder="Popis úrazu" rows={4}></textarea>
+        <textarea 
+          className="border w-full p-2 mb-4" 
+          placeholder="Popis úrazu" 
+          rows={4}
+          name = "injutyEventDescription"
+          onChange = {handleChange}
+          value = {formData.injuryEventDescription}>
+          </textarea>
 
         <h3 className="text-lg font-semibold mt-6">Jaké předpisy byly v souvislosti s úrazem porušeny a kým:</h3>
-        <textarea className="border w-full p-2 mb-4" placeholder="Popis úrazu" rows={4}></textarea>
+        <textarea 
+          className="border w-full p-2 mb-4" 
+          placeholder="Popis úrazu" 
+          rows={4}
+          name = "violation"
+          onChange = {handleChange}
+          value = {formData.violation}>
+          </textarea>
 
         <h3 className="text-lg font-semibold mt-6">Opatření přijatá k zabránění opakování pracovního úrazu:</h3>
-        <textarea className="border w-full p-2 mb-4" placeholder="Popis úrazu" rows={4}></textarea>
+        <textarea 
+          className="border w-full p-2 mb-4" 
+          placeholder="Popis úrazu" 
+          rows={4}
+          name = "prevetionMeasures"
+          onChange = {handleChange}
+          value = {formData.preventionMeasures}>
+          </textarea>
 
         <h3 className="text-lg font-semibold mt-6">Jména svědků úrazu, osobní číslo, popř: datum narození a adresa bydliště:</h3>
-        <textarea className="border w-full p-2 mb-4" placeholder="Popis úrazu" rows={4}></textarea>
+        <textarea 
+          className="border w-full p-2 mb-4" 
+          placeholder="Popis úrazu" 
+          rows={4}
+          name = "witnessInfo"
+          onChange = {handleChange}
+          value = {formData.witnessInfo}>
+          </textarea>
 
         <h3 className="text-lg font-semibold mt-6">Jméno a přijmení nadřízeného:</h3>
-        <textarea className="border w-full p-2 mb-4" placeholder="Popis úrazu" rows={1}></textarea>
+        <textarea 
+          className="border w-full p-2 mb-4" 
+          placeholder="Popis úrazu" 
+          rows={1}
+          name = "supervisor"
+          onChange = {handleChange}
+          value = {formData.supervisor}>
+          </textarea>
         <Link to="/">
         <button type="submit" className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-700">
           Odeslat záznam
