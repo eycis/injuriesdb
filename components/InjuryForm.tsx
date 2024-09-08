@@ -73,7 +73,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
 
   return (
     <div className="bg-white max-w-4xl mx-auto mt-10 pt-20 shadow-lg rounded-lg h-auto">
-    <div className='mb-[2rem]'>
+    <div className='mb-[2rem] print:hidden'>
       <button type="button" 
         className="bg-blue-500 text-white py-2 px-4 mx-[2rem] w-[250px] rounded hover:bg-blue-700"
         onClick = {() => window.print()}>
@@ -251,7 +251,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
           </label>
         </div>        
 
-        <h3 className="text-lg font-semibold mt-6 mb-3">Co bylo zdrojem úrazu?</h3>
+        <h3 className="text-lg font-semibold mt-6 mb-3 break-before-page">Co bylo zdrojem úrazu?</h3>
         <div className="grid grid-cols-2 gap-4">
           <label className="flex items-center">
             <input type="checkbox" className="mr-2"/> Dopravní prostředek
@@ -385,7 +385,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
           </textarea>
       </form>
       <Link to="/">
-        <button type="submit" className="bg-blue-500 text-white py-2 px-4 w-[250px] mb-[2rem] mt-[1rem] rounded hover:bg-blue-700">
+        <button type="submit" className="bg-blue-500 text-white py-2 px-4 w-[250px] mb-[2rem] mt-[1rem] rounded hover:bg-blue-700 print hidden">
           Odeslat záznam
         </button>
         </Link>

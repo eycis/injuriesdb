@@ -10,6 +10,9 @@ module.exports = {
     extend: {
       fontFamily: {
         primary: ["Poppins"],
+        breakBefore: {
+          'page': 'break-before-page',
+        },
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
