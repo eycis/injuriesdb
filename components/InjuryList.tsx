@@ -1,51 +1,52 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-interface InjuryListProps {
-    toggleModal: () => void;
-  }
 
-const InjuryList = ({ toggleModal } : InjuryListProps) => {
+const InjuryList = () => {
   const injuries = [
     {
+      entity: '123',
       name: 'Jan Novák',
       injuryDate: '2024-09-15 14:30',
       injuryType: 'Pád ze schodů',
       status: 'Zpracován',
+      injury: true,
+      record: false,
     },
     {
-      name: 'Petr Dvořák',
-      injuryDate: '2024-09-10 09:00',
-      injuryType: 'Řezná rána',
-      status: 'Čeká na zpracování',
-    },
+        entity: '123',
+        name: 'Petr Dvořák',
+        injuryDate: '2024-09-10 09:00',
+        injuryType: 'Řezná rána',
+        status: 'Čeká na zpracování',
+        injury: true,
+        record: true,
+      },
   ];
 
   return (
-    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[90%] lg:h-[70%] max-w-[1000px] bg-[#201f20] rounded-lg shadow-xl p-4 flex flex-col items-center">
-      <h2 className="text-xl font-bold mb-4 text-white uppercase">Záznamy Úrazů</h2>      
-      
-      <button
-        className="absolute top-2 right-2 text-red-700 text-4xl"
-        onClick={toggleModal}
-      >
-        &times;
-      </button>
-      
-      
+    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[100%] lg:h-[80%] p-4 flex flex-col items-center">   
+
       <div className="w-full">
-        <div className="grid grid-cols-4 gap-4 text-white bold uppercase mb-4">
-          <label>Pojišťovna postiženého:</label>
+        <div className="grid grid-cols-7 gap-4 text-black bold uppercase mt-[1rem] mb-[1rem]">
+          <label>Číslo podniku:</label>
+          <label>Jméno postiženého:</label>
           <label>Datum zranění:</label>
           <label>Typ zranění:</label>
           <label>Status:</label>
+          <label>Záznam:</label>
+          <label>Zápis:</label>
         </div>
         <div className="space-y-2">
           {injuries.map((injury, index) => (
-            <div key={index} className="grid grid-cols-4 gap-4 bg-gray-100 p-2 border-b">
+            <div key={index} className="grid grid-cols-7 gap-4 bg-gray-400 p-2 rounded">
+              <div>{injury.entity}</div>
               <div>{injury.name}</div>
               <div>{injury.injuryDate}</div>
               <div>{injury.injuryType}</div>
               <div>{injury.status}</div>
+              <div>{injury.injury? '👁️' : '' }</div>
+              <div>{injury.record? '👁️' : ''}</div>
             </div>
           ))}
         </div>

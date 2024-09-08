@@ -204,6 +204,15 @@ const InjuryForm = () => {
           Odeslat záznam
         </button>
         </Link>
+        <button type="button" className="bg-blue-500 text-white py-2 px-4 mx-[2rem] rounded hover:bg-blue-700">
+          Vytisknout záznam
+        </button>
+        <button type="button" className="bg-blue-500 text-white py-2 px-4 mx-[1rem] rounded hover:bg-blue-700">
+          Exportovat do excelu
+        </button>
+        <button type="button" className="bg-blue-500 text-white py-2 px-4 mx-[1rem] rounded hover:bg-blue-700">
+          Vytvořit záznam o úrazu
+        </button>
       </form>
     </div>
   );
