@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Head from '@/components/Head'; 
 import Body from '@/components/Body'; 
-import InjuryForm from '@/components/InjuryForm'; 
 import { useRouter } from 'next/router'; 
 const IndexPage = () => {
   const router = useRouter();
