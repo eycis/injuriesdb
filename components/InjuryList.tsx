@@ -46,7 +46,13 @@ const InjuryList = () => {
               <div>{injury.injuryType}</div>
               <div>{injury.status}</div>
               <div>{injury.injury? '👁️' : '' }</div>
-              <div>{injury.record? '👁️' : ''}</div>
+              <Link to="/injury-form">
+              <div>
+                <button>
+                    {injury.record? '👁️' : ''}
+                </button>
+                </div>
+              </Link>
             </div>
           ))}
         </div>
