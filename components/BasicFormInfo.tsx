@@ -257,7 +257,7 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
         value = {formData.injuryEventDescription}>
         </textarea>
 
-        <h3 className="text-lg font-semibold mt-6">Jaké předpisy byly v souvislosti s úrazem porušeny a kým:</h3>
+        <h3 className="text-lg font-semibold mt-6 break-before-page">Jaké předpisy byly v souvislosti s úrazem porušeny a kým:</h3>
         <textarea 
         className="border w-full p-2 mb-4" 
         placeholder="Popis úrazu" 

@@ -1,12 +1,9 @@
 import React, { useState } from 'react'
-import BasicInfo from './BasicInfo'
+import BasicInfo from './BasicFormInfo'
 import { Link } from 'react-router-dom';
-
-
 
 export const InjuryRecord = () => {
 
-    
 const [formData, setFormData] = useState({
     employer: '',
     insurance: '',
@@ -43,7 +40,7 @@ const [formData, setFormData] = useState({
 
 
   return (
-    <div className="bg-white max-w-4xl mx-auto mt-10 pt-20 shadow-lg rounded-lg h-auto">
+    <div className="bg-white max-w-4xl mx-auto mt-10 pt-20 shadow-lg rounded-lg h-auto print:pt-0">
     <form>
     <div className="flex items-center justify-between mb-[2rem]">
         <h3 className="text-lg font-bold uppercase">Záznam o úrazu:</h3>

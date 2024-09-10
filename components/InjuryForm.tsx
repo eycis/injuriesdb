@@ -1,7 +1,7 @@
 import { exportToExcel } from '@/Services/exportToExcelService';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import BasicInfo from './BasicInfo';
+import BasicInfo from './BasicFormInfo';
 
 interface FormData {
   employer: string;
@@ -73,7 +73,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
   };
 
   return (
-    <div className="bg-white max-w-4xl mx-auto mt-10 pt-20 shadow-lg rounded-lg h-auto">
+    <div className="bg-white max-w-4xl mx-auto mt-10 pt-20 shadow-lg rounded-lg h-auto print:pt-0">
     <div className='mb-[2rem] print:hidden'>
       <button type="button" 
         className="bg-blue-500 text-white py-2 px-4 mx-[2rem] w-[250px] rounded hover:bg-blue-700"
