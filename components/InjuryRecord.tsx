@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import BasicInfo from './BasicFormInfo'
 import { Link } from 'react-router-dom';
+import { exportToExcel } from '@/Services/exportToExcelService';
 
 export const InjuryRecord = () => {
 
@@ -37,22 +38,20 @@ const [formData, setFormData] = useState({
       [name]: value,
     }));
   };
+  
+  const handleExport = () => {
+    exportToExcel([formData], 'InjuryRecords');
+  };
 
 
   return (
-    <div className="bg-white max-w-4xl mx-auto mt-10 pt-20 shadow-lg rounded-lg h-auto print:pt-0">
+    <div className="bg-white max-w-4xl mx-auto mt-7 pt-20 shadow-lg rounded-lg h-auto print:pt-0">
     <form>
-    <div className="flex items-center justify-between mb-[2rem]">
-        <h3 className="text-lg font-bold uppercase">Záznam o úrazu:</h3>
-        <button 
-            type="button" 
-            className="bg-blue-500 text-white py-2 px-4 w-[250px] rounded hover:bg-blue-700 print:hidden"
-            onClick={() => window.print()}>
-            Vytisknout záznam
-        </button>
-    </div>
+        <h1 className="text-lg font-bold uppercase px-[2rem] mb-[2rem]">Záznam o úrazu:</h1>
+
         <BasicInfo formData={formData} handleChange={handleChange} />
 
+        <div className="px-[1rem]">
         <h3 className="text-lg font-semibold mt-6">Dodatečná otázka č. 1:</h3>
         <textarea 
         className="border w-full p-2 mb-4" 
@@ -85,12 +84,29 @@ const [formData, setFormData] = useState({
         // value = {formData.supervisor}
         >
         </textarea>
+        </div>
     </form>
-        <Link to="/">
-        <button type="submit" className="bg-blue-500 text-white py-2 px-4 w-[250px] mb-[2rem] mt-[1rem] rounded hover:bg-blue-700 print:hidden">
-          Uložit záznam ze zranění
+    <div className='mb-[3rem] print:hidden py-[2rem] flex justify-center items-center'>
+      <Link to="/">
+        <button 
+          type="submit" 
+          className="bg-green-600 text-white mx-[1rem] w-[200px] h-[40px] rounded hover:bg-blue-700"
+          onClick = {() => {
+            window.alert("Záznam o zranění byl uložen.")}}>
+          Uložit
         </button>
         </Link>
+        <button type="button" 
+          className="bg-blue-500 text-white mx-[1rem] w-[200px] h-[40px] rounded hover:bg-blue-700"
+          onClick = {() => window.print()}>
+          Vytisknout záznam
+        </button>
+        <button type="button" 
+          className="bg-blue-500 text-white mx-[1rem] w-[200px] h-[40px]  rounded hover:bg-blue-700"
+          onClick = {handleExport}>
+          Exportovat do excelu
+        </button>
+    </div>
     </div>
   )
 }

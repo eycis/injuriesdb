@@ -1,10 +1,10 @@
 import React from 'react'
 
 const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: any }) => (
-    <div>
-    <div className="grid grid-cols-2 gap-4">
+    <div className="px-[1rem]">
+    <div className="grid grid-cols-2 gap-4 px-[1rem]">
           <div>
-            <label>Pobočka:</label>
+            <label className='font-bold'>Pobočka:</label>
             <input 
               type="text" 
               name = "employer"
@@ -14,7 +14,7 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
               placeholder="Pobočka"/>
           </div>
           <div>
-            <label>Pojišťovna postiženého:</label>
+            <label className='font-bold'>Pojišťovna postiženého:</label>
             <input 
               type="text" 
               name = "insurance"
@@ -24,7 +24,7 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
               placeholder="Evidenční číslo"/>
           </div>
           <div>
-            <label>Jméno a příjmení postiženého:</label>
+            <label className='font-bold'>Jméno a příjmení postiženého:</label>
             <input 
               type="text" 
               className="border w-full p-2 mb-4" 
@@ -34,7 +34,7 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
               value = {formData.name}/>
           </div>
           <div>
-            <label>Datum narození:</label>
+            <label className='font-bold'>Datum narození:</label>
             <input 
               type="date" 
               className="border w-full p-2 mb-4"
@@ -43,7 +43,7 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
               value = {formData.birthDate}/>
           </div>
           <div>
-            <label>Osobní číslo:</label>
+            <label className='font-bold'>Osobní číslo:</label>
             <input 
               type="text" 
               className="border w-full p-2 mb-4" 
@@ -53,7 +53,7 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
               value = {formData.personalNumber}/>
           </div>
           <div>
-            <label>Bydliště postiženého:</label>
+            <label className='font-bold'>Bydliště postiženého:</label>
             <input 
               type="text" 
               className="border w-full p-2 mb-4" 
@@ -63,7 +63,7 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
               value = {formData.address}/>
           </div>
           <div>
-            <label>Pracovní pozice:</label>
+            <label className='font-bold'>Pracovní pozice:</label>
             <input 
               type="text" 
               className="border w-full p-2 mb-4" 
@@ -73,7 +73,7 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
               value = {formData.position}/>
           </div>
           <div>
-            <label>Od začátku směny odpracováno:</label>
+            <label className='font-bold'>Od začátku směny odpracováno:</label>
             <input 
               type="text" 
               className="border w-full p-2 mb-4" 
@@ -82,8 +82,8 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
               onChange = {handleChange}
               value = {formData.hoursWorked}/>
           </div>
-          <div>
-            <label>Datum a čas úrazu:</label>
+          <div >
+            <label className='font-bold'>Datum a čas úrazu:</label>
             <input 
               type="datetime-local" 
               className="border w-full p-2 mb-4"
@@ -93,9 +93,10 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
           </div>
         </div>
 
+ 
         <h2 className="text-lg font-semibold mt-6">Druh zranění a zraněná část těla:</h2>
         <input type="text" className="border w-full p-2 mb-4" placeholder="Popis zranění"/>
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-4 gap-2 ">
         <div>
             <label>Počet zraněných osob:</label>
             <input 
@@ -162,7 +163,8 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
         <label className="flex items-center">
             <input type="checkbox" className="mr-2"/> Smrtelný pracovní úraz
         </label>
-        </div>        
+        </div>  
+   
 
         <h3 className="text-lg font-semibold mt-6 mb-3 break-before-page">Co bylo zdrojem úrazu?</h3>
         <div className="grid grid-cols-2 gap-4">

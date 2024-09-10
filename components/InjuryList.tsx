@@ -45,12 +45,12 @@ const InjuryList = () => {
               <div>{injury.injuryDate}</div>
               <div>{injury.injuryType}</div>
               <div>{injury.status}</div>
-              <Link to="/injury-form">
+              <Link to="/injury-form-example">
                 <button>
                   {injury.injury ? <FontAwesomeIcon icon={faEye} /> : ''}
                 </button>
               </Link>
-              <Link to="/injury-record">
+              <Link to="/injury-record-example">
                   <button>
                     {injury.record ? <FontAwesomeIcon icon={faEye} /> : ''}
                   </button>

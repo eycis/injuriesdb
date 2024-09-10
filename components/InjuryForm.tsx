@@ -74,34 +74,33 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
 
   return (
     <div className="bg-white max-w-4xl mx-auto mt-10 pt-20 shadow-lg rounded-lg h-auto print:pt-0">
-    <div className='mb-[2rem] print:hidden'>
-      <button type="button" 
-        className="bg-blue-500 text-white py-2 px-4 mx-[2rem] w-[250px] rounded hover:bg-blue-700"
-        onClick = {() => window.print()}>
-        Vytisknout záznam
-      </button>
-      <button type="button" 
-        className="bg-blue-500 text-white py-2 px-4 mx-[1rem] w-[250px] rounded hover:bg-blue-700"
-        onClick = {handleExport}>
-        Exportovat do excelu
-      </button>
-      <Link to='/injury-record'>
-      <button type="button" className="bg-blue-500 text-white py-2 px-4 mx-[1rem]  w-[250px] rounded hover:bg-blue-700">
-        Vytvořit záznam o úrazu
-      </button>
-      </Link>
-    </div>
       <form>
         
         <BasicInfo formData={formData} handleChange={handleChange} />
 
         
       </form>
+      <div className='mb-[3rem] print:hidden py-[2rem] flex justify-center items-center'>
       <Link to="/">
-        <button type="submit" className="bg-blue-500 text-white py-2 px-4 w-[250px] mb-[2rem] mt-[1rem] rounded hover:bg-blue-700 print:hidden">
+        <button 
+          type="submit" 
+          className="bg-green-600 text-white mx-[1rem] w-[190px] h-[40px] rounded hover:bg-green-500"
+          onClick = {() => {
+            window.alert("Záznam o zranění byl uložen.")}}>
           Uložit
         </button>
         </Link>
+        <button type="button" 
+          className="bg-blue-500 text-white mx-[1rem] w-[200px] h-[40px] rounded hover:bg-blue-700"
+          onClick = {() => window.print()}>
+          Vytisknout záznam
+        </button>
+        <button type="button" 
+          className="bg-blue-500 text-white mx-[1rem] w-[200px] h-[40px]  rounded hover:bg-blue-700"
+          onClick = {handleExport}>
+          Exportovat do excelu
+        </button>
+    </div>
     </div>
   );
 };
