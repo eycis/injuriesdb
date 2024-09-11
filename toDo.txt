@@ -1,0 +1,4 @@
+upravit typování, aby více sedělo pro ts
+upravit využívání interface
+upravit tailwind css
+přidat styly

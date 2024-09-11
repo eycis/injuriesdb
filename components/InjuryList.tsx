@@ -23,6 +23,15 @@ const InjuryList = () => {
       injury: true,
       record: true,
     },
+    {
+      entity: '123',
+      name: 'Petr Dvořák',
+      injuryDate: '2024-09-10 09:00',
+      injuryType: 'Řezná rána',
+      status: 'Čeká na zpracování',
+      injury: true,
+      record: true,
+    },
   ];
 
   return (

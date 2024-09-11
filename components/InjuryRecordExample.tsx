@@ -1,36 +1,37 @@
 import { exportToExcel } from '@/Services/exportToExcelService';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FormData } from '@/models/form';
   
 const InjuryFormExample = () => {
-    const [formData, setFormData] = useState({
-        employer: '',
-        insurance: '',
-        name: '',
-        birthDate: '',
-        personalNumber: '',
-        address: '',
-        position: '',
-        hoursWorked: '',
-        injuryDateTime: '',
-        injuryDescription: '',
-        doctorVisit: '',
-        alcoholTest: '',
-        alcoholTestResult: '',
-        injuryType: '',
-        injuryCause: '',
-        activity: '',
-        location: '',
-        injuryEventDescription: '',
-        violation: '',
-        preventionMeasures: '',
-        witnessInfo: '',
-        supervisor: '',
-        numberOfInjuredPeople: '',
-      });
+  const [FormData, setFormData] = useState({
+      employer: '',
+      insurance: '',
+      name: '',
+      birthDate: new Date(),
+      personalNumber: 0,
+      address: '',
+      position: '',
+      hoursWorked: 0,
+      injuryDateTime: new Date(),
+      injuryDescription: '',
+      doctorVisit: '',
+      alcoholTest: '',
+      alcoholTestResult: '',
+      injuryType: '',
+      injuryCause: '',
+      activity: '',
+      location: '',
+      injuryEventDescription: '',
+      violation: '',
+      preventionMeasures: '',
+      witnessInfo: '',
+      supervisor: '',
+      numberOfInjuredPeople: 0,
+    });
 
       const handleExport = () => {
-        exportToExcel([formData], 'InjuryRecords');
+        exportToExcel([FormData], 'InjuryRecords');
       };
 
     return (

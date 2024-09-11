@@ -2,19 +2,20 @@ import React, { useState } from 'react'
 import BasicInfo from './BasicFormInfo'
 import { Link } from 'react-router-dom';
 import { exportToExcel } from '@/Services/exportToExcelService';
+import { FormData } from '@/models/form';
 
 export const InjuryRecord = () => {
 
-const [formData, setFormData] = useState({
+const [FormData, setFormData] = useState<FormData>({
     employer: '',
     insurance: '',
     name: '',
-    birthDate: '',
-    personalNumber: '',
+    birthDate: new Date(),
+    personalNumber: 0,
     address: '',
     position: '',
-    hoursWorked: '',
-    injuryDateTime: '',
+    hoursWorked: 0,
+    injuryDateTime: new Date(),
     injuryDescription: '',
     doctorVisit: '',
     alcoholTest: '',
@@ -28,7 +29,7 @@ const [formData, setFormData] = useState({
     preventionMeasures: '',
     witnessInfo: '',
     supervisor: '',
-    numberOfInjuredPeople: '',
+    numberOfInjuredPeople: 0,
   });
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -40,7 +41,7 @@ const [formData, setFormData] = useState({
   };
   
   const handleExport = () => {
-    exportToExcel([formData], 'InjuryRecords');
+    exportToExcel([FormData], 'InjuryRecords');
   };
 
 
@@ -49,7 +50,7 @@ const [formData, setFormData] = useState({
     <form>
         <h1 className="text-lg font-bold uppercase px-[2rem] mb-[2rem]">Záznam o úrazu:</h1>
 
-        <BasicInfo formData={formData} handleChange={handleChange} />
+        <BasicInfo formData={FormData} handleChange={handleChange} />
 
         <div className="px-[1rem]">
         <h3 className="text-lg font-semibold mt-6">Dodatečná otázka č. 1:</h3>

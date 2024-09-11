@@ -1,18 +1,19 @@
 import { exportToExcel } from '@/Services/exportToExcelService';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { FormData } from '@/models/form';
   
 const InjuryFormExample = () => {
-    const [formData, setFormData] = useState({
+    const [FormData, setFormData] = useState({
         employer: '',
         insurance: '',
         name: '',
-        birthDate: '',
-        personalNumber: '',
+        birthDate: new Date(),
+        personalNumber: 0,
         address: '',
         position: '',
-        hoursWorked: '',
-        injuryDateTime: '',
+        hoursWorked: 0,
+        injuryDateTime: new Date(),
         injuryDescription: '',
         doctorVisit: '',
         alcoholTest: '',
@@ -26,11 +27,11 @@ const InjuryFormExample = () => {
         preventionMeasures: '',
         witnessInfo: '',
         supervisor: '',
-        numberOfInjuredPeople: '',
+        numberOfInjuredPeople: 0,
       });
 
       const handleExport = () => {
-        exportToExcel([formData], 'InjuryRecords');
+        exportToExcel([FormData], 'InjuryRecords');
       };
 
     return (

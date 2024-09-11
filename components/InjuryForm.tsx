@@ -2,47 +2,20 @@ import { exportToExcel } from '@/Services/exportToExcelService';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import BasicInfo from './BasicFormInfo';
-
-interface FormData {
-  employer: string;
-  name: string;
-  injuryDate: string;
-  injuryType: string;
-  birthDate: string;
-  insurance: string;
-  witnessInfo: string;
-  personalNumber: string;
-  address: string;
-  position: string;
-  hoursWorked: string;
-  injuryDescription: string;
-  injuryTime: string;
-  doctorVisit: string;
-  alcoholTest: string;
-  alcoholTestResult: string;
-  injuryCause: string;
-  activity: string;
-  location: string;
-  injuryEventDescription: string;
-  violation: string;
-  preventionMeasures: string;
-  supervisor: string;
-  numberOfInjuredPeople: string;
-}
-
+import { FormData } from '@/models/form';
 
 const InjuryForm = () => {
     
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
     employer: '',
     insurance: '',
     name: '',
-    birthDate: '',
-    personalNumber: '',
+    birthDate: new Date(),
+    personalNumber: 0,
     address: '',
     position: '',
-    hoursWorked: '',
-    injuryDateTime: '',
+    hoursWorked: 0,
+    injuryDateTime: new Date(),
     injuryDescription: '',
     doctorVisit: '',
     alcoholTest: '',
@@ -56,7 +29,7 @@ const InjuryForm = () => {
     preventionMeasures: '',
     witnessInfo: '',
     supervisor: '',
-    numberOfInjuredPeople: '',
+    numberOfInjuredPeople: 0,
   });
 
 const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

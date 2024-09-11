@@ -1,33 +1,9 @@
 import ExcelJS from 'exceljs';
 import { saveAs } from 'file-saver';
+import { FormData } from '@/models/form'; 
 
-interface InjuryRecord {
-  employer: string;
-  name: string;
-  injuryDateTime: string;
-  injuryType: string;
-  birthDate: string;
-  insurance: string;
-  witnessInfo: string;
-  personalNumber: string;
-  address: string;
-  position: string;
-  hoursWorked: string;
-  injuryDescription: string;
-  doctorVisit: string;
-  alcoholTest: string;
-  alcoholTestResult: string;
-  injuryCause: string;
-  activity: string;
-  location: string;
-  injuryEventDescription: string;
-  violation: string;
-  preventionMeasures: string;
-  supervisor: string;
-  numberOfInjuredPeople: string;
-}
 
-export const exportToExcel = async (data: InjuryRecord[], fileName: string): Promise<void> => {
+export const exportToExcel = async (data: FormData[], fileName: string): Promise<void> => {
   const workbook = new ExcelJS.Workbook();
   const worksheet = workbook.addWorksheet('Záznamy');
 
@@ -36,12 +12,12 @@ export const exportToExcel = async (data: InjuryRecord[], fileName: string): Pro
       ['Pobočka: ', item.employer],
       ['Pojištovna: ', item.insurance],
       ['Jméno: ', item.name],
-      ['Datum narození: ', item.birthDate],
+      ['Datum narození: ', item.birthDate.toLocaleDateString()],
       ['Osobní číslo: ', item.personalNumber],
       ['Bydliště postiženého: ', item.address],
       ['Pracovní pozice: ', item.position],
       ['Odpracované hodiny: ', item.hoursWorked],
-      ['Čas a datum úrazu: ', item.injuryDateTime],
+      ['Čas a datum úrazu: ', item.injuryDateTime.toLocaleDateString()],
       ['Celkový počet zraněných: ', item.numberOfInjuredPeople],
       ['Návštěva u lékaře: ', item.doctorVisit],
       ['Test na alkohol: ', item.alcoholTest],
