@@ -57,22 +57,12 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
       <Link to="/">
         <button 
           type="submit" 
-          className="bg-green-600 text-white mx-[1rem] w-[190px] h-[40px] rounded hover:bg-green-500"
+          className="bg-green-600 text-white mx-4 w-full h-10 rounded-md hover:bg-green-500"
           onClick = {() => {
             window.alert("Záznam o zranění byl uložen.")}}>
-          Uložit
+          Uložit ke schválení
         </button>
         </Link>
-        <button type="button" 
-          className="bg-blue-500 text-white mx-[1rem] w-[200px] h-[40px] rounded hover:bg-blue-700"
-          onClick = {() => window.print()}>
-          Vytisknout záznam
-        </button>
-        <button type="button" 
-          className="bg-blue-500 text-white mx-[1rem] w-[200px] h-[40px]  rounded hover:bg-blue-700"
-          onClick = {handleExport}>
-          Exportovat do excelu
-        </button>
     </div>
     </div>
   );

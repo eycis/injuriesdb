@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components {
+    .save-button{
+        @apply bg-green-700 text-white mx-4 w-52 h-10 rounded-md hover:bg-green-900 transition duration-300
+    }
+    .action-button {
+        @apply bg-blue-700 text-white mx-4 w-52 h-10 rounded-md hover:bg-blue-900 transition duration-300
+    }
+}

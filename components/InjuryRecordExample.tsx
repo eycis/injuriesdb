@@ -243,14 +243,9 @@ const InjuryFormExample = () => {
     
     <div className='mb-[3rem] print:hidden py-[2rem] flex justify-center items-center'>
     <button type="button" 
-          className="bg-blue-500 text-white mx-[1rem] w-[200px] h-[40px] rounded hover:bg-blue-700"
+          className="action-button"
           onClick = {() => window.print()}>
           Vytisknout záznam
-        </button>
-        <button type="button" 
-          className="bg-blue-500 text-white mx-[1rem] w-[200px] h-[40px]  rounded hover:bg-blue-700"
-          onClick = {handleExport}>
-          Exportovat do excelu
         </button>
     </div>
     </div>

@@ -1,4 +1,10 @@
-upravit typování, aby více sedělo pro ts
+(upravit typování, aby více sedělo pro ts
 upravit využívání interface
 upravit tailwind css
 přidat styly
+)
+
+- přejmenovat tlačítko na 'uložit ke schválení'  - Navrhnout 'odeslat ke schválení'? 
+- ? vyexportovat celou tabulku z databáze
+
+-posílání mailů při schválení administrátorem.

@@ -205,22 +205,26 @@ const InjuryFormExample = () => {
         <h3 className="text-lg font-semibold mt-6">Jméno a přijmení nadřízeného:</h3>
         <textarea className="border w-full p-2 mb-4" rows={1} value="Anna Nováková" placeholder="Popis úrazu"/>
     
-    <div className='mb-[3rem] print:hidden py-[2rem] flex justify-center items-center'>
-    <button type="button" 
-          className="bg-blue-500 text-white mx-[1rem] w-[200px] h-[40px] rounded hover:bg-blue-700"
-          onClick = {() => window.print()}>
-          Vytisknout záznam
+    <div className='mb-12 print:hidden py-8 flex justify-center items-center'>
+    <button 
+        type="button" 
+        className="save-button"
+        onClick={() => window.print()}>
+        Potvrdit a uložit
+    </button>    
+    <button 
+        type="button" 
+        className="action-button"
+        onClick={() => window.print()}>
+        Vytisknout záznam
+    </button>
+    <Link to='/injury-record'>
+        <button 
+            type="button" 
+            className="action-button">
+            Vytvořit záznam o úrazu
         </button>
-        <button type="button" 
-          className="bg-blue-500 text-white mx-[1rem] w-[200px] h-[40px]  rounded hover:bg-blue-700"
-          onClick = {handleExport}>
-          Exportovat do excelu
-        </button>
-        <Link to='/injury-record'>
-        <button type="button" className="bg-blue-500 text-white mx-[1rem] h-[40px]  w-[220px] rounded hover:bg-blue-700">
-          Vytvořit záznam o úrazu
-        </button>
-        </Link>
+    </Link>
     </div>
     </div>
     </div>
