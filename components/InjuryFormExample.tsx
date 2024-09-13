@@ -206,12 +206,16 @@ const InjuryFormExample = () => {
         <textarea className="border w-full p-2 mb-4" rows={1} value="Anna Nováková" placeholder="Popis úrazu"/>
     
     <div className='mb-12 print:hidden py-8 flex justify-center items-center'>
+    <Link to="/">
     <button 
         type="button" 
         className="save-button"
-        onClick={() => window.print()}>
+        onClick={() =>
+          window.alert("Zápis byl uložen.")
+        }>
         Potvrdit a uložit
-    </button>    
+    </button>
+    </Link>    
     <button 
         type="button" 
         className="action-button"

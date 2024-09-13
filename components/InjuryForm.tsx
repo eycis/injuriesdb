@@ -57,7 +57,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
       <Link to="/">
         <button 
           type="submit" 
-          className="bg-green-600 text-white mx-4 w-full h-10 rounded-md hover:bg-green-500"
+          className="save-button"
           onClick = {() => {
             window.alert("Záznam o zranění byl uložen.")}}>
           Uložit ke schválení

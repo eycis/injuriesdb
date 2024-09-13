@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye } from '@fortawesome/free-solid-svg-icons';
-import { exportToExcel } from '@/Services/exportToExcelService';
 import { exportBook } from '@/Services/exportInjuries';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const InjuryList = () => {
   const injuries = [
@@ -34,6 +35,15 @@ const InjuryList = () => {
       injury: true,
       record: true,
     },
+    {
+      entity: '789',
+      name: 'Petr Dvořák',
+      injuryDate: '2024-09-10 09:00',
+      injuryType: 'Řezná rána',
+      status: 'Čeká na zpracování',
+      injury: true,
+      record: true,
+    },
   ];
 
   const [selectedEntity, setSelectedEntity] = useState('');
@@ -41,9 +51,24 @@ const InjuryList = () => {
     ? injuries.filter((injury) => injury.entity === selectedEntity)
     : injuries;
 
+    useEffect(() => {
+      AOS.init({
+        duration: 800, 
+      });
+    }, []);
+
+    useEffect(() => {
+      AOS.refresh();
+    }, [filteredInjuries]);
+
   return (
     <div>
       <div className="w-full fixed z-[10000] top-0 h-[10vh] bg-[#141c27] shadow-md print:hidden flex items-center justify-between px-10">
+          <Link to='/'>
+            <button className="flex-[0.6] uppercase cursor-pointer text-[25px] text-white font-bold">
+              Elektronická Kniha <span className="text-blue-400">Úrazů</span>
+            </button>
+          </Link>
         <div>
           <label htmlFor="entityDropdown" className="text-white font-bold ">
             Zobrazit provoz:
@@ -82,7 +107,10 @@ const InjuryList = () => {
           </div>
           <div className="space-y-2">
             {filteredInjuries.map((injury, index) => (
-              <div key={index} className="grid grid-cols-7 gap-4 bg-gray-400 p-2 rounded">
+              <div key={index} 
+                    className="grid grid-cols-7 gap-4 bg-gray-400 p-2 rounded"
+                    data-aos="fade-up"
+                    data-aos-delay={index * 200}>
                 <div>{injury.entity}</div>
                 <div>{injury.name}</div>
                 <div>{injury.injuryDate}</div>
@@ -97,7 +125,7 @@ const InjuryList = () => {
               </div>
             ))}
           </div>
-        </div>
+          </div>
       </div>
     </div>
   );

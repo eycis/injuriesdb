@@ -10,4 +10,7 @@
     .action-button {
         @apply bg-blue-700 text-white mx-4 w-52 h-10 rounded-md hover:bg-blue-900 transition duration-300
     }
+    .body-button{
+        @apply bg-blue-700 text-white py-4 px-4 w-72 rounded transition-colors duration-300 hover:bg-blue-900
+    }
 }

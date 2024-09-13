@@ -5,6 +5,5 @@ přidat styly
 )
 
 - přejmenovat tlačítko na 'uložit ke schválení'  - Navrhnout 'odeslat ke schválení'? 
-- ? vyexportovat celou tabulku z databáze
 
 -posílání mailů při schválení administrátorem.
