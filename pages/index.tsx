@@ -9,24 +9,16 @@ const IndexPage = () => {
   useEffect(() => {
     const token = localStorage.getItem('token'); 
     if (token) {
-      setIsLoggedIn(true); 
+      setIsLoggedIn(false); 
     }
   }, []);
 
   const handleLogin = () => {
-    setIsLoggedIn(true); 
+    setIsLoggedIn(false); 
   };
 
   return (
-    <div className="overflow-x-hidden">
-      <Head /> 
-      <div className="mt-[15vh]">
-        {isLoggedIn ? (
-          <Body /> 
-        ) : (
-          <button onClick={handleLogin}>Přihlásit se</button>
-        )}
-      </div>
+    <div>
     </div>
   );
 };

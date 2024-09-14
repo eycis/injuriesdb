@@ -47,9 +47,12 @@ const InjuryList = () => {
   ];
 
   const [selectedEntity, setSelectedEntity] = useState('');
-  const filteredInjuries = selectedEntity
-    ? injuries.filter((injury) => injury.entity === selectedEntity)
-    : injuries;
+  const [isAdmin, setIsAdmin] = useState(false);
+
+  const filteredInjuries = injuries.filter( injury => {
+    if(!isAdmin && injury.entity !== '123') return false;
+    return selectedEntity ? injury.entity == selectedEntity : true;
+  })
 
     useEffect(() => {
       AOS.init({
@@ -63,12 +66,15 @@ const InjuryList = () => {
 
   return (
     <div>
-      <div className="w-full fixed z-[10000] top-0 h-[10vh] bg-[#141c27] shadow-md print:hidden flex items-center justify-between px-10">
+     <div className="w-[100%] fixed z-[10000] top-0 h-[10vh] bg-[#141c27] shadow-md print:hidden">
+      <div className="flex items-center justify-between w-[80%] mx-auto h-[100%]">
           <Link to='/'>
-            <button className="flex-[0.6] uppercase cursor-pointer text-[25px] text-white font-bold">
+            <button className="flex-[0.6] uppercase cursor-pointer text-[25px] text-white font-bold hover:text-blue-400 transition duration-300">
               Elektronická Kniha <span className="text-blue-400">Úrazů</span>
             </button>
           </Link>
+
+        {isAdmin &&(
         <div>
           <label htmlFor="entityDropdown" className="text-white font-bold ">
             Zobrazit provoz:
@@ -85,14 +91,27 @@ const InjuryList = () => {
             <option value="789">789</option>
           </select>
         </div>
-
+        )}
+        {isAdmin &&(
         <button 
             type = "button"
             className='action-button'
             onClick = {exportBook}>
             Exportovat knihu úrazů
         </button>
+        )}
+        <div>
+        <label htmlFor="adminToggle" className="text-white font-bold mr-2">Admin:</label>
+          <input
+            id="adminToggle"
+            type="checkbox"
+            checked={isAdmin}
+            onChange={() => setIsAdmin(!isAdmin)}
+            className="toggle-checkbox w-6 h-6"
+          />
+          </div>
       </div>
+      </div>      
 
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full lg:h-[80%] p-4 flex flex-col items-center">
         <div className="w-full">

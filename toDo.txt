@@ -7,3 +7,9 @@ přidat styly
 - přejmenovat tlačítko na 'uložit ke schválení'  - Navrhnout 'odeslat ke schválení'? 
 
 -posílání mailů při schválení administrátorem.
+
+-projít a zkontrolovat gramatické chyby
+-zkusit deploy
+-po deployi zkontrolovat u mamky na pc že to funguje
+-zkontrolovat vzhled na menších zařízeních
+-přihlášení zprovoznit? 

@@ -46,13 +46,12 @@ const App = () => {
 
   return (
     <Router>
-      <Head />
       <Routes>
-        <Route path="/" element={<Body />} />
-        <Route path="/injury-form" element={<div><Head/> <InjuryForm /></div>} />
+        <Route path="/" element={<div><Head /><Body /></div>} />
+        <Route path="/injury-form" element={<div><Head /> <InjuryForm /></div>} />
         <Route path="/injury-list" element={<div><InjuryList /></div>} />
-        <Route path="/injury-record" element={<div><Head/> <InjuryRecord/> </div>} />
-        <Route path="/injury-form-example" element={<div><Head/> <InjuryFormExample/> </div>} />
+        <Route path="/injury-record" element={<div><Head /> <InjuryRecord/> </div>} />
+        <Route path="/injury-form-example" element={<div> <InjuryFormExample/> </div>} />
         <Route path="/injury-record-example" element={<div><Head/> <InjuryRecordExample/> </div>} />
       </Routes>
     </Router>

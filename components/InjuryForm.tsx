@@ -1,4 +1,3 @@
-import { exportToExcel } from '@/Services/exportToExcelService';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import BasicInfo from './BasicFormInfo';
@@ -40,10 +39,6 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
       [name]: value,
     }));
 };
-
-  const handleExport = () => {
-    exportToExcel([formData], 'InjuryRecords');
-  };
 
   return (
     <div className="bg-white max-w-4xl mx-auto mt-10 pt-20 shadow-lg rounded-lg h-auto print:pt-0">

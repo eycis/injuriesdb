@@ -30,10 +30,6 @@ const InjuryFormExample = () => {
       numberOfInjuredPeople: 0,
     });
 
-      const handleExport = () => {
-        exportToExcel([FormData], 'InjuryRecords');
-      };
-
     return (
     <div className="bg-white max-w-4xl mx-auto mt-10 pt-20 shadow-lg rounded-lg h-auto print:pt-0">
     <div className="px-[1rem]">
