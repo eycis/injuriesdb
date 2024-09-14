@@ -12,4 +12,7 @@ přidat styly
 -zkusit deploy
 -po deployi zkontrolovat u mamky na pc že to funguje
 -zkontrolovat vzhled na menších zařízeních
+-zkontrolovat funkce
 -přihlášení zprovoznit? 
+
+----přidat breakpointy pro tisk

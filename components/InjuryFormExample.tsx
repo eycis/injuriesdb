@@ -46,7 +46,7 @@ const InjuryFormExample = () => {
       <div className="w-[100%] sticky z-[10000] top-0 h-[10vh] bg-[#141c27] shadow-md print:hidden">
        <div className="flex items-center justify-between w-[80%] mx-auto h-[100%]">
            <Link to='/'>
-             <button className="flex-[0.6] uppercase cursor-pointer text-[25px] text-white font-bold hover:text-blue-400 transition duration-300">
+             <button className="flex-[0.6] uppercase cursor-pointer text-[25px] text-white font-bold hover:text-blue-400 transition duration-300 focus:outline-none">
                Elektronická Kniha <span className="text-blue-400">Úrazů</span>
              </button>
            </Link>
@@ -260,7 +260,7 @@ const InjuryFormExample = () => {
             </label>
           </div>
 
-          <h3 className="text-lg font-semibold mt-6 mb-3">Co bylo zdrojem úrazu?</h3>
+          <h3 className="text-lg font-semibold mt-6 mb-3 break-before-page">Co bylo zdrojem úrazu?</h3>
           <div className="grid grid-cols-2 gap-4">
             <label className="flex items-center">
               <input
@@ -446,7 +446,7 @@ const InjuryFormExample = () => {
           onChange={handleInputChange} 
           placeholder="Popis úrazu"/>
 
-        <h3 className="text-lg font-semibold mt-6">Jaké předpisy byly v souvislosti s úrazem porušeny a kým:</h3>
+        <h3 className="text-lg font-semibold mt-6 break-before-page">Jaké předpisy byly v souvislosti s úrazem porušeny a kým:</h3>
         <textarea 
           className="border w-full p-2 mb-4" 
           rows={4}
