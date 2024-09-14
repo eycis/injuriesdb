@@ -150,37 +150,181 @@ const InjuryFormExample = () => {
 
         <h3 className="text-lg font-semibold mt-6 mb-3">Druh pracovního úrazu:</h3>
         <div className="grid grid-cols-2 gap-4">
-        <label className="flex items-center">
-            <input 
-            type="checkbox" 
-            className="mr-2"
-            checked
-            /> 
-            Bez pracovní neschopnosti
-        </label>
-        <label className="flex items-center">
-            <input type="checkbox" className="mr-2" /> S pracovní neschopností 3 kalendářních dnů
-        </label>
-        </div>        
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+                checked
+              />
+              Bez pracovní neschopnosti
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+              />
+              S pracovní neschopností 3 kalendářních dnů
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+              />
+              S pracovní neschopností nad 3 kalendářní dny
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+              />
+              S hospitalizací nad 5 dnů
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+              />
+              Smrtelný pracovní úraz
+            </label>
+          </div>
 
-        <h3 className="text-lg font-semibold mt-6 mb-3">Co bylo zdrojem úrazu?</h3>
-        <div className="grid grid-cols-2 gap-4">
-        <label className="flex items-center">
-            <input type="checkbox" className="mr-2" checked /> Nástroj, přístroj, nářadí
-        </label>
-        <label className="flex items-center">
-            <input type="checkbox" className="mr-2" /> Dopravní prostředek
-        </label>
-        </div>
+          <h3 className="text-lg font-semibold mt-6 mb-3 break-before-page">Co bylo zdrojem úrazu?</h3>
+          <div className="grid grid-cols-2 gap-4">
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+              />
+              Dopravní prostředek
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+                checked
+              />
+              průmyslové škodliviny
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+              />
+              stroje a zařízení přenosná nebo mobilní
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+              />
+              horké látky a předměty, oheň a výbušniny
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+              />
+              materiál, břemena
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+              />
+              stroje a zařízení stabilní
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+              />
+              pád na rovině, z výšky, do hloubky, propadnutí
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+              />
+              lidé, zvířata nebo přírodní živly
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+              />
+              nástroj, přístroj, nářadí
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+              />
+              elektrická energie
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+              />
+              jiné
+            </label>
+          </div>
 
-        <h3 className="text-lg font-semibold mt-6 mb-3">Proč k úrazu došlo?</h3>
-        <div className="grid grid-cols-2 gap-4">
-        <label className="flex items-center">
-            <input type="checkbox" className="mr-2" checked /> Porušení předpisů vztahujících se k práci
-        </label>
-        </div>
+          <h3 className="text-lg font-semibold mt-6 mb-3">Proč k úrazu došlo?</h3>
+          <div className="grid grid-cols-2 gap-4">
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+              />
+              Porušení předpisů vztahujících se k práci
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+              />
+              pro porušení předpisů vztahujících se k práci
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+                checked
+              />
+              pro špatně, nebo nedostatečné vyhodnocení rizika
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+              />
+              pro nepředvídatelné riziko práce nebí selhání lidského činitele
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+              />
+              pro nedostatečné osobní zajištění zaměstnance
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+              />
+              stroje a zařízení stabilní
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+              />
+              pro jiný, blíže nespecifikovaný důvod
+            </label>
+          </div>
 
-        <h3 className="text-lg font-semibold mt-6 mb-3">Činnost, při níž k úrazu došlo:</h3>
+        <h3 className="text-lg font-semibold mt-6 mb-3 ">Činnost, při níž k úrazu došlo:</h3>
         <textarea className="border w-full p-2 mb-4" rows={1} value="Údržba stroje" placeholder="Doplňte"/>
 
         <h3 className="text-lg font-semibold mt-6">Místo úrazu:</h3>
@@ -189,7 +333,7 @@ const InjuryFormExample = () => {
         <h3 className="text-lg font-semibold mt-6">Popis úrazového děje:</h3>
         <textarea className="border w-full p-2 mb-4" rows={4} value="Při údržbě stroje došlo k nečekanému spuštění." placeholder="Popis úrazu"/>
 
-        <h3 className="text-lg font-semibold mt-6">Jaké předpisy byly v souvislosti s úrazem porušeny a kým:</h3>
+        <h3 className="text-lg font-semibold mt-6 break-before-page">Jaké předpisy byly v souvislosti s úrazem porušeny a kým:</h3>
         <textarea className="border w-full p-2 mb-4" rows={4} value="Porušení bezpečnostních předpisů." placeholder="Popis úrazu"/>
 
         <h3 className="text-lg font-semibold mt-6">Opatření přijatá k zabránění opakování pracovního úrazu:</h3>
@@ -213,7 +357,7 @@ const InjuryFormExample = () => {
         >
         </textarea>
 
-        <h3 className="text-lg font-semibold mt-6">Dodatečná otázka č. 2:</h3>
+        <h3 className="text-lg font-semibold mt-6 break-before-page">Dodatečná otázka č. 2:</h3>
         <textarea 
         className="border w-full p-2 mb-4" 
         placeholder="Popis" 

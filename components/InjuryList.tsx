@@ -5,6 +5,7 @@ import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { exportBook } from '@/Services/exportInjuries';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { faBedPulse } from '@fortawesome/free-solid-svg-icons/faBedPulse';
 
 const InjuryList = () => {
   const injuries = [
@@ -13,9 +14,18 @@ const InjuryList = () => {
       name: 'Jan Novák',
       injuryDate: '2024-09-15 14:30',
       injuryType: 'Pád ze schodů',
-      status: 'Zpracován',
+      status: 'Čeká na potvrzení',
       injury: true,
       record: false,
+    },
+    {
+      entity: '123',
+      name: 'Petr Hilšer',
+      injuryDate: '2024-09-15 14:30',
+      injuryType: 'Pád',
+      status: 'Zpracován',
+      injury: true,
+      record: true,
     },
     {
       entity: '456',
