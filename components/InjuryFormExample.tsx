@@ -165,10 +165,10 @@ const InjuryFormExample = () => {
           </div>
         </div>
 
-        <h2 className="text-lg font-semibold mt-6">Druh zranění a zraněná část těla:</h2>
-        <input type="text" className="border w-full p-2 mb-4" value="Řezná rána na ruce" placeholder="Popis zranění"/>
+        <h2 className="text-lg font-semibold mt-6 px-[1rem]">Druh zranění a zraněná část těla:</h2>
+        <input type="text" className="border w-full p-2 mb-4 px-[1rem]" value="Řezná rána na ruce" placeholder="Popis zranění"/>
         
-        <div className="grid grid-cols-4 gap-2">
+        <div className="grid grid-cols-4 gap-2 px-[1rem]">
         <div>
             <label>Počet zraněných osob:</label>
             <input 
@@ -215,8 +215,8 @@ const InjuryFormExample = () => {
         </div>
         </div>
 
-        <h3 className="text-lg font-semibold mt-6 mb-3">Druh pracovního úrazu:</h3>
-          <div className="grid grid-cols-2 gap-4">
+        <h3 className="text-lg font-semibold mt-6 mb-3 px-[1rem]">Druh pracovního úrazu:</h3>
+          <div className="grid grid-cols-2 gap-4 px-[1rem]">
             <label className="flex items-center">
               <input
                 type="checkbox"
@@ -260,8 +260,8 @@ const InjuryFormExample = () => {
             </label>
           </div>
 
-          <h3 className="text-lg font-semibold mt-6 mb-3 break-before-page">Co bylo zdrojem úrazu?</h3>
-          <div className="grid grid-cols-2 gap-4">
+          <h3 className="text-lg font-semibold mt-6 mb-3 break-before-page px-[1rem]">Co bylo zdrojem úrazu?</h3>
+          <div className="grid grid-cols-2 gap-4 px-[1rem]">
             <label className="flex items-center">
               <input
                 type="checkbox"
@@ -353,8 +353,8 @@ const InjuryFormExample = () => {
             </label>
           </div>
 
-          <h3 className="text-lg font-semibold mt-6 mb-3">Proč k úrazu došlo?</h3>
-          <div className="grid grid-cols-2 gap-4">
+          <h3 className="text-lg font-semibold mt-6 mb-3 px-[1rem]">Proč k úrazu došlo?</h3>
+          <div className="grid grid-cols-2 gap-4  px-[1rem] ">
             <label className="flex items-center">
               <input
                 type="checkbox"
@@ -415,10 +415,10 @@ const InjuryFormExample = () => {
           </div>
 
        
-
+        <div className="px-[1rem]">
         <h3 className="text-lg font-semibold mt-6 mb-3">Činnost, při níž k úrazu došlo:</h3>
         <textarea 
-          className="border w-full p-2 mb-4" 
+          className="border w-full p-2 mb-4 " 
           rows={1}
           name = "activity" 
           value = {formData.activity}
@@ -426,9 +426,9 @@ const InjuryFormExample = () => {
           onChange={handleInputChange} 
           placeholder="Doplňte"/>
 
-        <h3 className="text-lg font-semibold mt-6">Místo úrazu:</h3>
+        <h3 className="text-lg font-semibold mt-6 px-[1rem]">Místo úrazu:</h3>
         <textarea 
-          className="border w-full p-2 mb-4" 
+          className="border w-full p-2 mb-4 px-[1rem]" 
           rows={1} 
           name= "location"
           value = {formData.location}
@@ -436,9 +436,9 @@ const InjuryFormExample = () => {
           onChange={handleInputChange} 
           placeholder="Doplňte"/>
 
-        <h3 className="text-lg font-semibold mt-6">Popis úrazového děje:</h3>
+        <h3 className="text-lg font-semibold mt-6 px-[1rem]">Popis úrazového děje:</h3>
         <textarea 
-          className="border w-full p-2 mb-4" 
+          className="border w-full p-2 mb-4 px-[1rem]" 
           rows={4} 
           name = "injuryDescription"
           value = {formData.injuryDescription}
@@ -446,9 +446,9 @@ const InjuryFormExample = () => {
           onChange={handleInputChange} 
           placeholder="Popis úrazu"/>
 
-        <h3 className="text-lg font-semibold mt-6 break-before-page">Jaké předpisy byly v souvislosti s úrazem porušeny a kým:</h3>
+        <h3 className="text-lg font-semibold mt-6 break-before-page px-[1rem]">Jaké předpisy byly v souvislosti s úrazem porušeny a kým:</h3>
         <textarea 
-          className="border w-full p-2 mb-4" 
+          className="border w-full p-2 mb-4 px-[1rem]" 
           rows={4}
           name = "violation"
           value = {formData.violation}
@@ -456,9 +456,9 @@ const InjuryFormExample = () => {
           onChange={handleInputChange}
           placeholder="Popis úrazu"/>
 
-        <h3 className="text-lg font-semibold mt-6">Opatření přijatá k zabránění opakování pracovního úrazu:</h3>
+        <h3 className="text-lg font-semibold mt-6 px-[1rem]">Opatření přijatá k zabránění opakování pracovního úrazu:</h3>
         <textarea 
-          className="border w-full p-2 mb-4" 
+          className="border w-full p-2 mb-4 px-[1rem]" 
           rows={4} 
           name = "preventionMeasures"
           value = {formData.preventionMeasures}
@@ -466,9 +466,9 @@ const InjuryFormExample = () => {
           onChange={handleInputChange}
           placeholder="Popis úrazu"/>
 
-        <h3 className="text-lg font-semibold mt-6">Jména svědků úrazu:</h3>
+        <h3 className="text-lg font-semibold mt-6 px-[1rem]">Jména svědků úrazu:</h3>
         <textarea 
-          className="border w-full p-2 mb-4" 
+          className="border w-full p-2 mb-4 px-[1rem]" 
           rows={4} 
           name = "witnessInfo"
           value = {formData.witnessInfo}
@@ -476,9 +476,9 @@ const InjuryFormExample = () => {
           onChange={handleInputChange} 
           placeholder="Popis úrazu"/>
 
-        <h3 className="text-lg font-semibold mt-6">Jméno a přijmení nadřízeného:</h3>
+        <h3 className="text-lg font-semibold mt-6 px-[1rem]">Jméno a přijmení nadřízeného:</h3>
         <textarea 
-          className="border w-full p-2 mb-4" 
+          className="border w-full p-2 mb-4 px-[1rem]" 
           rows={1} 
           name = "supervisor"
           value = {formData.supervisor}
@@ -486,6 +486,7 @@ const InjuryFormExample = () => {
           onChange={handleInputChange}
           placeholder="Popis úrazu" 
           />
+          </div>
     
     <div className='mb-12 print:hidden py-8 flex justify-center items-center'>
     {isAdmin && (

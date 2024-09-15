@@ -9,6 +9,7 @@ přidat styly
 -posílání mailů při schválení administrátorem.
 
 -projít a zkontrolovat gramatické chyby
+-deploy
 -po deployi zkontrolovat u mamky na pc že to funguje
 -zkontrolovat vzhled na menších zařízeních
 -zkontrolovat funkce
