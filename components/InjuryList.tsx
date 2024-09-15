@@ -21,7 +21,7 @@ const InjuryList = () => {
     {
       entity: '123',
       name: 'Petr Hilšer',
-      injuryDate: '2024-09-15 14:30',
+      injuryDate: '2024-22-03 14:30',
       injuryType: 'Pád',
       status: 'Zpracován',
       injury: true,
@@ -38,8 +38,8 @@ const InjuryList = () => {
     },
     {
       entity: '789',
-      name: 'Petr Dvořák',
-      injuryDate: '2024-09-10 09:00',
+      name: 'Martin Novotný',
+      injuryDate: '2024-08-12 05:00',
       injuryType: 'Řezná rána',
       status: 'Čeká na zpracování',
       injury: true,
@@ -48,8 +48,8 @@ const InjuryList = () => {
     {
       entity: '789',
       name: 'Petr Dvořák',
-      injuryDate: '2024-09-10 09:00',
-      injuryType: 'Řezná rána',
+      injuryDate: '2024-01-8 12:00',
+      injuryType: 'Úder předmětem',
       status: 'Čeká na zpracování',
       injury: true,
       record: true,

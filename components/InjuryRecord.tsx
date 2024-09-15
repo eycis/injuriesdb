@@ -362,7 +362,7 @@ export const InjuryRecord = () => {
         >
         </textarea>
 
-        <h3 className="text-lg font-semibold mt-6">Dodatečná otázka č. 2:</h3>
+        <h3 className="text-lg font-semibold mt-6 break-before-page">Dodatečná otázka č. 2:</h3>
         <textarea 
         className="border w-full p-2 mb-4" 
         placeholder="Popis" 
