@@ -29,6 +29,7 @@ export const InjuryRecord = () => {
         witnessInfo: '',
         supervisor: '',
         numberOfInjuredPeople: 0,
+        supervisorEmail: '',
       });
   
 
@@ -338,23 +339,26 @@ export const InjuryRecord = () => {
         <textarea className="border w-full p-2 mb-4" rows={4} value="Při údržbě stroje došlo k nečekanému spuštění." placeholder="Popis úrazu"/>
 
         <h3 className="text-lg font-semibold mt-6 break-before-page">Jaké předpisy byly v souvislosti s úrazem porušeny a kým:</h3>
-        <textarea className="border w-full p-2 mb-4" rows={4} value="Porušení bezpečnostních předpisů." placeholder="Popis úrazu"/>
+        <textarea className="border w-full p-2 mb-4" rows={4} value="Porušení bezpečnostních předpisů." placeholder="Doplňte"/>
 
         <h3 className="text-lg font-semibold mt-6">Opatření přijatá k zabránění opakování pracovního úrazu:</h3>
-        <textarea className="border w-full p-2 mb-4" rows={4} value="Zvýšení kontroly bezpečnostních postupů." placeholder="Popis úrazu"/>
+        <textarea className="border w-full p-2 mb-4" rows={4} value="Zvýšení kontroly bezpečnostních postupů." placeholder="Doplňte"/>
 
         <h3 className="text-lg font-semibold mt-6">Jména svědků úrazu:</h3>
-        <textarea className="border w-full p-2 mb-4" rows={4} value="Petr Dvořák" placeholder="Popis úrazu"/>
+        <textarea className="border w-full p-2 mb-4" rows={4} value="Petr Dvořák" placeholder="Doplňte"/>
 
-        <h3 className="text-lg font-semibold mt-6">Jméno a přijmení nadřízeného:</h3>
-        <textarea className="border w-full p-2 mb-4" rows={1} value="Anna Nováková" placeholder="Popis úrazu"/>
-        </div>        
+        <h3 className="text-lg font-semibold mt-6">Zapsal - jméno, přijmení, funkce</h3>
+        <textarea className="border w-full p-2 mb-4" rows={1} value="Anna Nováková" placeholder="Doplňte"/>
+   
+        <h3 className="text-lg font-semibold mt-6">Zapsal - email:</h3>
+        <textarea className="border w-full p-2 mb-4" rows={1} value="example@gmail.com" placeholder="Doplňte"/>
+        </div>    
 
         <div className="px-[1rem]">
         <h3 className="text-lg font-semibold mt-6">Dodatečná otázka č. 1:</h3>
         <textarea 
         className="border w-full p-2 mb-4" 
-        placeholder="Popis" 
+        placeholder="Doplňte" 
         rows={4}
         // name = "preventionMeasures"
         // onChange = {handleChange}
@@ -365,7 +369,7 @@ export const InjuryRecord = () => {
         <h3 className="text-lg font-semibold mt-6 break-before-page">Dodatečná otázka č. 2:</h3>
         <textarea 
         className="border w-full p-2 mb-4" 
-        placeholder="Popis" 
+        placeholder="Doplňte"  
         rows={4}
         // name = "witnessInfo"
         // onChange = {handleChange}
@@ -376,7 +380,7 @@ export const InjuryRecord = () => {
         <h3 className="text-lg font-semibold mt-6">Dodatečná otázka č. 3:</h3>
         <textarea 
         className="border w-full p-2 mb-4" 
-        placeholder="Popis" 
+        placeholder="Doplňte" 
         rows={1}
         // name = "supervisor"
         // onChange = {handleChange}

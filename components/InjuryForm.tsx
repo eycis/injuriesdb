@@ -29,6 +29,7 @@ const InjuryForm = () => {
     witnessInfo: '',
     supervisor: '',
     numberOfInjuredPeople: 0,
+    supervisorEmail: '',
   });
 
 const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

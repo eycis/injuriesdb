@@ -8,9 +8,18 @@ přidat styly
 
 -posílání mailů při schválení administrátorem.
 
--projít a zkontrolovat gramatické chyby
--deploy
--po deployi zkontrolovat u mamky na pc že to funguje
--zkontrolovat vzhled na menších zařízeních
--zkontrolovat funkce
--přihlášení zprovoznit? 
+
+
+---
+zkrátit formulář na stránku
+----
+kouknout na vzhled u menších obrazovek
+---
+tokeny
+---
+Nejvýš přidám zaměstnavatele input
+Pobočka nahradím - "Provoz"
+Přidat další filtr za zaměstnavatele.
+--
+přidat číslo zaměstnavatele do "prohlédnout záznamy"
+

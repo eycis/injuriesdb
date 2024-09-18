@@ -23,6 +23,6 @@ export interface FormData {
     witnessInfo: string;
     supervisor: string;
     numberOfInjuredPeople: number;
-    supervisorMail: string,
+    supervisorEmail: string,
   }
   

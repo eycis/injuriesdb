@@ -5,11 +5,11 @@ import { faEye } from '@fortawesome/free-solid-svg-icons';
 import { exportBook } from '@/Services/exportInjuries';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import { faBedPulse } from '@fortawesome/free-solid-svg-icons/faBedPulse';
 
 const InjuryList = () => {
   const injuries = [
     {
+      employer: "A",
       entity: '123',
       name: 'Jan Novák',
       injuryDate: '2024-09-15 14:30',
@@ -19,6 +19,7 @@ const InjuryList = () => {
       record: false,
     },
     {
+      employer: "B",
       entity: '123',
       name: 'Petr Hilšer',
       injuryDate: '2024-22-03 14:30',
@@ -28,6 +29,7 @@ const InjuryList = () => {
       record: true,
     },
     {
+      employer: "A",
       entity: '456',
       name: 'Petr Dvořák',
       injuryDate: '2024-09-10 09:00',
@@ -37,6 +39,7 @@ const InjuryList = () => {
       record: true,
     },
     {
+      employer: "B",
       entity: '789',
       name: 'Martin Novotný',
       injuryDate: '2024-08-12 05:00',
@@ -46,6 +49,7 @@ const InjuryList = () => {
       record: true,
     },
     {
+      employer: "B",
       entity: '789',
       name: 'Petr Dvořák',
       injuryDate: '2024-01-8 12:00',
@@ -61,7 +65,7 @@ const InjuryList = () => {
 
   const filteredInjuries = injuries.filter( injury => {
     if(!isAdmin && injury.entity !== '123') return false;
-    return selectedEntity ? injury.entity == selectedEntity : true;
+    return selectedEntity ? injury.entity && injury.employer == selectedEntity : true;
   })
 
     useEffect(() => {
@@ -87,6 +91,23 @@ const InjuryList = () => {
         {isAdmin &&(
         <div>
           <label htmlFor="entityDropdown" className="text-white font-bold ">
+            Zaměstnavatel
+          </label>
+          <select
+            id="entityDropdown"
+            className="ml-3 p-2 rounded bg-white text-black"
+            value={selectedEntity}
+            onChange={(e) => setSelectedEntity(e.target.value)}
+          >
+            <option value="">Vše</option>
+            <option value="123">A</option>
+            <option value="456">B</option>
+          </select>
+        </div>
+        )}
+        {isAdmin &&(
+        <div>
+          <label htmlFor="entityDropdown" className="text-white font-bold ">
             Zobrazit provoz:
           </label>
           <select
@@ -95,7 +116,7 @@ const InjuryList = () => {
             value={selectedEntity}
             onChange={(e) => setSelectedEntity(e.target.value)}
           >
-            <option value="">Všechny</option>
+            <option value="">Vše</option>
             <option value="123">123</option>
             <option value="456">456</option>
             <option value="789">789</option>
@@ -126,7 +147,8 @@ const InjuryList = () => {
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full lg:h-[80%] p-4 flex flex-col items-center">
         <div className="w-full">
           <div className="grid grid-cols-7 gap-4 text-black font-bold uppercase mt-4 mb-4">
-            <label>Číslo provozu:</label>
+            <label>Zaměstnavatel</label>
+            <label>Provoz:</label>
             <label>Jméno postiženého:</label>
             <label>Datum zranění:</label>
             <label>Typ zranění:</label>
@@ -140,6 +162,7 @@ const InjuryList = () => {
                     className="grid grid-cols-7 gap-4 bg-gray-400 p-2 rounded"
                     data-aos="fade-up"
                     data-aos-delay={index * 200}>
+                <div>{injury.employer}</div>
                 <div>{injury.entity}</div>
                 <div>{injury.name}</div>
                 <div>{injury.injuryDate}</div>

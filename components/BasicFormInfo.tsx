@@ -252,7 +252,7 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
         <h3 className="text-lg font-semibold mt-6">Popis úrazového děje:</h3>
         <textarea 
         className="border w-full p-2 mb-4" 
-        placeholder="Popis úrazu" 
+        placeholder="Doplňte" 
         rows={4}
         name = "injuryEventDescription"
         onChange = {handleChange}
@@ -262,7 +262,7 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
         <h3 className="text-lg font-semibold mt-6 break-before-page">Jaké předpisy byly v souvislosti s úrazem porušeny a kým:</h3>
         <textarea 
         className="border w-full p-2 mb-4" 
-        placeholder="Popis úrazu" 
+        placeholder="Doplňte"  
         rows={4}
         name = "violation"
         onChange = {handleChange}
@@ -272,7 +272,7 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
         <h3 className="text-lg font-semibold mt-6">Opatření přijatá k zabránění opakování pracovního úrazu:</h3>
         <textarea 
         className="border w-full p-2 mb-4" 
-        placeholder="Popis úrazu" 
+        placeholder="Doplňte" 
         rows={4}
         name = "preventionMeasures"
         onChange = {handleChange}
@@ -282,21 +282,31 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
         <h3 className="text-lg font-semibold mt-6">Jména svědků úrazu, osobní číslo, popř: datum narození a adresa bydliště:</h3>
         <textarea 
         className="border w-full p-2 mb-4" 
-        placeholder="Popis úrazu" 
+        placeholder="Doplňte" 
         rows={4}
         name = "witnessInfo"
         onChange = {handleChange}
         value = {formData.witnessInfo}>
         </textarea>
 
-        <h3 className="text-lg font-semibold mt-6">Jméno a přijmení nadřízeného:</h3>
+        <h3 className="text-lg font-semibold mt-6">Zapsal - jméno, přijmení, funkce</h3>
         <textarea 
         className="border w-full p-2 mb-4" 
-        placeholder="Popis úrazu" 
+        placeholder="Doplňte" 
         rows={1}
         name = "supervisor"
         onChange = {handleChange}
         value = {formData.supervisor}>
+        </textarea>
+
+        <h3 className="text-lg font-semibold mt-6">Zapsal - e-mail</h3>
+        <textarea 
+        className="border w-full p-2 mb-4" 
+        placeholder="Doplňte" 
+        rows={1}
+        name = "supervisorEmail"
+        onChange = {handleChange}
+        value = {formData.supervisorEmail}>
         </textarea>
     </div>
 );

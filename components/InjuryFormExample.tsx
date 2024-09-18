@@ -29,7 +29,7 @@ const InjuryFormExample = () => {
     witnessInfo: 'Petr Dvořák',
     supervisor: 'Anna Nováková',
     numberOfInjuredPeople: '1 osoba',
-    supervisorMail: 'example@gmail.com',
+    supervisorEmail: 'example@gmail.com',
   });
 
     const [isAdmin, setIsAdmin] = useState(false);
@@ -493,7 +493,7 @@ const InjuryFormExample = () => {
           className="border w-full p-2 mb-4 px-[1rem]" 
           rows={1} 
           name = "supervisor"
-          value = {formData.supervisorMail}
+          value = {formData.supervisorEmail}
           disabled={!isAdmin}
           onChange={handleInputChange}
           placeholder="Popis úrazu" 
