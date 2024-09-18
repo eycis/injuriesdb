@@ -28,6 +28,7 @@ const InjuryFormExample = () => {
       witnessInfo: '',
       supervisor: '',
       numberOfInjuredPeople: 0,
+      supervisorMail: '',
     });
 
     return (
@@ -342,8 +343,16 @@ const InjuryFormExample = () => {
         <h3 className="text-lg font-semibold mt-6">Jména svědků úrazu:</h3>
         <textarea className="border w-full p-2 mb-4" rows={4} value="Petr Dvořák" placeholder="Popis úrazu"/>
 
-        <h3 className="text-lg font-semibold mt-6">Jméno a přijmení nadřízeného:</h3>
+        <h3 className="text-lg font-semibold mt-6">Zapsal - jméno, přijmení, funkce:</h3>
         <textarea className="border w-full p-2 mb-4" rows={1} value="Anna Nováková" placeholder="Popis úrazu"/>
+
+        <h3 className="text-lg font-semibold mt-6 px-[1rem]">Zapsal - e-mail:</h3>
+        <textarea 
+          className="border w-full p-2 mb-4 px-[1rem]" 
+          rows={1} 
+          name = "supervisor"
+          placeholder="Popis úrazu" 
+          />
 
         <h3 className="text-lg font-semibold mt-6">Dodatečná otázka č. 1:</h3>
         <textarea 
