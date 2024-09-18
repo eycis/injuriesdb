@@ -19,7 +19,7 @@ const InjuryList = () => {
       record: false,
     },
     {
-      employer: "B",
+      employer: "A",
       entity: '123',
       name: 'Petr Hilšer',
       injuryDate: '2024-22-03 14:30',
@@ -61,12 +61,17 @@ const InjuryList = () => {
   ];
 
   const [selectedEntity, setSelectedEntity] = useState('');
+  const [selectedEmployer, setSelectedEmployer] = useState('');
   const [isAdmin, setIsAdmin] = useState(false);
 
   const filteredInjuries = injuries.filter( injury => {
     if(!isAdmin && injury.entity !== '123') return false;
-    return selectedEntity ? injury.entity && injury.employer == selectedEntity : true;
+    const entityMatch = selectedEntity ? injury.entity == selectedEntity : true;
+    const employerMatch = selectedEmployer? injury.employer == selectedEmployer :true
+    
+    return entityMatch && employerMatch;
   })
+
 
     useEffect(() => {
       AOS.init({
@@ -97,7 +102,7 @@ const InjuryList = () => {
             id="entityDropdown"
             className="ml-3 p-2 rounded bg-white text-black"
             value={selectedEntity}
-            onChange={(e) => setSelectedEntity(e.target.value)}
+            onChange={(e) => setSelectedEmployer(e.target.value)}
           >
             <option value="">Vše</option>
             <option value="123">A</option>
@@ -146,7 +151,7 @@ const InjuryList = () => {
 
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-full lg:h-[80%] p-4 flex flex-col items-center">
         <div className="w-full">
-          <div className="grid grid-cols-7 gap-4 text-black font-bold uppercase mt-4 mb-4">
+          <div className="grid grid-cols-8 gap-4 text-black font-bold uppercase mt-4 mb-4">
             <label>Zaměstnavatel</label>
             <label>Provoz:</label>
             <label>Jméno postiženého:</label>
@@ -159,7 +164,7 @@ const InjuryList = () => {
           <div className="space-y-2">
             {filteredInjuries.map((injury, index) => (
               <div key={index} 
-                    className="grid grid-cols-7 gap-4 bg-gray-400 p-2 rounded"
+                    className="grid grid-cols-8 gap-4 bg-gray-400 p-2 rounded"
                     data-aos="fade-up"
                     data-aos-delay={index * 200}>
                 <div>{injury.employer}</div>

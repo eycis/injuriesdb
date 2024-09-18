@@ -1,6 +1,7 @@
 
 export interface FormData {
     employer: string;
+    entity: string;
     insurance: string;
     name: string;
     birthDate: Date;

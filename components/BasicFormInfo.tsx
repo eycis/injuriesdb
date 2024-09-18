@@ -3,15 +3,25 @@ import React from 'react'
 const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: any }) => (
     <div className="px-[1rem]">
     <div className="grid grid-cols-2 gap-4 px-[1rem]">
-          <div>
-            <label className='font-bold'>Pobočka:</label>
+            <div>
+            <label className='font-bold'>Zaměstnavatel:</label>
             <input 
               type="text" 
               name = "employer"
               className="border w-full p-2 mb-4"
               value = {formData.employer}
               onChange = {handleChange} 
-              placeholder="Pobočka"/>
+              placeholder="Zaměstnavatel"/>
+          </div>
+          <div>
+            <label className='font-bold'>Provoz:</label>
+            <input 
+              type="text" 
+              name = "employer"
+              className="border w-full p-2 mb-4"
+              value = {formData.entity}
+              onChange = {handleChange} 
+              placeholder="Provoz"/>
           </div>
           <div>
             <label className='font-bold'>Pojišťovna postiženého:</label>
@@ -289,7 +299,7 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
         value = {formData.witnessInfo}>
         </textarea>
 
-        <h3 className="text-lg font-semibold mt-6">Zapsal - jméno, přijmení, funkce</h3>
+        <h3 className="text-lg font-semibold mt-6">Zapsal: jméno, přijmení, funkce:</h3>
         <textarea 
         className="border w-full p-2 mb-4" 
         placeholder="Doplňte" 
@@ -299,7 +309,7 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
         value = {formData.supervisor}>
         </textarea>
 
-        <h3 className="text-lg font-semibold mt-6">Zapsal - e-mail</h3>
+        <h3 className="text-lg font-semibold mt-6">Zapsal: e-mail:</h3>
         <textarea 
         className="border w-full p-2 mb-4" 
         placeholder="Doplňte" 

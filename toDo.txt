@@ -16,10 +16,8 @@ zkrátit formulář na stránku
 kouknout na vzhled u menších obrazovek
 ---
 tokeny
----
-Nejvýš přidám zaměstnavatele input
-Pobočka nahradím - "Provoz"
-Přidat další filtr za zaměstnavatele.
+
+Přidat další filtr za zaměstnavatele.   -zkontrolovat funkcionalitu
 --
-přidat číslo zaměstnavatele do "prohlédnout záznamy"
+
 

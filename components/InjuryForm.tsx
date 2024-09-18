@@ -7,6 +7,7 @@ const InjuryForm = () => {
     
   const [formData, setFormData] = useState<FormData>({
     employer: '',
+    entity: '',
     insurance: '',
     name: '',
     birthDate: new Date(),

@@ -1,4 +1,3 @@
-import { exportToExcel } from '@/Services/exportToExcelService';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FormData } from '@/models/form';
@@ -6,6 +5,7 @@ import { FormData } from '@/models/form';
 const InjuryFormExample = () => {
   const [FormData, setFormData] = useState({
       employer: '',
+      entity: '',
       insurance: '',
       name: '',
       birthDate: new Date(),
@@ -33,16 +33,26 @@ const InjuryFormExample = () => {
 
     return (
     <div className="bg-white max-w-4xl mx-auto mt-10 pt-20 shadow-lg rounded-lg h-auto print:pt-0">
-    <div className="px-[1rem]">
-    <div className="grid grid-cols-2 gap-4 px-[1rem]">
+      <h1 className="text-lg font-bold uppercase px-[2rem] mb-[2rem]">Záznam o úrazu:</h1>
+      <div className="px-[1rem]">
+      <div className="grid grid-cols-2 gap-4 px-[1rem]">
           <div>
-            <label className='font-bold'>Pobočka:</label>
+            <label className='font-bold'>Zaměstnavatel:</label>
             <input 
               type="text" 
               name = "employer"
               className="border w-full p-2 mb-4"
+              value = "A"
+              placeholder="employer"/>
+          </div>
+          <div>
+            <label className='font-bold'>Provoz:</label>
+            <input 
+              type="text" 
+              name = "entity"
+              className="border w-full p-2 mb-4"
               value = "ABC Corporation"
-              placeholder="Pobočka"/>
+              placeholder="Provoz"/>
           </div>
           <div>
             <label className='font-bold'>Pojišťovna postiženého:</label>
