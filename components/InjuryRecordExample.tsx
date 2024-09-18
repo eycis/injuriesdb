@@ -387,6 +387,10 @@ const InjuryFormExample = () => {
           onClick = {() => window.print()}>
           Vytisknout záznam
         </button>
+    <button type="button" 
+          className="save-button">
+          Uložit
+    </button>
     </div>
     </div>
     </div>

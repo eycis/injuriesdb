@@ -490,7 +490,6 @@ const InjuryFormExample = () => {
     
     <div className='mb-12 print:hidden py-8 flex justify-center items-center'>
     {isAdmin && (
-    <Link to="/">
     <button 
         type="button" 
         className="save-button"
@@ -498,15 +497,8 @@ const InjuryFormExample = () => {
           window.alert("Zápis byl uložen.")
         }>
         Potvrdit a uložit
-    </button>
-    </Link>    
-    )}
-    <button 
-        type="button" 
-        className="action-button"
-        onClick={() => window.print()}>
-        Vytisknout záznam
-    </button>
+    </button>    
+    )} 
     {isAdmin && (
     <Link to='/injury-record'>
         <button 
@@ -516,6 +508,12 @@ const InjuryFormExample = () => {
         </button>
     </Link>
     )}
+    <button 
+        type="button" 
+        className="action-button"
+        onClick={() => window.print()}>
+        Vytisknout záznam
+    </button>
     </div>
     </div>
     </div>
