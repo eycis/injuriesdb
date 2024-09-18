@@ -382,7 +382,7 @@ const InjuryFormExample = () => {
         </textarea>
     <button type="button" 
           className="save-button">
-          Uložit
+          Uložit záznam o úrazu
     </button>
     <div className='mb-[3rem] print:hidden py-[2rem] flex justify-center items-center'>
     <button type="button" 

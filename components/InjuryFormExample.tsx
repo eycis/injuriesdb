@@ -29,6 +29,7 @@ const InjuryFormExample = () => {
     witnessInfo: 'Petr Dvořák',
     supervisor: 'Anna Nováková',
     numberOfInjuredPeople: '1 osoba',
+    supervisorMail: 'example@gmail.com',
   });
 
     const [isAdmin, setIsAdmin] = useState(false);
@@ -476,12 +477,23 @@ const InjuryFormExample = () => {
           onChange={handleInputChange} 
           placeholder="Popis úrazu"/>
 
-        <h3 className="text-lg font-semibold mt-6 px-[1rem]">Jméno a přijmení nadřízeného:</h3>
+        <h3 className="text-lg font-semibold mt-6 px-[1rem]">Zapsal - jméno, přijmení, funkce:</h3>
         <textarea 
           className="border w-full p-2 mb-4 px-[1rem]" 
           rows={1} 
           name = "supervisor"
           value = {formData.supervisor}
+          disabled={!isAdmin}
+          onChange={handleInputChange}
+          placeholder="Popis úrazu" 
+          />
+
+        <h3 className="text-lg font-semibold mt-6 px-[1rem]">Zapsal - e-mail:</h3>
+        <textarea 
+          className="border w-full p-2 mb-4 px-[1rem]" 
+          rows={1} 
+          name = "supervisor"
+          value = {formData.supervisorMail}
           disabled={!isAdmin}
           onChange={handleInputChange}
           placeholder="Popis úrazu" 
