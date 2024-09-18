@@ -386,19 +386,17 @@ export const InjuryRecord = () => {
         </div>
     </form>
     <div className='mb-[3rem] py-[2rem] flex justify-center items-center print:hidden '>
-      <Link to="/">
         <button 
           type="submit" 
           className="bg-green-600 text-white mx-[1rem] w-[200px] h-[40px] rounded hover:bg-blue-700"
           onClick = {() => {
             window.alert("Záznam o zranění byl uložen.")}}>
-          Uložit
+          Potvrdit a uložit
         </button>
-        </Link>
         <button type="button" 
           className="bg-blue-500 text-white mx-[1rem] w-[200px] h-[40px] rounded hover:bg-blue-700"
           onClick = {() => window.print()}>
-          Vytisknout záznam
+          Vytisknout záznam o úrazu
         </button>
     </div>
     </div>

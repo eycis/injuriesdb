@@ -380,17 +380,16 @@ const InjuryFormExample = () => {
         // value = {formData.supervisor}
         >
         </textarea>
-    
-    <div className='mb-[3rem] print:hidden py-[2rem] flex justify-center items-center'>
-    <button type="button" 
-          className="action-button"
-          onClick = {() => window.print()}>
-          Vytisknout záznam
-        </button>
     <button type="button" 
           className="save-button">
           Uložit
     </button>
+    <div className='mb-[3rem] print:hidden py-[2rem] flex justify-center items-center'>
+    <button type="button" 
+          className="action-button"
+          onClick = {() => window.print()}>
+          Vytisknout záznam o úrazu
+        </button>
     </div>
     </div>
     </div>
