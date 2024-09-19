@@ -37,10 +37,10 @@ export const InjuryRecord = () => {
   return (
     <div className="bg-white max-w-4xl mx-auto mt-7 pt-20 shadow-lg rounded-lg h-auto print:pt-0">
     <form>
-        <h1 className="text-lg font-bold uppercase px-[2rem] mb-[2rem] pt-[2rem]">
+        <h1 className="text-lg font-bold uppercase px-[2rem] mb-[0.5rem]">
           Záznam o úrazu:
           </h1>
-        <div className="grid grid-cols-3 gap-4 px-[1rem] pb-[2rem]">
+        <div className="grid grid-cols-3 gap-4 px-[1rem] pb-[1rem]">
         <label className="flex items-center">
           <input
             type="checkbox"
@@ -89,7 +89,7 @@ export const InjuryRecord = () => {
         </div>
         </div>
         {/* --------- */}
-          <label className='font-bold text-2xl'> A. Údaje o zaměstnavateli, u kterého je urázem postižený zaměstnanec v základním pracovněprávním vztahu</label>
+          <label className='record-header'> A. Údaje o zaměstnavateli, u kterého je urázem postižený zaměstnanec v základním pracovněprávním vztahu</label>
         <div className="grid grid-cols-2 gap-4 px-[1rem] pt-3">
           <div>
           <div>
@@ -148,7 +148,7 @@ export const InjuryRecord = () => {
             </div>
             </div>
             {/* ----- */}
-            <label className='font-bold text-2xl'> B. Údaje o zaměstnavateli, u kterého k úrazu došlo (pokud se nejedná o zaměstnavatele uvedeného v části A záznamu</label>
+            <label className='record-header'> B. Údaje o zaměstnavateli, u kterého k úrazu došlo (pokud se nejedná o zaměstnavatele uvedeného v části A záznamu</label>
         <div className="grid grid-cols-2 gap-4 px-[1rem] pt-3">
           <div>
           <div>
@@ -191,7 +191,7 @@ export const InjuryRecord = () => {
           </div>
 
         {/* ------ */}
-        <label className='font-bold text-2xl'> C. Údaje o úrazem postiženém zaměstnanci</label>
+        <label className='record-header'> C. Údaje o úrazem postiženém zaměstnanci</label>
         <div className="grid grid-cols-2 gap-4 px-[1rem] pt-3">
           <div>
             <label className='font-bold'>1. Jméno a přijmení:</label>
@@ -335,7 +335,7 @@ export const InjuryRecord = () => {
 
           <div className='pt-5 px-2'>
             <div className='pb-5'>
-            <label className='font-bold text-2xl'>D. Údaje o úrazu</label>
+            <label className='record-header'>D. Údaje o úrazu</label>
             </div>
             <div className="grid grid-cols-2 gap-4 px-[1rem]">
             <div className="grid grid-cols-1 gap-4 px-[1rem]">
@@ -398,7 +398,7 @@ export const InjuryRecord = () => {
             </div>
 
             
-          <h3 className="text-lg font-semibold mt-6 mb-3 break-before-page">Co bylo zdrojem úrazu?</h3>
+          <h3 className="text-lg font-semibold mt-6 mb-3">Co bylo zdrojem úrazu?</h3>
           <div className="grid grid-cols-2 gap-4">
             <label className="flex items-center">
               <input
@@ -534,159 +534,159 @@ export const InjuryRecord = () => {
             </label>
           </div>
           <div className='pt-6'>
-            <label className='text-lg font-semibold mt-6 mb-3'>Zkouška na alkohol:</label>
+            <label className='text-lg font-semibold mt-6 mb-3'>8. Byla u úrazem postiženého zaměstnance provedena kontrola přítomnosti
+              alkoholu nebo jiných návykových látek a pokud ano, s jakým výsledkem? 
+            </label>
+            <div className="grid grid-cols-4 gap-4">
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+              />
+              ANO
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+              />
+              NE
+            </label>
+            <label className='py-4'>Výsledek</label>
             <input 
             type="text" 
             className="border w-full p-2 mb-4" 
-            value="Ne"
-            placeholder="Ano/Ne"/>
+            value="Negativní"/>
+            </div>
         </div>
-        <div>
-            <label>Výsledek zkoušky:</label>
-            <input 
-            type="text" 
-            className="border w-full p-2 mb-4" 
-            value="Negativní"
-            placeholder="Výsledek"/>
+        <div className='py-3'>
+        <label className='text-lg font-semibold mt-6 mb-3'>9. Popis úrazového děje, rozvedení popisu místa, příčin a okolností, za nichž došlo k úrazu:</label>
+        <textarea className="border w-full p-2 mb-4" rows={6}/>
+        <label className='text-lg font-semibold mt-6 mb-3'>10. Uveďte, jaké předpisy byly v souvislosti s úrazem porušeny a kým, pokud jejich porušení do doby odeslání záznamu zjistěno:</label>
+        <textarea className="border w-full p-2 mb-4" rows={6}/>
+        <label className='text-lg font-semibold mt-6 mb-3'>11. Opatření přijatá k zabránění opakování pracovního úrazu:</label>
+        <textarea className="border w-full p-2 mb-4" rows={6}/>
         </div>
+        <label className='record-header'> E. Vyjádření úrazem postiženého zaměstnance a svědků úrazu případně dalších osob</label>
 
-        <h2 className="text-lg font-semibold mt-6">Druh zranění a zraněná část těla:</h2>
-        <input type="text" className="border w-full p-2 mb-4" value="Řezná rána na ruce" placeholder="Popis zranění"/>
-        
-        <div className="grid grid-cols-4 gap-2">
-        <div>
-            <label>Počet zraněných osob:</label>
-            <input 
-            type="text" 
-            className="border w-full p-2 mb-4" 
-            value="1 osoba" 
-            placeholder="Počet zraněných"/>
-        </div>
-        <div>
-            <label>Ošetřen u lékaře:</label>
-            <input 
-            type="text" 
-            className="border w-full p-2 mb-4" 
-            value="Ano"
-            placeholder="Ano/Ne"/>
-        </div>
-        <div>
-            <label>Zkouška na alkohol:</label>
-            <input 
-            type="text" 
-            className="border w-full p-2 mb-4" 
-            value="Ne"
-            placeholder="Ano/Ne"/>
-        </div>
-        <div>
-            <label>Výsledek zkoušky:</label>
-            <input 
-            type="text" 
-            className="border w-full p-2 mb-4" 
-            value="Negativní"
-            placeholder="Výsledek"/>
-        </div>
-        </div>
-
-        <h3 className="text-lg font-semibold mt-6 mb-3">Druh pracovního úrazu:</h3>
-        <div className="grid grid-cols-2 gap-4">
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-                checked
-              />
-              Bez pracovní neschopnosti
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              S pracovní neschopností 3 kalendářních dnů
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              S pracovní neschopností nad 3 kalendářní dny
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              S hospitalizací nad 5 dnů
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              Smrtelný pracovní úraz
-            </label>
+        <div className="border border-black">
+            <table className="w-full border-collapse border border-black">
+              <thead>
+                <tr className="border border-black">
+                  <th className="border border-black w-1/3 p-2"></th>
+                  <th className="border border-black p-2">datum</th>
+                  <th className="border border-black p-2">jméno a příjmení</th>
+                  <th className="border border-black p-2">podpis</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border border-black p-2">Úrazem postižený zaměstnanec:</td>
+                  <td className="border border-black p-2">
+                    <input type="date" className="w-full p-2" />
+                  </td>
+                  <td className="border border-black p-2">
+                    <input type="text" className="w-full p-2" placeholder="Jméno a příjmení" />
+                  </td>
+                  <td className="border border-black p-2">
+                    <input type="text" className="w-full p-2" placeholder="Podpis" />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-black p-2 text-center align-middle" rowSpan={4}>Svědci:</td>
+                  <td className="border border-black p-2">
+                    <input type="date" className="w-full p-2" />
+                  </td>
+                  <td className="border border-black p-2">
+                    <input type="text" className="w-full p-2" placeholder="Jméno a příjmení" />
+                  </td>
+                  <td className="border border-black p-2">
+                    <input type="text" className="w-full p-2" placeholder="Podpis" />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-black p-2 h-16">
+                    <input type="date" className="w-full p-2" />
+                  </td>
+                  <td className="border border-black p-2 h-16">
+                    <input type="text" className="w-full p-2" placeholder="Jméno a příjmení" />
+                  </td>
+                  <td className="border border-black p-2 h-16">
+                    <input type="text" className="w-full p-2" placeholder="Podpis" />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-black p-2 h-16">
+                    <input type="date" className="w-full p-2" />
+                  </td>
+                  <td className="border border-black p-2 h-16">
+                    <input type="text" className="w-full p-2" placeholder="Jméno a příjmení" />
+                  </td>
+                  <td className="border border-black p-2 h-16">
+                    <input type="text" className="w-full p-2" placeholder="Podpis" />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-black p-2 h-16">
+                    <input type="date" className="w-full p-2" />
+                  </td>
+                  <td className="border border-black p-2 h-16">
+                    <input type="text" className="w-full p-2" placeholder="Jméno a příjmení" />
+                  </td>
+                  <td className="border border-black p-2 h-16">
+                    <input type="text" className="w-full p-2" placeholder="Podpis" />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-black p-2">Zástupce zaměstnanců pro bezpečnost a ochranu zdraví při práci:</td>
+                  <td className="border border-black p-2">
+                    <input type="date" className="w-full p-2" />
+                  </td>
+                  <td className="border border-black p-2">
+                    <input type="text" className="w-full p-2" placeholder="Jméno a příjmení" />
+                  </td>
+                  <td className="border border-black p-2">
+                    <input type="text" className="w-full p-2" placeholder="Podpis" />
+                  </td>
+                </tr>
+                <tr>
+                  <td className="border border-black p-2">Za odborovou organizaci:</td>
+                  <td className="border border-black p-2">
+                    <input type="date" className="w-full p-2" />
+                  </td>
+                  <td className="border border-black p-2">
+                    <input type="text" className="w-full p-2" placeholder="Jméno a příjmení" />
+                  </td>
+                  <td className="border border-black p-2">
+                    <input type="text" className="w-full p-2" placeholder="Podpis" />
+                  </td>
+                </tr>
+              <tr>
+              <td className="border border-black p-2" rowSpan={2}>Za zaměstnavatele:</td>
+              <td className="border border-black p-2 text-center">
+                <input type="date" className="w-full p-1 border" />
+              </td>
+              <td className="border border-black p-2 text-center">
+                <input type="text" className="w-full p-1 border" placeholder="Jméno a přijmení" />
+              </td>
+              <td className="border border-black p-2 text-center">
+                <input type="text" className="w-full p-1 border" placeholder="Podpis" />
+              </td>
+            </tr>
+            <tr>
+              <td className="border border-black p-2 text-center" colSpan={2}>
+                <input type="text" className="w-full p-1 border" placeholder="Pracovní zařazení" />
+              </td>
+            </tr>
+              </tbody>
+            </table>
           </div>
 
-
-        <h3 className="text-lg font-semibold mt-6 mb-3 ">Činnost, při níž k úrazu došlo:</h3>
-        <textarea className="border w-full p-2 mb-4" rows={1} value="Údržba stroje" placeholder="Doplňte"/>
-
-        <h3 className="text-lg font-semibold mt-6">Místo úrazu:</h3>
-        <textarea className="border w-full p-2 mb-4" rows={1} value="Praha, sklad" placeholder="Doplňte"/>
-
-        <h3 className="text-lg font-semibold mt-6">Popis úrazového děje:</h3>
-        <textarea className="border w-full p-2 mb-4" rows={4} value="Při údržbě stroje došlo k nečekanému spuštění." placeholder="Popis úrazu"/>
-
-        <h3 className="text-lg font-semibold mt-6 break-before-page">Jaké předpisy byly v souvislosti s úrazem porušeny a kým:</h3>
-        <textarea className="border w-full p-2 mb-4" rows={4} value="Porušení bezpečnostních předpisů." placeholder="Doplňte"/>
-
-        <h3 className="text-lg font-semibold mt-6">Opatření přijatá k zabránění opakování pracovního úrazu:</h3>
-        <textarea className="border w-full p-2 mb-4" rows={4} value="Zvýšení kontroly bezpečnostních postupů." placeholder="Doplňte"/>
-
-        <h3 className="text-lg font-semibold mt-6">Jména svědků úrazu:</h3>
-        <textarea className="border w-full p-2 mb-4" rows={4} value="Petr Dvořák" placeholder="Doplňte"/>
-
-        <h3 className="text-lg font-semibold mt-6">Zapsal - jméno, přijmení, funkce</h3>
+        <h3 className="text-lg font-semibold mt-6 print:hidden">Zapsal - jméno, přijmení, funkce</h3>
         <textarea className="border w-full p-2 mb-4" rows={1} value="Anna Nováková" placeholder="Doplňte"/>
    
-        <h3 className="text-lg font-semibold mt-6">Zapsal - email:</h3>
+        <h3 className="text-lg font-semibold mt-6 print:hidden">Zapsal - email:</h3>
         <textarea className="border w-full p-2 mb-4" rows={1} value="example@gmail.com" placeholder="Doplňte"/>   
-
-        <div className="px-[1rem]">
-        <h3 className="text-lg font-semibold mt-6">Dodatečná otázka č. 1:</h3>
-        <textarea 
-        className="border w-full p-2 mb-4" 
-        placeholder="Doplňte" 
-        rows={4}
-        // name = "preventionMeasures"
-        // onChange = {handleChange}
-        // value = {formData.preventionMeasures}
-        >
-        </textarea>
-
-        <h3 className="text-lg font-semibold mt-6 break-before-page">Dodatečná otázka č. 2:</h3>
-        <textarea 
-        className="border w-full p-2 mb-4" 
-        placeholder="Doplňte"  
-        rows={4}
-        // name = "witnessInfo"
-        // onChange = {handleChange}
-        // value = {formData.witnessInfo}
-        >
-        </textarea>
-
-        <h3 className="text-lg font-semibold mt-6">Dodatečná otázka č. 3:</h3>
-        <textarea 
-        className="border w-full p-2 mb-4" 
-        placeholder="Doplňte" 
-        rows={1}
-        // name = "supervisor"
-        // onChange = {handleChange}
-        // value = {formData.supervisor}
-        >
-        </textarea>
-        </div>
     </form>
     <div className='mb-[3rem] py-[2rem] flex justify-center items-center print:hidden '>
         <button 

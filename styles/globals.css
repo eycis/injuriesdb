@@ -13,4 +13,7 @@
     .body-button{
        @apply bg-blue-700 text-white py-4 px-4 w-72 rounded-lg hover:bg-blue-900 transition-colors duration-300
     }
+    .record-header{
+        @apply font-bold text-lg
+    }
 }
