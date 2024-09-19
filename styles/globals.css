@@ -5,12 +5,12 @@
 
 @layer components {
     .save-button{
-        @apply bg-green-700 text-white mx-4 w-52 h-10 rounded-md hover:bg-green-900 transition duration-300
+        @apply bg-green-700 text-white mx-4 w-52 h-10 rounded-lg hover:bg-green-900 transition duration-300
     }
     .action-button {
-        @apply bg-blue-700 text-white mx-4 w-52 h-10 rounded-md hover:bg-blue-900 transition duration-300
+        @apply bg-blue-700 text-white mx-4 px-3 h-10 rounded-lg  hover:bg-blue-900 transition duration-300
     }
     .body-button{
-       @apply bg-blue-700 text-white py-4 px-4 w-72 rounded-md hover:bg-blue-900 transition-colors duration-300
+       @apply bg-blue-700 text-white py-4 px-4 w-72 rounded-lg hover:bg-blue-900 transition-colors duration-300
     }
 }
