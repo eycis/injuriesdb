@@ -285,7 +285,7 @@ export const InjuryRecord = () => {
             </div>
             </div>
           </div>
-          <div>
+          <div className='px-1'>
             <label className='font-bold'>8. Úrazem postižený je:</label>
             <label className="flex items-center">
               <input
@@ -309,120 +309,95 @@ export const InjuryRecord = () => {
               osoba vykonávající činnosti nebo poskytující služby mimo pracovněprávní vztahy (§ 12 zákona č. 309/2006 Sb.)
             </label>
           </div>
-          <div>
+          <div className='pt-5 px-2'>
             <label className='font-bold'>9. Trvání pracovní neschopnosti následkem úrazu</label>
-            <div className="grid grid-cols-6 gap-0 px-0 pt-3">
-            <div className='pt-2'>
+            <div className="grid grid-cols-6 gap-1  pt-3">
             <label>od: </label>
+            <input 
+              type="text" 
+              className="border w-full p-2 mb-2"  
+              name= ""
+              value = "4"/>
+             <label>do:</label>
+            <input 
+              type="text" 
+              className="border w-full p-2 mb-2" 
+              name= ""
+              value = "5"/>
+             <label>celkem kalendářní dnů:</label>
+            <input 
+              type="text" 
+              className="border w-full p-2 mb-2" 
+              name= ""
+              value = "5"/>
+              </div>
+          </div>
+
+          <div className='pt-5 px-2'>
+            <div className='pb-5'>
+            <label className='font-bold text-2xl'>D. Údaje o úrazu</label>
+            </div>
+            <div className="grid grid-cols-2 gap-4 px-[1rem]">
+            <div className="grid grid-cols-1 gap-4 px-[1rem]">
+            <div>
+            <label>1. Datum úrazu: </label>
+            <input 
+              type="text" 
+              className="border w-full p-0 mb-2"  
+              name= ""
+              value = "4"/>
+              </div>
+            <div>
+            <label> Hodina úrazu:</label>
+            <input 
+              type="text" 
+              className="border w-full p-0 mb-2"  
+              name= ""
+              value = "4"/>
             </div>
             <div>
+             <label>Datum úmrtí úrazem postiženého zaměstnance:</label>
+            <input 
+              type="text" 
+              className="border w-full mb-2" 
+              name= ""
+              value = "5"/>
+            </div>
+            </div>
+            <div>
+            <label>2. Počet hodin odpracovaných bezprostředně před vznikem úrazu: </label>
             <input 
               type="text" 
               className="border w-full p-2 mb-2"  
               name= ""
               value = "4"/>
             </div>
-            <div className='pt-2'>
-             <label>do:</label>
-            </div>
             <div>
+            <label>3. Druh zranění: </label>
             <input 
               type="text" 
-              className="border w-full p-2 mb-2" 
+              className="border w-full p-2 mb-2"  
               name= ""
-              value = "5"/>
-            </div>
-            <div className='pt-2'>
-             <label>celkem kalendářní dnů:</label>
+              value = "4"/>
             </div>
             <div>
+            <label>4. Zraněná část těla: </label>
             <input 
               type="text" 
-              className="border w-full p-2 mb-2" 
+              className="border w-full p-2 mb-2"  
               name= ""
-              value = "5"/>
+              value = "4"/>
             </div>
             </div>
-          </div>
+            <label>5. Počet zraněných osob: </label>
+            <input 
+              type="text" 
+              className="border w-full p-2 mb-2"  
+              name= ""
+              value = "4"/>
+            </div>
 
-        <h2 className="text-lg font-semibold mt-6">Druh zranění a zraněná část těla:</h2>
-        <input type="text" className="border w-full p-2 mb-4" value="Řezná rána na ruce" placeholder="Popis zranění"/>
-        
-        <div className="grid grid-cols-4 gap-2">
-        <div>
-            <label>Počet zraněných osob:</label>
-            <input 
-            type="text" 
-            className="border w-full p-2 mb-4" 
-            value="1 osoba" 
-            placeholder="Počet zraněných"/>
-        </div>
-        <div>
-            <label>Ošetřen u lékaře:</label>
-            <input 
-            type="text" 
-            className="border w-full p-2 mb-4" 
-            value="Ano"
-            placeholder="Ano/Ne"/>
-        </div>
-        <div>
-            <label>Zkouška na alkohol:</label>
-            <input 
-            type="text" 
-            className="border w-full p-2 mb-4" 
-            value="Ne"
-            placeholder="Ano/Ne"/>
-        </div>
-        <div>
-            <label>Výsledek zkoušky:</label>
-            <input 
-            type="text" 
-            className="border w-full p-2 mb-4" 
-            value="Negativní"
-            placeholder="Výsledek"/>
-        </div>
-        </div>
-
-        <h3 className="text-lg font-semibold mt-6 mb-3">Druh pracovního úrazu:</h3>
-        <div className="grid grid-cols-2 gap-4">
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-                checked
-              />
-              Bez pracovní neschopnosti
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              S pracovní neschopností 3 kalendářních dnů
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              S pracovní neschopností nad 3 kalendářní dny
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              S hospitalizací nad 5 dnů
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              Smrtelný pracovní úraz
-            </label>
-          </div>
-
+            
           <h3 className="text-lg font-semibold mt-6 mb-3 break-before-page">Co bylo zdrojem úrazu?</h3>
           <div className="grid grid-cols-2 gap-4">
             <label className="flex items-center">
@@ -505,7 +480,7 @@ export const InjuryRecord = () => {
             </label>
           </div>
 
-          <h3 className="text-lg font-semibold mt-6 mb-3">Proč k úrazu došlo?</h3>
+          <h3 className="text-lg font-semibold mt-6 mb-3">Proč k úrazu došlo? (příčiny)</h3>
           <div className="grid grid-cols-2 gap-4">
             <label className="flex items-center">
               <input
@@ -558,6 +533,101 @@ export const InjuryRecord = () => {
               pro jiný, blíže nespecifikovaný důvod
             </label>
           </div>
+          <div className='pt-6'>
+            <label className='text-lg font-semibold mt-6 mb-3'>Zkouška na alkohol:</label>
+            <input 
+            type="text" 
+            className="border w-full p-2 mb-4" 
+            value="Ne"
+            placeholder="Ano/Ne"/>
+        </div>
+        <div>
+            <label>Výsledek zkoušky:</label>
+            <input 
+            type="text" 
+            className="border w-full p-2 mb-4" 
+            value="Negativní"
+            placeholder="Výsledek"/>
+        </div>
+
+        <h2 className="text-lg font-semibold mt-6">Druh zranění a zraněná část těla:</h2>
+        <input type="text" className="border w-full p-2 mb-4" value="Řezná rána na ruce" placeholder="Popis zranění"/>
+        
+        <div className="grid grid-cols-4 gap-2">
+        <div>
+            <label>Počet zraněných osob:</label>
+            <input 
+            type="text" 
+            className="border w-full p-2 mb-4" 
+            value="1 osoba" 
+            placeholder="Počet zraněných"/>
+        </div>
+        <div>
+            <label>Ošetřen u lékaře:</label>
+            <input 
+            type="text" 
+            className="border w-full p-2 mb-4" 
+            value="Ano"
+            placeholder="Ano/Ne"/>
+        </div>
+        <div>
+            <label>Zkouška na alkohol:</label>
+            <input 
+            type="text" 
+            className="border w-full p-2 mb-4" 
+            value="Ne"
+            placeholder="Ano/Ne"/>
+        </div>
+        <div>
+            <label>Výsledek zkoušky:</label>
+            <input 
+            type="text" 
+            className="border w-full p-2 mb-4" 
+            value="Negativní"
+            placeholder="Výsledek"/>
+        </div>
+        </div>
+
+        <h3 className="text-lg font-semibold mt-6 mb-3">Druh pracovního úrazu:</h3>
+        <div className="grid grid-cols-2 gap-4">
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+                checked
+              />
+              Bez pracovní neschopnosti
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+              />
+              S pracovní neschopností 3 kalendářních dnů
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+              />
+              S pracovní neschopností nad 3 kalendářní dny
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+              />
+              S hospitalizací nad 5 dnů
+            </label>
+            <label className="flex items-center">
+              <input
+                type="checkbox"
+                className="mr-2"
+              />
+              Smrtelný pracovní úraz
+            </label>
+          </div>
+
 
         <h3 className="text-lg font-semibold mt-6 mb-3 ">Činnost, při níž k úrazu došlo:</h3>
         <textarea className="border w-full p-2 mb-4" rows={1} value="Údržba stroje" placeholder="Doplňte"/>
