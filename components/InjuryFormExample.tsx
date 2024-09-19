@@ -6,7 +6,8 @@ import { FormData } from '@/models/form';
 
 const InjuryFormExample = () => {
   const [formData, setFormData] = useState({
-    employer: 'ABC Corporation',
+    employer: 'A',
+    entity: 'ABC Corporation',
     insurance: 'XYZ Insurance',
     name: 'Jan Novák',
     birthDate: '1985-07-23',
@@ -29,7 +30,7 @@ const InjuryFormExample = () => {
     witnessInfo: 'Petr Dvořák',
     supervisor: 'Anna Nováková',
     numberOfInjuredPeople: '1 osoba',
-    supervisorMail: 'example@gmail.com',
+    supervisorEmail: 'example@gmail.com',
   });
 
     const [isAdmin, setIsAdmin] = useState(false);
@@ -65,8 +66,8 @@ const InjuryFormExample = () => {
         </div>
         <div className="bg-white max-w-4xl mx-auto mt-10 pt-5 shadow-lg rounded-lg h-auto print:pt-0" >
         <div className="grid grid-cols-2 gap-4 px-[1rem]">
-          <div>
-            <label className='font-bold'>Pobočka:</label>
+        <div>
+            <label className='font-bold'>Zaměstnavatel:</label>
             <input 
               type="text" 
               name = "employer"
@@ -74,7 +75,18 @@ const InjuryFormExample = () => {
               value = {formData.employer}
               disabled={!isAdmin}
               onChange={handleInputChange}
-              placeholder="Pobočka"/>
+              placeholder="Zaměstnavatel"/>
+          </div>
+          <div>
+            <label className='font-bold'>Provoz:</label>
+            <input 
+              type="text" 
+              name = "employer"
+              className="border w-full p-2 mb-4"
+              value = {formData.entity}
+              disabled={!isAdmin}
+              onChange={handleInputChange}
+              placeholder="Provoz"/>
           </div>
           <div>
             <label className='font-bold'>Pojišťovna postiženého:</label>
@@ -493,7 +505,7 @@ const InjuryFormExample = () => {
           className="border w-full p-2 mb-4 px-[1rem]" 
           rows={1} 
           name = "supervisor"
-          value = {formData.supervisorMail}
+          value = {formData.supervisorEmail}
           disabled={!isAdmin}
           onChange={handleInputChange}
           placeholder="Popis úrazu" 

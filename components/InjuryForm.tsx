@@ -7,6 +7,7 @@ const InjuryForm = () => {
     
   const [formData, setFormData] = useState<FormData>({
     employer: '',
+    entity: '',
     insurance: '',
     name: '',
     birthDate: new Date(),
@@ -29,6 +30,7 @@ const InjuryForm = () => {
     witnessInfo: '',
     supervisor: '',
     numberOfInjuredPeople: 0,
+    supervisorEmail: '',
   });
 
 const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

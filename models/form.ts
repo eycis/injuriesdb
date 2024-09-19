@@ -1,6 +1,7 @@
 
 export interface FormData {
     employer: string;
+    entity: string;
     insurance: string;
     name: string;
     birthDate: Date;
@@ -23,6 +24,6 @@ export interface FormData {
     witnessInfo: string;
     supervisor: string;
     numberOfInjuredPeople: number;
-    supervisorMail: string,
+    supervisorEmail: string,
   }
   
