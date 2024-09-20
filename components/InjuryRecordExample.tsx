@@ -32,384 +32,641 @@ const InjuryFormExample = () => {
     });
 
     return (
-    <div className="bg-white max-w-4xl mx-auto mt-10 pt-20 shadow-lg rounded-lg h-auto print:pt-0">
-      <h1 className="text-lg font-bold uppercase px-[2rem] mb-[2rem]">Záznam o úrazu:</h1>
-      <div className="px-[1rem]">
-      <div className="grid grid-cols-2 gap-4 px-[1rem]">
-          <div>
-            <label className='font-bold'>Zaměstnavatel:</label>
-            <input 
-              type="text" 
-              name = "employer"
-              className="border w-full p-2 mb-4"
-              value = "A"
-              placeholder="employer"/>
-          </div>
-          <div>
-            <label className='font-bold'>Provoz:</label>
-            <input 
-              type="text" 
-              name = "entity"
-              className="border w-full p-2 mb-4"
-              value = "ABC Corporation"
-              placeholder="Provoz"/>
-          </div>
-          <div>
-            <label className='font-bold'>Pojišťovna postiženého:</label>
-            <input 
-              type="text" 
-              name = "insurance"
-              className="border w-full p-2 mb-4"
-              value = "XYZ Insurance"
-              placeholder="Evidenční číslo"/>
-          </div>
-          <div>
-            <label className='font-bold'>Jméno a příjmení postiženého:</label>
-            <input 
-              type="text" 
-              className="border w-full p-2 mb-4" 
-              value = "Jan Novák"
-              placeholder="Jméno"/>
-          </div>
-          <div>
-            <label className='font-bold'>Datum narození:</label>
-            <input 
-              type="date" 
-              className="border w-full p-2 mb-4"
-              value = "1985-07-23"
-              placeholder="Datum narození"/>
-          </div>
-          <div>
-            <label className='font-bold'>Osobní číslo:</label>
-            <input 
-              type="text" 
-              className="border w-full p-2 mb-4" 
-              value = "123456"
-              placeholder="Osobní číslo"/>
-          </div>
-          <div>
-            <label className='font-bold'>Bydliště postiženého:</label>
-            <input 
-              type="text" 
-              className="border w-full p-2 mb-4" 
-              value = "Praha 4, Česká republika"
-              placeholder="Bydliště"/>
-          </div>
-          <div>
-            <label className='font-bold'>Pracovní pozice:</label>
-            <input 
-              type="text" 
-              className="border w-full p-2 mb-4" 
-              value = "Technik"
-              placeholder="Pracovní pozice"/>
-          </div>
-          <div>
-            <label className='font-bold'>Od začátku směny odpracováno:</label>
-            <input 
-              type="text" 
-              className="border w-full p-2 mb-4" 
-              value = "6 hodin"
-              placeholder="Odpracované hodiny"/>
-          </div>
-          <div >
-            <label className='font-bold'>Datum a čas úrazu:</label>
-            <input 
-              type="datetime-local" 
-              className="border w-full p-2 mb-4"
-              value = "2024-09-10T14:30"
-              placeholder="Datum a čas úrazu"/>
-          </div>
-        </div>
-
-        <h2 className="text-lg font-semibold mt-6">Druh zranění a zraněná část těla:</h2>
-        <input type="text" className="border w-full p-2 mb-4" value="Řezná rána na ruce" placeholder="Popis zranění"/>
-        
-        <div className="grid grid-cols-4 gap-2">
-        <div>
-            <label>Počet zraněných osob:</label>
-            <input 
-            type="text" 
-            className="border w-full p-2 mb-4" 
-            value="1 osoba" 
-            placeholder="Počet zraněných"/>
-        </div>
-        <div>
-            <label>Ošetřen u lékaře:</label>
-            <input 
-            type="text" 
-            className="border w-full p-2 mb-4" 
-            value="Ano"
-            placeholder="Ano/Ne"/>
-        </div>
-        <div>
-            <label>Zkouška na alkohol:</label>
-            <input 
-            type="text" 
-            className="border w-full p-2 mb-4" 
-            value="Ne"
-            placeholder="Ano/Ne"/>
-        </div>
-        <div>
-            <label>Výsledek zkoušky:</label>
-            <input 
-            type="text" 
-            className="border w-full p-2 mb-4" 
-            value="Negativní"
-            placeholder="Výsledek"/>
-        </div>
-        </div>
-
-        <h3 className="text-lg font-semibold mt-6 mb-3">Druh pracovního úrazu:</h3>
-        <div className="grid grid-cols-2 gap-4">
-            <label className="flex items-center">
+        <div className="bg-white max-w-4xl mx-auto mt-7 pt-20 shadow-lg rounded-lg h-auto print:pt-0">
+        <form>
+            <h1 className="text-lg form-text uppercase px-[2rem] mb-[0.25rem]">
+              Záznam o úrazu:
+              </h1>
+            <div className="grid grid-cols-3 gap-4 px-[1rem] pb-[0.5rem]">
+            <label className="flex items-center text-sm">
               <input
                 type="checkbox"
                 className="mr-2"
                 checked
               />
-              Bez pracovní neschopnosti
+              Smrtelném
             </label>
-            <label className="flex items-center">
+            <label className="flex items-center text-sm">
               <input
                 type="checkbox"
                 className="mr-2"
               />
-              S pracovní neschopností 3 kalendářních dnů
+              S hospitalizací delší než 5 dnů
             </label>
-            <label className="flex items-center">
+            <label className="flex items-center text-sm">
               <input
                 type="checkbox"
                 className="mr-2"
               />
-              S pracovní neschopností nad 3 kalendářní dny
+              Ostatním
             </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              S hospitalizací nad 5 dnů
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              Smrtelný pracovní úraz
-            </label>
-          </div>
-
-          <h3 className="text-lg font-semibold mt-6 mb-3 break-before-page">Co bylo zdrojem úrazu?</h3>
-          <div className="grid grid-cols-2 gap-4">
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              Dopravní prostředek
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-                checked
-              />
-              průmyslové škodliviny
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              stroje a zařízení přenosná nebo mobilní
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              horké látky a předměty, oheň a výbušniny
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              materiál, břemena
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              stroje a zařízení stabilní
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              pád na rovině, z výšky, do hloubky, propadnutí
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              lidé, zvířata nebo přírodní živly
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              nástroj, přístroj, nářadí
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              elektrická energie
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              jiné
-            </label>
-          </div>
-
-          <h3 className="text-lg font-semibold mt-6 mb-3">Proč k úrazu došlo?</h3>
-          <div className="grid grid-cols-2 gap-4">
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              Porušení předpisů vztahujících se k práci
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              pro porušení předpisů vztahujících se k práci
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-                checked
-              />
-              pro špatně, nebo nedostatečné vyhodnocení rizika
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              pro nepředvídatelné riziko práce nebí selhání lidského činitele
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              pro nedostatečné osobní zajištění zaměstnance
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              stroje a zařízení stabilní
-            </label>
-            <label className="flex items-center">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              pro jiný, blíže nespecifikovaný důvod
-            </label>
-          </div>
-
-        <h3 className="text-lg font-semibold mt-6 mb-3 ">Činnost, při níž k úrazu došlo:</h3>
-        <textarea className="border w-full p-2 mb-4" rows={1} value="Údržba stroje" placeholder="Doplňte"/>
-
-        <h3 className="text-lg font-semibold mt-6">Místo úrazu:</h3>
-        <textarea className="border w-full p-2 mb-4" rows={1} value="Praha, sklad" placeholder="Doplňte"/>
-
-        <h3 className="text-lg font-semibold mt-6">Popis úrazového děje:</h3>
-        <textarea className="border w-full p-2 mb-4" rows={4} value="Při údržbě stroje došlo k nečekanému spuštění." placeholder="Popis úrazu"/>
-
-        <h3 className="text-lg font-semibold mt-6 break-before-page">Jaké předpisy byly v souvislosti s úrazem porušeny a kým:</h3>
-        <textarea className="border w-full p-2 mb-4" rows={4} value="Porušení bezpečnostních předpisů." placeholder="Doplňte"/>
-
-        <h3 className="text-lg font-semibold mt-6">Opatření přijatá k zabránění opakování pracovního úrazu:</h3>
-        <textarea className="border w-full p-2 mb-4" rows={4} value="Zvýšení kontroly bezpečnostních postupů." placeholder="Doplňte"/>
-
-        <h3 className="text-lg font-semibold mt-6">Jména svědků úrazu:</h3>
-        <textarea className="border w-full p-2 mb-4" rows={4} value="Petr Dvořák" placeholder="Doplňte"/>
-
-        <h3 className="text-lg font-semibold mt-6">Zapsal - jméno, přijmení, funkce:</h3>
-        <textarea className="border w-full p-2 mb-4" rows={1} value="Anna Nováková" placeholder="Doplňte"/>
-
-        <h3 className="form-text">Zapsal - e-mail:</h3>
-        <textarea 
-          className="border w-full p-2 mb-4 px-[1rem]" 
-          rows={1} 
-          name = "supervisorEmail"
-          placeholder="Doplňte" 
-          />
-
-        <h3 className="text-lg font-semibold mt-6">Dodatečná otázka č. 1:</h3>
-        <textarea 
-        className="border w-full p-2 mb-4" 
-        placeholder="Popis" 
-        rows={4}
-        value="Placeholder Text"
-        // name = "preventionMeasures"
-        // onChange = {handleChange}
-        // value = {formData.preventionMeasures}
-        >
-        </textarea>
-
-        <h3 className="text-lg font-semibold mt-6 break-before-page">Dodatečná otázka č. 2:</h3>
-        <textarea 
-        className="border w-full p-2 mb-4" 
-        placeholder="Popis" 
-        rows={4}
-        value="Placeholder Text"
-        // name = "witnessInfo"
-        // onChange = {handleChange}
-        // value = {formData.witnessInfo}
-        >
-        </textarea>
-
-        <h3 className="text-lg font-semibold mt-6">Dodatečná otázka č. 3:</h3>
-        <textarea 
-        className="border w-full p-2 mb-4" 
-        placeholder="Popis" 
-        rows={1}
-        value="Placeholder Text"
-        // name = "supervisor"
-        // onChange = {handleChange}
-        // value = {formData.supervisor}
-        >
-        </textarea>
-    <button type="button" 
-          className="save-button">
-          Uložit záznam o úrazu
-    </button>
+              </div>
+            <div className="grid grid-cols-2 gap-4 px-[1rem]">
+            <div>
+                <label className='form-text'>Evidenční číslo záznamu:</label> 
+            </div>
+            <div>
+                <input 
+                  type="text" 
+                  name = "recordId"
+                  className="form-grid"
+                  value = "A"
+                  placeholder="Doplňte"/>
+            </div>
+            <div>
+                <label className='form-text'>Evidenční číslo zaměstnavatele:</label> 
+            </div>
+            <div>
+                <input 
+                  type="text" 
+                  name = "employer"
+                  className="form-grid"
+                  value = "A"
+                  placeholder="Doplňte"/>
+            </div>
+            </div>
+            {/* --------- */}
+              <label className='record-header'> A. Údaje o zaměstnavateli, u kterého je urázem postižený zaměstnanec v základním pracovněprávním vztahu</label>
+              <div className="grid grid-cols-2 gap-1 px-[1rem]">
+                <div>
+                  <label className="form-text">1. IČ:</label>
+                  <textarea name="ICO" className="form-grid mb-2" rows={2} value="ABC Corporation" />
+    
+                  <label className="form-text">Název zaměstnavatele a jeho sídlo:</label>
+                  <textarea name="employerInfo" className="form-grid" rows={4} value="ABC Corporation" />
+                </div>
+              <div>
+                <label className='form-text'>2. Hlavní činnost (CZ-NACE), v jejímž rámci k úrazu došlo:</label>
+                <input 
+                  type="text" 
+                  name = "entityActivity"
+                  className="form-grid"
+                  value = "XYZ Insurance"/>
+                <label className='form-text'>3. Místo, kde k úrazu došlo:</label>
+                <input 
+                  type="text"
+                  name = "location"
+                  className="form-grid" 
+                  value = "Kuchyň"/>
+                <label className='form-text'>4. Bylo místo úrazu pravidelným pracovištěm úrazem postiženého zaměstnance:</label>
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                  />
+                  Ano
+                </label>
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                  />
+                  Ne
+                </label>
+                </div>
+                </div>
+                {/* ----- */}
+                <label className='record-header'> B. Údaje o zaměstnavateli, u kterého k úrazu došlo (pokud se nejedná o zaměstnavatele uvedeného v části A záznamu)</label>
+            <div className="grid grid-cols-2 gap-4 px-[1rem]">
+              <div>
+                <label className='form-text'>1. IČ:</label>
+                <textarea
+                  name = "ICO"
+                  className="form-grid"
+                  rows={2}
+                  value = "ABC Corporation"
+                  />
+              <label className='form-text'>Název zaměstnavatele a jeho sídlo (adresa):</label>
+                <textarea  
+                  name = "employerInfo"
+                  className="form-grid"
+                  rows={3}
+                  value = "ABC Corporation"
+                  />
+              </div>
+              <div className='grid grid-cols-1 gap-4 px-[1rem] '>
+              <div>
+                <label className='form-text'>2. Hlavní činnost (CZ-NACE), v jejímž rámci k úrazu došlo:</label>
+                <input 
+                  type="text" 
+                  name = "entityActivity"
+                  className="form-grid"
+                  value = "XYZ Insurance"/>
+              </div>
+              <div>
+                <label className='form-text'>3. Místo, kde k úrazu došlo:</label>
+                <input 
+                  type="text"
+                  name = "location"
+                  className="form-grid" 
+                  value = "Kuchyň"/>
+              </div>
+              </div>
+              </div>
+    
+            {/* ------ */}
+            <label className='record-header'> C. Údaje o úrazem postiženém zaměstnanci</label>
+            <div className="grid grid-cols-2 gap-4 px-[1rem]">
+              <div>
+                <label className='form-text'>1. Jméno a přijmení:</label>
+                <input 
+                  type="text"
+                  name = "name"
+                  className="form-grid" 
+                  value = "123456"/>
+              </div>
+              <div>
+                <label className='form-text'>Pohlaví:</label>
+                <div className="grid grid-cols-2 gap-4 px-[1rem]">
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                  />
+                  Muž
+                </label>
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                  />
+                  Žena
+                </label>
+                </div>
+              </div>
+              <div>
+                <label className='form-text'>2. Datum narození:</label>
+                <input 
+                  type="text" 
+                  className="form-grid" 
+                  name= "birthDate"
+                  value = "Praha 4, Česká republika"/>
+              </div>
+              <div>
+                <label className='form-text'>3. Státní občanství:</label>
+                <input 
+                  type="text" 
+                  className="form-grid" 
+                  name= ""
+                  value = "české"/>
+              </div>
+              </div>
+              <div>
+                <label className='form-text'>4. Adresa pro doručování:</label>
+                <input 
+                  type="text" 
+                  className="form-grid" 
+                  name= ""
+                  value = "Jeronýmova 5, Praha 4"/>
+              </div>
+              <div className="grid grid-cols-2 gap-4 px-[1rem] pt-3">
+              <div>
+                <label className='form-text'>5. Klasifikace zaměstnání (CZ-ISCO):</label>
+                <input 
+                  type="text" 
+                  className="form-grid" 
+                  name= ""/>
+              </div>
+              <div>
+                <label className='form-text'>6. Činnost, při které k úrazu došlo:</label>
+                <input 
+                  type="text" 
+                  className="form-grid" 
+                  name= ""/>
+              </div>
+              </div>
+              <div>
+                <label className='form-text'>7. Délka trvání základního pracovněprávního vztahu u zaměstnavatele:</label>
+                <div className="grid grid-cols-4 gap-4 px-[1rem] pt-3">
+                <div className='pt-2'>
+                <label  className='form-text'>Roků: </label></div>
+                <div>
+                <input 
+                  type="text" 
+                  className="form-grid" 
+                  name= ""
+                  value = "4"/>
+                </div>
+                <div className='pt-2'>
+                 <label  className='form-text'>Měsíců:</label>
+                </div>
+                <div>
+                <input 
+                  type="text" 
+                  className="form-grid" 
+                  name= ""
+                  value = "5"/>
+                </div>
+                </div>
+              </div>
+              <div className='px-1'>
+                <label className='form-text'>8. Úrazem postižený je:</label>
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                  />
+                  Zaměstnanec v pracovním poměru
+                </label>
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                  />
+                  zaměstnanec zaměstnaný na základě dohod o pracích konaných mimo pracovní poměr 
+                </label>
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                  />
+                  osoba vykonávající činnosti nebo poskytující služby mimo pracovněprávní vztahy (§ 12 zákona č. 309/2006 Sb.)
+                </label>
+              </div>
+              <div className='pt-5 px-2'>
+                <label className='form-text'>9. Trvání pracovní neschopnosti následkem úrazu</label>
+                <div className="grid grid-cols-6 gap-4">
+                <label  className='form-text py-2'>od: </label>
+                <input 
+                  type="text" 
+                  className="form-grid h-8"  
+                  name= ""
+                  value = "4"/>
+                 <label  className='form-text py-2' >do:</label>
+                <input 
+                  type="text" 
+                  className="form-grid h-8" 
+                  name= ""
+                  value = "5"/>
+                 <label  className='form-text py-2'>celkem kalendářní dnů:</label>
+                <input 
+                  type="text" 
+                  className="form-grid h-8" 
+                  name= ""
+                  value = "5"/>
+                  </div>
+              </div>
+    
+              <div className='px-2'>
+                <div className='pb-5'>
+                <label className='record-header'>D. Údaje o úrazu</label>
+                </div>
+                <div className="grid grid-cols-2 gap-4 px-[1rem]">
+                <div>
+                <label  className='form-text'>1. Datum úrazu: </label>
+                <input 
+                  type="text" 
+                  className="border w-full p-0 mb-2"  
+                  name= ""
+                  value = "4"/>
+                <label className='form-text'> Hodina úrazu:</label>
+                <input 
+                  type="text" 
+                  className="border w-full p-0 mb-2"  
+                  name= ""
+                  value = "4"/>
+                 <label className='form-text' >Datum úmrtí úrazem postiženého zaměstnance:</label>
+                <input 
+                  type="text" 
+                  className="border w-full mb-2" 
+                  name= ""
+                  value = "5"/>
+                </div>
+                <div>
+                <label  className='form-text' >2. Počet hodin odpracovaných bezprostředně před vznikem úrazu: </label>
+                <input 
+                  type="text" 
+                  className="form-grid"  
+                  name= ""
+                  value = "4"/>
+                </div>
+                <div>
+                <label  className='form-text'>3. Druh zranění: </label>
+                <input 
+                  type="text" 
+                  className="form-grid"  
+                  name= ""
+                  value = "4"/>
+                </div>
+                <div>
+                <label  className='form-text'>4. Zraněná část těla: </label>
+                <input 
+                  type="text" 
+                  className="form-grid"  
+                  name= ""
+                  value = "4"/>
+                </div>
+                </div>
+                <label  className='form-text'>5. Počet zraněných osob: </label>
+                <input 
+                  type="text" 
+                  className="form-grid"  
+                  name= ""
+                  value = "4"/>
+                </div>
+    
+                
+              <h3 className="form-text">Co bylo zdrojem úrazu?</h3>
+              <div className="grid grid-cols-2 gap-1">
+                <label className="flex items-center checkbox-label">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                  />
+                  Dopravní prostředek
+                </label>
+                <label className="flex items-center checkbox-label">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                    checked
+                  />
+                  průmyslové škodliviny
+                </label>
+                <label className="flex items-center checkbox-label">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                  />
+                  stroje a zařízení přenosná nebo mobilní
+                </label>
+                <label className="flex items-center checkbox-label">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                  />
+                  horké látky a předměty, oheň a výbušniny
+                </label>
+                <label className="flex items-center checkbox-label">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                  />
+                  materiál, břemena
+                </label>
+                <label className="flex items-center checkbox-label">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                  />
+                  stroje a zařízení stabilní
+                </label>
+                <label className="flex items-center checkbox-label">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                  />
+                  pád na rovině, z výšky, do hloubky, propadnutí
+                </label>
+                <label className="flex items-center checkbox-label">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                  />
+                  lidé, zvířata nebo přírodní živly
+                </label>
+                <label className="flex items-center checkbox-label">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                  />
+                  nástroj, přístroj, nářadí
+                </label>
+                <label className="flex items-center checkbox-label">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                  />
+                  elektrická energie
+                </label>
+                <label className="flex items-center checkbox-label">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                  />
+                  jiné
+                </label>
+              </div>
+    
+              <h3 className="form-text">Proč k úrazu došlo? (příčiny)</h3>
+              <div className="grid grid-cols-2 gap-1">
+                <label className="flex items-center checkbox-label">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                  />
+                  Porušení předpisů vztahujících se k práci
+                </label>
+                <label className="flex items-center checkbox-label">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                  />
+                  pro porušení předpisů vztahujících se k práci
+                </label>
+                <label className="flex items-center checkbox-label">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                    checked
+                  />
+                  pro špatně, nebo nedostatečné vyhodnocení rizika
+                </label>
+                <label className="flex items-center checkbox-label">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                  />
+                  pro nepředvídatelné riziko práce nebí selhání lidského činitele
+                </label>
+                <label className="flex items-center checkbox-label">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                  />
+                  pro nedostatečné osobní zajištění zaměstnance
+                </label>
+                <label className="flex items-center checkbox-label">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                  />
+                  stroje a zařízení stabilní
+                </label>
+                <label className="flex items-center checkbox-label">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                  />
+                  pro jiný, blíže nespecifikovaný důvod
+                </label>
+              </div>
+              <div className='pt-6'>
+                <label className='form-text'>8. Byla u úrazem postiženého zaměstnance provedena kontrola přítomnosti
+                  alkoholu nebo jiných návykových látek a pokud ano, s jakým výsledkem? 
+                </label>
+                <div className="grid grid-cols-4 gap-4">
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                  />
+                  ANO
+                </label>
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    className="mr-2"
+                  />
+                  NE
+                </label>
+                <label className='py-4'>Výsledek</label>
+                <input 
+                type="text" 
+                className="form-grid" 
+                value="Negativní"/>
+                </div>
+            </div>
+            <div className='py-3'>
+            <label className='form-text'>9. Popis úrazového děje, rozvedení popisu místa, příčin a okolností, za nichž došlo k úrazu:</label>
+            <textarea className="form-grid" rows={4}/>
+            <label className='form-text'>10. Uveďte, jaké předpisy byly v souvislosti s úrazem porušeny a kým, pokud jejich porušení do doby odeslání záznamu zjistěno:</label>
+            <textarea className="form-grid" rows={4}/>
+            <label className='form-text'>11. Opatření přijatá k zabránění opakování pracovního úrazu:</label>
+            <textarea className="form-grid" rows={4}/>
+            </div>
+            <label className='record-header'> E. Vyjádření úrazem postiženého zaměstnance a svědků úrazu případně dalších osob</label>
+    
+            <div className="border border-black">
+                <table className="w-full border-collapse border border-black">
+                  <thead>
+                    <tr className="border border-black">
+                      <th className="border border-black w-1/3"></th>
+                      <th className="border border-black">datum</th>
+                      <th className="border border-black">jméno a příjmení</th>
+                      <th className="border border-black">podpis</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td className="border border-black form-text ">Úrazem postižený zaměstnanec:</td>
+                      <td className="border border-black">
+                        <input type="text" className="w-full" />
+                      </td>
+                      <td className="border border-black">
+                        <input type="text" className="w-full"  />
+                      </td>
+                      <td className="border border-black">
+                        <input type="text" className="w-full"  />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-black text-center form-text align-middle" rowSpan={4}>Svědci:</td>
+                      <td className="border border-black">
+                        <input type="text" className="w-full" />
+                      </td>
+                      <td className="border border-black">
+                        <input type="text" className="w-full"  />
+                      </td>
+                      <td className="border border-black">
+                        <input type="text" className="w-full"  />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-black h-2.5">
+                        <input type="text" className="w-full" />
+                      </td>
+                      <td className="border border-black h-2.5">
+                        <input type="text" className="w-full"  />
+                      </td>
+                      <td className="border border-black h-2.5">
+                        <input type="text" className="w-full"  />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-black h-2.5">
+                        <input type="text" className="w-full" />
+                      </td>
+                      <td className="border border-black h-2.5">
+                        <input type="text" className="w-full"  />
+                      </td>
+                      <td className="border border-black h-2.5">
+                        <input type="text" className="w-full"  />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-black h-2.5">
+                        <input type="text" className="w-full" />
+                      </td>
+                      <td className="border border-black h-2.5">
+                        <input type="text" className="w-full"  />
+                      </td>
+                      <td className="border border-black h-2.5">
+                        <input type="text" className="w-full"  />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-black form-text">Zástupce zaměstnanců pro bezpečnost a ochranu zdraví při práci:</td>
+                      <td className="border border-black">
+                        <input type="text" className="w-full" />
+                      </td>
+                      <td className="border border-black">
+                        <input type="text" className="w-full"  />
+                      </td>
+                      <td className="border border-black">
+                        <input type="text" className="w-full"  />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-black form-text">Za odborovou organizaci:</td>
+                      <td className="border border-black">
+                        <input type="text" className="w-full" />
+                      </td>
+                      <td className="border border-black">
+                        <input type="text" className="w-full" />
+                      </td>
+                      <td className="border border-black">
+                        <input type="text" className="w-full"  />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-black form-text" rowSpan={2}>Za zaměstnavatele:</td>
+                      <td className="border border-black text-center">
+                        <input type="text" className="w-full border" />
+                      </td>
+                      <td className="border border-black text-center">
+                        <input type="text" className="w-full border" />
+                      </td>
+                      <td className="border border-black text-center">
+                        <input type="text" className="w-full border" />
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-black text-center" colSpan={2}>
+                        Pracovní zařazení
+                      </td>
+                      <td className="border border-black text-center">
+                        <input type="text" className="w-full border" placeholder="Pracovní zařazení" />
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+    
+            <div className='print:hidden'>
+            <h3 className="form-text mt-10">Zapsal - jméno, přijmení, funkce</h3>
+            <textarea className="form-grid" rows={1} value="Anna Nováková" placeholder="Doplňte"/>
+       
+            <h3 className="form-text">Zapsal - email:</h3>
+            <textarea className="form-grid" rows={1} value="example@gmail.com" placeholder="Doplňte"/>
+            </div>   
+        </form>
     <div className='mb-[3rem] print:hidden py-[2rem] flex justify-center items-center'>
     <button type="button" 
           className="action-button"
           onClick = {() => window.print()}>
           Vytisknout záznam o úrazu
         </button>
-    </div>
     </div>
     </div>
 );

@@ -15,5 +15,8 @@ zkontrolovat jeho funkcionalitu
 ----
 Přidat další filtr za zaměstnavatele.   -zkontrolovat funkcionalitu
 --
+---
+upravit zarovnání ve formech px-1.
+kouknout na data vyplněná ve formech a jejich vzhled
 
 
