@@ -4,99 +4,99 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
     <div className="px-[1rem]">
     <div className="grid grid-cols-2 gap-4 px-[1rem]">
             <div>
-            <label className='font-bold'>Zaměstnavatel:</label>
+            <label className='form-text'>Zaměstnavatel:</label>
             <input 
               type="text" 
               name = "employer"
-              className="border w-full p-2 mb-4"
+              className="form-grid h-8"
               value = {formData.employer}
               onChange = {handleChange} 
               placeholder="Zaměstnavatel"/>
           </div>
           <div>
-            <label className='font-bold'>Provoz:</label>
+            <label className='form-text'>Provoz:</label>
             <input 
               type="text" 
               name = "employer"
-              className="border w-full p-2 mb-4"
+              className="form-grid h-8"
               value = {formData.entity}
               onChange = {handleChange} 
               placeholder="Provoz"/>
           </div>
           <div>
-            <label className='font-bold'>Pojišťovna postiženého:</label>
+            <label className='form-text'>Pojišťovna postiženého:</label>
             <input 
               type="text" 
               name = "insurance"
-              className="border w-full p-2 mb-4"
+              className="form-grid h-8"
               value = {formData.insurance}
               onChange = {handleChange}
               placeholder="Evidenční číslo"/>
           </div>
           <div>
-            <label className='font-bold'>Jméno a příjmení postiženého:</label>
+            <label className='form-text'>Jméno a příjmení postiženého:</label>
             <input 
               type="text" 
-              className="border w-full p-2 mb-4" 
+              className="form-grid h-8" 
               placeholder="Jméno"
               name = "name"
               onChange = {handleChange}
               value = {formData.name}/>
           </div>
           <div>
-            <label className='font-bold'>Datum narození:</label>
+            <label className='form-text'>Datum narození:</label>
             <input 
               type="date" 
-              className="border w-full p-2 mb-4"
+              className="form-grid h-8"
               name = "birthDate"
               onChange = {handleChange}
               value = {formData.birthDate}/>
           </div>
           <div>
-            <label className='font-bold'>Osobní číslo:</label>
+            <label className='form-text'>Osobní číslo:</label>
             <input 
               type="text" 
-              className="border w-full p-2 mb-4" 
+              className="form-grid h-8" 
               placeholder="Osobní číslo"
               name = "personalNumber"
               onChange = {handleChange}
               value = {formData.personalNumber}/>
           </div>
           <div>
-            <label className='font-bold'>Bydliště postiženého:</label>
+            <label className='form-text'>Bydliště postiženého:</label>
             <input 
               type="text" 
-              className="border w-full p-2 mb-4" 
+              className="form-grid h-8" 
               placeholder="bydliště"
               name = "address"
               onChange = {handleChange}
               value = {formData.address}/>
           </div>
           <div>
-            <label className='font-bold'>Pracovní pozice:</label>
+            <label className='form-text'>Pracovní pozice:</label>
             <input 
               type="text" 
-              className="border w-full p-2 mb-4" 
+              className="form-grid h-8" 
               placeholder="Position"
               name = "position"
               onChange = {handleChange}
               value = {formData.position}/>
           </div>
           <div>
-            <label className='font-bold'>Od začátku směny odpracováno:</label>
+            <label className='form-text'>Od začátku směny odpracováno:</label>
             <input 
               type="text" 
-              className="border w-full p-2 mb-4" 
+              className="form-grid h-8" 
               placeholder="Odpracované hodiny"
               name = "hoursWorked"
               onChange = {handleChange}
               value = {formData.hoursWorked}/>
           </div>
           <div >
-            <label className='font-bold'>Datum a čas úrazu:</label>
+            <label className='form-text'>Datum a čas úrazu:</label>
             <input 
               type="datetime-local" 
-              className="border w-full p-2 mb-4"
+              className="form-grid h-8"
               name = "injuryDateTime"
               onChange = {handleChange}
               value = {formData.injuryDateTime}/>
@@ -104,14 +104,14 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
         </div>
 
  
-        <h2 className="text-lg font-semibold mt-6">Druh zranění a zraněná část těla:</h2>
-        <input type="text" className="border w-full p-2 mb-4" placeholder="Popis zranění"/>
+        <h2 className="form-text">Druh zranění a zraněná část těla:</h2>
+        <input type="text" className="form-grid h-8" placeholder="Popis zranění"/>
         <div className="grid grid-cols-4 gap-2 ">
         <div>
             <label>Počet zraněných osob:</label>
             <input 
             type="text" 
-            className="border w-full p-2 mb-4" 
+            className="form-grid h-8" 
             placeholder=""
             name = "numberOfInjuredPeople"
             onChange = {handleChange}
@@ -121,7 +121,7 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
             <label>Ošetřen u lékaře:</label>
             <input 
             type="text" 
-            className="border w-full p-2 mb-4" 
+            className="form-grid h-8" 
             placeholder="Ano/Ne"
             name = "doctorVisit"
             onChange = {handleChange}
@@ -131,7 +131,7 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
             <label>Zkouška na alkohol:</label>
             <input 
             type="text" 
-            className="border w-full p-2 mb-4" 
+            className="form-grid h-8" 
             placeholder="Ano/Ne"
             name = "alcoholTest"
             onChange = {handleChange}
@@ -141,7 +141,7 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
             <label>Výsledek zkoušky:</label>
             <input 
             type="text" 
-            className="border w-full p-2 mb-4" 
+            className="form-grid h-8" 
             placeholder="Výsledek"
             name = "alcoholTestResult"
             onChange = {handleChange}
@@ -149,8 +149,8 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
         </div>
         </div>
 
-        <h3 className="text-lg font-semibold mt-6 mb-3">Druh pracovního úrazu:</h3>
-        <div className="grid grid-cols-2 gap-4">
+        <h3 className="form-text mb-3">Druh pracovního úrazu:</h3>
+        <div className="grid grid-cols-2 gap-1">
         <label className="flex items-center">
             <input 
             type="checkbox" 
@@ -176,8 +176,8 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
         </div>  
    
 
-        <h3 className="text-lg font-semibold mt-6 mb-3 break-before-page">Co bylo zdrojem úrazu?</h3>
-        <div className="grid grid-cols-2 gap-4">
+        <h3 className="form-text mb-3 break-before-page">Co bylo zdrojem úrazu?</h3>
+        <div className="grid grid-cols-2 gap-1">
         <label className="flex items-center">
             <input type="checkbox" className="mr-2"/> Dopravní prostředek
         </label>
@@ -213,8 +213,8 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
         </label>
         </div>
 
-        <h3 className="text-lg font-semibold mt-6 mb-3">Proč k úrazu došlo? Zaškrtněte příčinu:</h3>
-        <div className="grid grid-cols-2 gap-4">
+        <h3 className="form-text mb-3">Proč k úrazu došlo? Zaškrtněte příčinu:</h3>
+        <div className="grid grid-cols-2 gap-1">
         <label className="flex items-center">
             <input type="checkbox" className="mr-2"/> poruchy nebo vadný stav některého zdrojů úrazu
         </label>
@@ -239,9 +239,9 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
         </label>
         </div>
 
-        <h3 className="text-lg font-semibold mt-6 mb-3">Činnost, při níž k úrazu došlo:</h3>
+        <h3 className="form-text mb-3">Činnost, při níž k úrazu došlo:</h3>
         <textarea 
-        className="border w-full p-2 mb-4" 
+        className="form-grid h-8" 
         placeholder="Doplňte" 
         rows={1}
         name = "activity"
@@ -249,9 +249,9 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
         value = {formData.activity}>
         </textarea>
 
-        <h3 className="text-lg font-semibold mt-6">Místo úrazu:</h3>
+        <h3 className="form-text">Místo úrazu:</h3>
         <textarea 
-        className="border w-full p-2 mb-4" 
+        className="form-grid h-8" 
         placeholder="Doplňte" 
         rows={1}
         name = "location"
@@ -259,9 +259,9 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
         value = {formData.location}>
         </textarea>
 
-        <h3 className="text-lg font-semibold mt-6">Popis úrazového děje:</h3>
+        <h3 className="form-text">Popis úrazového děje:</h3>
         <textarea 
-        className="border w-full p-2 mb-4" 
+        className="form-grid h-8" 
         placeholder="Doplňte" 
         rows={4}
         name = "injuryEventDescription"
@@ -269,9 +269,9 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
         value = {formData.injuryEventDescription}>
         </textarea>
 
-        <h3 className="text-lg font-semibold mt-6 break-before-page">Jaké předpisy byly v souvislosti s úrazem porušeny a kým:</h3>
+        <h3 className="form-text break-before-page">Jaké předpisy byly v souvislosti s úrazem porušeny a kým:</h3>
         <textarea 
-        className="border w-full p-2 mb-4" 
+        className="form-grid h-8" 
         placeholder="Doplňte"  
         rows={4}
         name = "violation"
@@ -279,9 +279,9 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
         value = {formData.violation}>
         </textarea>
 
-        <h3 className="text-lg font-semibold mt-6">Opatření přijatá k zabránění opakování pracovního úrazu:</h3>
+        <h3 className="form-text">Opatření přijatá k zabránění opakování pracovního úrazu:</h3>
         <textarea 
-        className="border w-full p-2 mb-4" 
+        className="form-grid h-8" 
         placeholder="Doplňte" 
         rows={4}
         name = "preventionMeasures"
@@ -289,9 +289,9 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
         value = {formData.preventionMeasures}>
         </textarea>
 
-        <h3 className="text-lg font-semibold mt-6">Jména svědků úrazu, osobní číslo, popř: datum narození a adresa bydliště:</h3>
+        <h3 className="form-text">Jména svědků úrazu, osobní číslo, popř: datum narození a adresa bydliště:</h3>
         <textarea 
-        className="border w-full p-2 mb-4" 
+        className="form-grid h-8" 
         placeholder="Doplňte" 
         rows={4}
         name = "witnessInfo"
@@ -299,9 +299,9 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
         value = {formData.witnessInfo}>
         </textarea>
 
-        <h3 className="text-lg font-semibold mt-6">Zapsal: jméno, přijmení, funkce:</h3>
+        <h3 className="form-text">Zapsal: jméno, přijmení, funkce:</h3>
         <textarea 
-        className="border w-full p-2 mb-4" 
+        className="form-grid h-8" 
         placeholder="Doplňte" 
         rows={1}
         name = "supervisor"
@@ -309,9 +309,9 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
         value = {formData.supervisor}>
         </textarea>
 
-        <h3 className="text-lg font-semibold mt-6">Zapsal: e-mail:</h3>
+        <h3 className="form-text">Zapsal: e-mail:</h3>
         <textarea 
-        className="border w-full p-2 mb-4" 
+        className="form-grid h-8" 
         placeholder="Doplňte" 
         rows={1}
         name = "supervisorEmail"
