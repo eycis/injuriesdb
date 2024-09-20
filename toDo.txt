@@ -1,23 +1,22 @@
 (upravit typování, aby více sedělo pro ts
 upravit využívání interface
 upravit tailwind css
-přidat styly
 )
 
-- přejmenovat tlačítko na 'uložit ke schválení'  - Navrhnout 'odeslat ke schválení'? 
 
 -posílání mailů při schválení administrátorem.
-
-
-
----
-zkrátit formulář na stránku
-----
-kouknout na vzhled u menších obrazovek
----
+--
 tokeny
 
+---
+zkontrolovat jeho obsah
+zkontrolovat jeho funkcionalitu
+
+----
 Přidat další filtr za zaměstnavatele.   -zkontrolovat funkcionalitu
 --
+---
+upravit zarovnání ve formech px-1.
+kouknout na data vyplněná ve formech a jejich vzhled
 
 
