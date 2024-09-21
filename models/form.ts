@@ -1,5 +1,6 @@
 
 export interface FormData {
+    recordId:string;
     employer: string;
     entity: string;
     insurance: string;
@@ -25,5 +26,6 @@ export interface FormData {
     supervisor: string;
     numberOfInjuredPeople: number;
     supervisorEmail: string,
+    injuredBodypart: string,
   }
   

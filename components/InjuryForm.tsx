@@ -6,6 +6,7 @@ import { FormData } from '@/models/form';
 const InjuryForm = () => {
     
   const [formData, setFormData] = useState<FormData>({
+    recordId:'',
     employer: '',
     entity: '',
     insurance: '',
@@ -31,6 +32,7 @@ const InjuryForm = () => {
     supervisor: '',
     numberOfInjuredPeople: 0,
     supervisorEmail: '',
+    injuredBodypart: '',
   });
 
 const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

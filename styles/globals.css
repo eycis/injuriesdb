@@ -22,7 +22,7 @@
     .form-grid{
         @apply border w-full p-1
     }
-    .checkbox-label{
+    .checkbox-label {
         @apply text-sm
     }
 }

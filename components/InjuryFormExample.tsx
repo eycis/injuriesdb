@@ -31,6 +31,7 @@ const InjuryFormExample = () => {
     supervisor: 'Anna Nováková',
     numberOfInjuredPeople: '1 osoba',
     supervisorEmail: 'example@gmail.com',
+    injuredBodypart:"Řezná rána na ruce",
   });
 
     const [isAdmin, setIsAdmin] = useState(false);
@@ -179,7 +180,14 @@ const InjuryFormExample = () => {
         </div>
 
         <h2 className="form-text px-[1rem]">Druh zranění a zraněná část těla:</h2>
-        <input type="text" className="form-grid h-5 px-[1rem]" value="Řezná rána na ruce" placeholder="Popis zranění"/>
+        <input 
+          type="text" 
+          className="form-grid h-5 px-[1rem]" 
+          value={formData.injuredBodypart}
+          disabled={!isAdmin} 
+          name="injuredBodypart" 
+          onChange={handleInputChange}
+          placeholder="Popis zranění"/>
         
         <div className="grid grid-cols-4 gap-2 px-[1rem]">
         <div>
@@ -506,7 +514,7 @@ const InjuryFormExample = () => {
         <textarea 
           className="form-grid px-[1rem]" 
           rows={1} 
-          name = "supervisor"
+          name = "supervisorEmail"
           value = {formData.supervisorEmail}
           disabled={!isAdmin}
           onChange={handleInputChange}
