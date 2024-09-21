@@ -1,6 +1,5 @@
 
 export interface FormData {
-    entityActivity:string;
     recordId:string;
     employer: string;
     entity: string;
@@ -27,5 +26,6 @@ export interface FormData {
     supervisor: string;
     numberOfInjuredPeople: number;
     supervisorEmail: string,
+    injuredBodypart: string,
   }
   

@@ -8,7 +8,7 @@ const InjuryFormExample = () => {
               Záznam o úrazu:
               </h1>
             <div className="grid grid-cols-3 gap-4 px-[1rem] pb-[0.5rem]">
-            <label className="flex items-center text-sm">
+            <label className="flex flex-col items-center justify-center text-sm">
               <input
                 type="checkbox"
                 className="mr-2"
@@ -17,14 +17,14 @@ const InjuryFormExample = () => {
               />
               Smrtelném
             </label>
-            <label className="flex items-center text-sm">
+            <label className="flex flex-col items-center justify-center text-sm">
               <input
                 type="checkbox"
                 className="mr-2"
               />
               S hospitalizací delší než 5 dnů
             </label>
-            <label className="flex items-center text-sm">
+            <label className="flex flex-col items-center justify-center text-sm">
               <input
                 type="checkbox"
                 className="mr-2"

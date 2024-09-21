@@ -1,0 +1,47 @@
+export interface InjuryRecordData {
+    entityActivity: string;
+    recordId: string;
+    employer: string;
+    employerInfo: string;
+    entity: string;
+    insurance: string;
+    name: string;
+    birthDate: string;
+    personalNumber: string;
+    address: string;
+    position: string;
+    hoursWorked: string;
+    injuryDateTime: string;
+    injuryDescription: string;
+    doctorVisit: string;
+    alcoholTest: string;
+    alcoholTestResult: string;
+    injuryType: string;
+    injuryCause: string;
+    activity: string;
+    location: string;
+    injuryEventDescription: string;
+    violation: string;
+    preventionMeasures: string;
+    witnessInfo: string;
+    supervisor: string;
+    numberOfInjuredPeople: string;
+    supervisorEmail: string;
+    injuredBodypart: string;
+    mainActivity: string;
+    IC: string;
+    mainActivityB: string;
+    locationB: string;
+    employerInfoB: string;
+    ICB: string;
+    deliveryAddress: string;
+    nationality: string;
+    From: string;
+    Until: string;
+    dateOfDeath: string;
+    bodyPart: string;
+    yearsWorked: string;
+    monthsWorked: string;
+    dayCount: string;
+  }
+  
