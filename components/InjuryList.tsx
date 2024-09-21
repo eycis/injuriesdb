@@ -60,17 +60,18 @@ const InjuryList = () => {
     },
   ];
 
-  const [selectedEntity, setSelectedEntity] = useState('');
-  const [selectedEmployer, setSelectedEmployer] = useState('');
-  const [isAdmin, setIsAdmin] = useState(false);
+  const [selectedEntity, setSelectedEntity] = useState<string>('');
+  const [selectedEmployer, setSelectedEmployer] = useState<string>('');
+  const [isAdmin, setIsAdmin] = useState<boolean>(false);
 
-  const filteredInjuries = injuries.filter( injury => {
-    if(!isAdmin && injury.entity !== '123') return false;
-    const entityMatch = selectedEntity ? injury.entity == selectedEntity : true;
-    const employerMatch = selectedEmployer? injury.employer == selectedEmployer :true
-    
+  const filteredInjuries = injuries.filter(injury => {
+    if (!isAdmin && injury.entity !== '123') return false;
+    const entityMatch = selectedEntity ? injury.entity === selectedEntity : true;
+    const employerMatch = selectedEmployer ? injury.employer === selectedEmployer : true;
+  
     return entityMatch && employerMatch;
-  })
+  });
+  
 
 
     useEffect(() => {
@@ -95,18 +96,18 @@ const InjuryList = () => {
 
         {isAdmin &&(
         <div>
-          <label htmlFor="entityDropdown" className="text-white font-bold ">
+          <label htmlFor="employerDropdown" className="text-white font-bold ">
             Zaměstnavatel
           </label>
           <select
-            id="entityDropdown"
+            id="employerDropdown"
             className="ml-3 p-2 rounded bg-white text-black"
-            value={selectedEntity}
+            value={selectedEmployer}
             onChange={(e) => setSelectedEmployer(e.target.value)}
           >
             <option value="">Vše</option>
-            <option value="123">A</option>
-            <option value="456">B</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
           </select>
         </div>
         )}
