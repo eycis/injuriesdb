@@ -77,7 +77,7 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
             <input 
               type="text" 
               className="form-grid h-5" 
-              placeholder="Position"
+              placeholder="Pozice"
               name = "position"
               onChange = {handleChange}
               value = {formData.position}/>
