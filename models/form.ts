@@ -1,5 +1,7 @@
 
 export interface FormData {
+    entityActivity:string;
+    recordId:string;
     employer: string;
     entity: string;
     insurance: string;
