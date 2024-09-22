@@ -4,9 +4,9 @@ import { InjuryRecordData } from '@/models/record';
 
 export const InjuryRecord = () => {
     const [formData, setFormData] = useState({
-      entityActivity:'',
+      entityActivity:'654321',
       recordId: '',
-      employer: 'A',
+      employer: 'Zamestnavatel_vzor',
       employerInfo:'',
       entity: 'ABC Corporation',
       insurance: 'XYZ Insurance',
@@ -65,29 +65,33 @@ export const InjuryRecord = () => {
         <h1 className="text-lg form-text uppercase px-[2rem] mb-[0.25rem]">
           Záznam o úrazu:
           </h1>
-        <div className="grid grid-cols-3 gap-4 px-[1rem] pb-[0.5rem] items-center justify-center">
-        <label className="flex flex-col items-center justify-center text-sm">
+        <div className='px-[1rem]'>
+        <label className=" text-sm">
           <input
             type="checkbox"
             className="mr-2"
           />
           Smrtelném
         </label>
-        <label className="flex flex-col items-center justify-center text-sm">
+        </div>
+        <div className='px-[1rem]'>
+        <label className="text-sm">
           <input
             type="checkbox"
             className="mr-2"
           />
           S hospitalizací delší než 5 dnů
         </label>
-        <label className="flex flex-col items-center justify-center text-sm">
+        </div >
+        <div className='px-[1rem]'>
+        <label className="text-sm">
           <input
             type="checkbox"
             className="mr-2"
           />
           Ostatním
         </label>
-          </div>
+        </div>
         <div className="grid grid-cols-2 gap-4 px-[1rem]">
         <div>
             <label className='form-text'>Evidenční číslo záznamu:</label> 
@@ -106,7 +110,6 @@ export const InjuryRecord = () => {
             <input 
               type="text" 
               className="form-grid"
-
               value={formData.employer}
               name= "employer"
               placeholder="Doplňte"/>
@@ -117,10 +120,10 @@ export const InjuryRecord = () => {
           <div className="grid grid-cols-2 gap-1 px-[1rem]">
             <div>
               <label className="form-text">1. IČ:</label>
-              <textarea 
+              <input
+                type="text"
                 name="IC" 
-                className="form-grid mb-2" 
-                rows={2} 
+                className="form-grid" 
                 onChange={handleInputChange}
                 value={formData.IC}/>
 
@@ -148,6 +151,8 @@ export const InjuryRecord = () => {
               value={formData.location}
               className="form-grid" />
             <label className='form-text'>4. Bylo místo úrazu pravidelným pracovištěm úrazem postiženého zaměstnance:</label>
+            <div className="grid grid-cols-2 gap-1]">
+            <div>
             <label className="flex items-center">
               <input
                 type="checkbox"
@@ -155,6 +160,8 @@ export const InjuryRecord = () => {
               />
               Ano
             </label>
+            </div>
+            <div>
             <label className="flex items-center">
               <input
                 type="checkbox"
@@ -164,15 +171,17 @@ export const InjuryRecord = () => {
             </label>
             </div>
             </div>
+            </div>
+            </div>
             {/* ----- */}
             <label className='record-header'> B. Údaje o zaměstnavateli, u kterého k úrazu došlo (pokud se nejedná o zaměstnavatele uvedeného v části A záznamu)</label>
         <div className="grid grid-cols-2 gap-1 px-[1rem]">
           <div>
             <label className='form-text'>1. IČ:</label>
-            <textarea
+            <input
+              type="text"
               name="ICB" 
               className="form-grid" 
-              rows={2} 
               onChange={handleInputChange}
               value={formData.ICB}
               />
@@ -182,10 +191,10 @@ export const InjuryRecord = () => {
                 className="form-grid"
                 onChange={handleInputChange}
                 value={formData.employerInfoB}
-                rows={3} 
+                rows={2} 
               />
           </div>
-          <div className='grid grid-cols-1 gap-1 px-[1rem] '>
+          <div className='grid grid-cols-1 px-[1rem] '>
           <div>
             <label className='form-text'>2. Hlavní činnost (CZ-NACE), v jejímž rámci k úrazu došlo:</label>
             <input 
@@ -209,7 +218,7 @@ export const InjuryRecord = () => {
 
         {/* ------ */}
         <label className='record-header'> C. Údaje o úrazem postiženém zaměstnanci</label>
-        <div className="grid grid-cols-2 gap-1 px-[1rem]">
+        <div className="grid grid-cols-2 px-[1rem]">
           <div>
             <label className='form-text'>1. Jméno a přijmení:</label>
             <input 
@@ -220,7 +229,7 @@ export const InjuryRecord = () => {
           </div>
           <div>
             <label className='form-text'>Pohlaví:</label>
-            <div className="grid grid-cols-2 gap-1 px-[1rem]">
+            <div className="grid grid-cols-2 px-[1rem]">
             <label className="flex items-center">
               <input
                 type="checkbox"
@@ -309,23 +318,23 @@ export const InjuryRecord = () => {
             </div>
             </div>
           </div>
-          <div className='px-[1rem] break-before-page'>
+          <div className='px-[1rem]'>
             <label className='form-text'>8. Úrazem postižený je:</label>
-            <label className="flex items-center">
+            <label className="flex items-center checkbox-label">
               <input
                 type="checkbox"
                 className="mr-2"
               />
               Zaměstnanec v pracovním poměru
             </label>
-            <label className="flex items-center">
+            <label className="flex items-center checkbox-label">
               <input
                 type="checkbox"
                 className="mr-2"
               />
               zaměstnanec zaměstnaný na základě dohod o pracích konaných mimo pracovní poměr 
             </label>
-            <label className="flex items-center">
+            <label className="flex items-center checkbox-label">
               <input
                 type="checkbox"
                 className="mr-2"
@@ -333,7 +342,7 @@ export const InjuryRecord = () => {
               osoba vykonávající činnosti nebo poskytující služby mimo pracovněprávní vztahy (§ 12 zákona č. 309/2006 Sb.)
             </label>
           </div>
-          <div className='pt-5 px-[1rem]'>
+          <div className='px-[1rem]'>
             <label className='form-text'>9. Trvání pracovní neschopnosti následkem úrazu</label>
             <div className="grid grid-cols-6 gap-4">
             <label  
@@ -361,148 +370,152 @@ export const InjuryRecord = () => {
               </div>
           </div>
 
-          <div className='px-2'>
-            <label className='record-header'>D. Údaje o úrazu</label>
-            <div className="grid grid-cols-2 gap-4 px-[1rem]">
-            <div>
-            <label  className='form-text'>1. Datum úrazu: </label>
-            <input 
-              type="date" 
-              className="border w-full p-0 mb-2"  
-              name= "injuryDate"
-              value = "2024-06-06"/>
-            <label className='form-text'> Hodina úrazu:</label>
-            <input 
-              type="text" 
-              className="border w-full p-0 mb-2"  
-              name= "injuryTime"
-              value = "14:00"/>
-             <label className='form-text' >Datum úmrtí úrazem postiženého zaměstnance:</label>
-            <input 
-              type="date" 
-              className="border w-full mb-2" 
-              name= "dateOfDeath"
-              onChange={handleInputChange}
-              value={formData.dateOfDeath}/>
-            </div>
-            <div>
-            <label  className='form-text' >2. Počet hodin odpracovaných bezprostředně před vznikem úrazu: </label>
-            <input 
-              type="text" 
-              className="form-grid"  
-              name= "hoursWorked"
-              value = "4"/>
-            </div>
-            <div>
-            <label  className='form-text'>3. Druh zranění: </label>
-            <input 
-              type="text" 
-              className="form-grid"  
-              name= "injuryType"
-              value = "Řezná rána na ruce"/>
-            </div>
-            <div>
-            <label  className='form-text'>4. Zraněná část těla: </label>
-            <input 
-              type="text" 
-              className="form-grid"  
-              name= "Bodypart"
-              onChange={handleInputChange}
-              value={formData.bodyPart}/>
+          <label className='record-header'>D. Údaje o úrazu</label>
+          <div className="grid grid-cols-2 gap-0 px-[1rem]">
+          <div className="grid grid-cols-2 gap-0 px-[1rem]">
+            <div className='col-span-1'>
+              <label className='form-text'>1. Datum úrazu:</label></div>
+              <div className='colspan-1'>
+              <input 
+                type="date" 
+                className="border w-full p-0"  
+                name= "injuryDate"
+                value="2024-06-06"/>
+              </div>
+              <div className="col-span-1">
+              <label className='form-text'>Hodina úrazu:</label></div>
+              <div className="col-span-1">
+              <input 
+                type="text" 
+                className="border w-full p-0"  
+                name="injuryTime"
+                value="14:00"/>
+              </div>
+              <div className="col-span-1">
+                <label className='form-text'>Datum úmrtí úrazem postiženého zaměstnance:</label></div>
+                <div>
+                <input 
+                type="date" 
+                className="border w-full" 
+                name="dateOfDeath"
+                onChange={handleInputChange}
+                value={formData.dateOfDeath}/>
             </div>
             </div>
-            <div className='px-[1rem]'>
-            <label  className='form-text'>5. Počet zraněných osob: </label>
-            <input 
-              type="text" 
-              className="form-grid"  
-              name= "numberOfInjuredPeople"
-              value = "1"/>
+            <div className="grid grid-cols-2 px-[1rem]">
+              <div className="col-span-2">
+              <label className='form-text'>2. Počet hodin odpracovaných bezprostředně před vznikem úrazu:</label>
+              <input 
+                type="text" 
+                className="form-grid"  
+                name="hoursWorked"
+                value="4"/>
+            </div>    
             </div>
+            </div>
+            
+            <div className="grid grid-cols-2 gap-4 px-[1rem] mt-4">
+              <div className="col-span-1">
+                <label className="form-text">3. Druh zranění:</label>
+                <div className="flex">
+                  <input 
+                    type="text" 
+                    className="form-grid w-full" 
+                    name="injuryType" 
+                    value="Řezná rána na ruce" />
+                  <div className="grid grid-cols-3 gap-0">
+                    <div className="border border-black w-6 h-6"></div>
+                    <div className="border border-black w-6 h-6"></div>
+                    <div className="border border-black w-6 h-6"></div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="col-span-1">
+                <label className="form-text">4. Zraněná část těla:</label>
+                <div className="flex">
+                  <input 
+                    type="text" 
+                    className="form-grid w-full" 
+                    name="bodyPart" 
+                    onChange={handleInputChange} value={formData.bodyPart} />
+                  <div className="grid grid-cols-2 gap-0">
+                    <div className="border border-black w-6 h-6"></div>
+                    <div className="border border-black w-6 h-6"></div>
+                  </div>
+                </div>
+              </div>
             </div>
 
-            
-          <h3 className="form-text px-[1rem]">Co bylo zdrojem úrazu?</h3>
-          <div className="grid grid-cols-2 gap-1 px-[1rem]">
+            <div className="grid grid-cols-1 gap-1 px-[1rem]">
+              <label className='form-text'>5. Počet zraněných osob:</label>
+              <input 
+                type="text" 
+                className="form-grid"  
+                name="numberOfInjuredPeople"
+                value="1"/>
+            </div>     
+
+          <h3 className="form-text px-[1rem]">6. Co bylo zdrojem úrazu?</h3>
+            <div className="grid grid-cols-2 gap-1 px-[1rem]">
             <label className="flex items-center checkbox-label">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              Dopravní prostředek
-            </label>
-            <label className="flex items-center checkbox-label">
-              <input
-                type="checkbox"
-                className="mr-2"
-                checked
-              />
-              průmyslové škodliviny
-            </label>
-            <label className="flex items-center checkbox-label">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              stroje a zařízení přenosná nebo mobilní
-            </label>
-            <label className="flex items-center checkbox-label">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              horké látky a předměty, oheň a výbušniny
-            </label>
-            <label className="flex items-center checkbox-label">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              materiál, břemena
-            </label>
-            <label className="flex items-center checkbox-label">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              stroje a zařízení stabilní
-            </label>
-            <label className="flex items-center checkbox-label">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              pád na rovině, z výšky, do hloubky, propadnutí
-            </label>
-            <label className="flex items-center checkbox-label">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              lidé, zvířata nebo přírodní živly
-            </label>
-            <label className="flex items-center checkbox-label">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              nástroj, přístroj, nářadí
-            </label>
-            <label className="flex items-center checkbox-label">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              elektrická energie
-            </label>
-            <label className="flex items-center checkbox-label">
-              <input
-                type="checkbox"
-                className="mr-2"
-              />
-              jiné
-            </label>
-          </div>
+                <input type="checkbox" className="mr-2" />
+                Dopravní prostředek
+              </label>
+              <label className="flex items-center checkbox-label">
+                <input type="checkbox" className="mr-2" />
+                Stroje a zařízení přenosná nebo mobilní
+              </label>
+              <label className="flex items-center checkbox-label">
+                <input type="checkbox" className="mr-2" />
+                Materiál, břemena, předměty (pád, přiražení, odlétnutí, náraz, zavalení)
+              </label>
+              <label className="flex items-center checkbox-label">
+                <input type="checkbox" className="mr-2" />
+                Pád na rovině, z výšky, do hloubky, propadnutí
+              </label>
+              <label className="flex items-center checkbox-label">
+                <input type="checkbox" className="mr-2" />
+                Nástroj, přístroj, nářadí
+              </label>
+              <label className="flex items-center checkbox-label">
+                <input type="checkbox" className="mr-2" />
+                Průmyslové škodliviny, chemické látky, biologické činitele
+              </label>
+              <label className="flex items-center checkbox-label">
+                <input type="checkbox" className="mr-2" />
+                Horké látky a předměty, oheň a výbušniny
+              </label>
+              <label className="flex items-center checkbox-label">
+                <input type="checkbox" className="mr-2" />
+                Stroje a zařízení stabilní
+              </label>
+              <label className="flex items-center checkbox-label">
+                <input type="checkbox" className="mr-2" />
+                Nástroj, přístroj, nářadí
+              </label>
+              <label className="flex items-center checkbox-label">
+                <input type="checkbox" className="mr-2" />
+                Lidé, zvířata nebo přírodní živly
+              </label>
+              <label className="flex items-center checkbox-label">
+                <input type="checkbox" className="mr-2" />
+                Elektrická energie
+              </label>
+              <label className="flex items-center checkbox-label">
+                <input type="checkbox" className="mr-2" />
+                Jiný, blíže nespecifikovaný zdroj
+              </label>
+              <div></div>
+              <div className="flex justify-end">
+                <div className="grid grid-cols-4 gap-0">
+                  <div className="border border-black w-5 h-5"></div>
+                  <div className="border border-black w-5 h-5"></div>
+                  <div className="border border-black w-5 h-5"></div>
+                  <div className="border border-black w-5 h-5"></div>
+                </div>
+              </div>
+            </div>
 
           <h3 className="form-text px-[1rem]">Proč k úrazu došlo? (příčiny)</h3>
           <div className="grid grid-cols-2 gap-1 px-[1rem]">
@@ -556,30 +569,36 @@ export const InjuryRecord = () => {
               />
               pro jiný, blíže nespecifikovaný důvod
             </label>
+              <div className="flex justify-end  ml-auto">
+                <div className="grid grid-cols-4 gap-0">
+                  <div className="border border-black w-5 h-5"></div>
+                  <div className="border border-black w-5 h-5"></div>
+                </div>
+            </div>
           </div>
           <div className='pt-6 px-[1rem]'>
             <label className='form-text'>8. Byla u úrazem postiženého zaměstnance provedena kontrola přítomnosti
               alkoholu nebo jiných návykových látek a pokud ano, s jakým výsledkem? 
             </label>
             <div className="grid grid-cols-4 gap-4">
-            <label className="flex items-center">
+            <label className="checkbox ">
               <input
                 type="checkbox"
                 className="mr-2"
               />
               ANO
             </label>
-            <label className="flex items-center">
+            <label className="checkbox">
               <input
                 type="checkbox"
                 className="mr-2"
               />
               NE
             </label>
-            <label className='py-4'>Výsledek</label>
+            <label>Výsledek</label>
             <input 
             type="text" 
-            className="form-grid" 
+            className="form-grid h-8" 
             name= "alcoholTestResult"
             onChange={handleInputChange}
             value={formData.alcoholTestResult}/>
@@ -592,7 +611,23 @@ export const InjuryRecord = () => {
           name= "injuryEventDescription"
           onChange={handleInputChange}
           value={formData.injuryEventDescription}
-          rows={4}/>
+          rows={10}/>
+          <div className="flex justify-end">
+            <div className="grid grid-cols-4 gap-0">
+              <div className="border border-black w-5 h-5"></div>
+              <div className="border border-black w-5 h-5"></div>
+              <div className="border border-black w-5 h-5"></div>
+              <div className="border border-black w-5 h-5"></div>
+            </div>
+          </div>
+          <div className="flex justify-end">
+            <div className="grid grid-cols-4 gap-0">
+              <div className="border border-black w-5 h-5"></div>
+              <div className="border border-black w-5 h-5"></div>
+              <div className="border border-black w-5 h-5"></div>
+              <div className="border border-black w-5 h-2.5"></div>
+            </div>
+          </div>
         <label className='form-text'>10. Uveďte, jaké předpisy byly v souvislosti s úrazem porušeny a kým, pokud jejich porušení do doby odeslání záznamu zjistěno:</label>
         <textarea 
           className="form-grid"  
@@ -613,6 +648,11 @@ export const InjuryRecord = () => {
         <div className="border border-black">
             <table className="w-full border-collapse border border-black">
               <thead>
+              <tr>
+                  <td className="h-2.5">
+                    <input type="text" className="w-full" />
+                  </td>
+                </tr>
                 <tr className="border border-black">
                   <th className="border border-black w-1/3"></th>
                   <th className="border border-black">datum</th>
@@ -634,7 +674,7 @@ export const InjuryRecord = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td className="border border-black text-center form-text align-middle" rowSpan={4}>Svědci:</td>
+                  <td className="border border-black text-center form-text align-middle" rowSpan={3}>Svědci:</td>
                   <td className="border border-black">
                     <input type="text" className="w-full" />
                   </td>
@@ -642,17 +682,6 @@ export const InjuryRecord = () => {
                     <input type="text" className="w-full"  />
                   </td>
                   <td className="border border-black">
-                    <input type="text" className="w-full"  />
-                  </td>
-                </tr>
-                <tr>
-                  <td className="border border-black h-2.5">
-                    <input type="text" className="w-full" />
-                  </td>
-                  <td className="border border-black h-2.5">
-                    <input type="text" className="w-full"  />
-                  </td>
-                  <td className="border border-black h-2.5">
                     <input type="text" className="w-full"  />
                   </td>
                 </tr>
@@ -715,17 +744,13 @@ export const InjuryRecord = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td className="border border-black text-center" colSpan={2}>
+                  <td className="text-left" colSpan={2}>
                     Pracovní zařazení
-                  </td>
-                  <td className="border border-black text-center">
-                    <input type="text" className="w-full border" placeholder="Pracovní zařazení" />
                   </td>
                 </tr>
               </tbody>
             </table>
           </div>
-
         <div className='print:hidden px-[1rem] pt-10'>
         <h3 className="form-text">Zapsal - jméno, přijmení, funkce</h3>
         <textarea className="form-grid" rows={1} value="Anna Nováková" placeholder="Doplňte"/>
@@ -739,7 +764,8 @@ export const InjuryRecord = () => {
           type="submit" 
           className="bg-green-600 text-white mx-[1rem] w-[200px] h-[40px] rounded hover:bg-blue-700"
           onClick = {() => {
-            window.alert("Záznam o zranění byl uložen.")}}>
+            window.alert("Záznam o zranění byl uložen.")
+            }}>
           Potvrdit a uložit
         </button>
         <button type="button" 
