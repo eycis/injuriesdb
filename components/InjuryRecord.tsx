@@ -744,11 +744,8 @@ export const InjuryRecord = () => {
                   </td>
                 </tr>
                 <tr>
-                  <td className="border border-black text-center" colSpan={2}>
+                  <td className="text-left" colSpan={2}>
                     Pracovní zařazení
-                  </td>
-                  <td className="border border-black text-center">
-                    <input type="text" className="w-full border" />
                   </td>
                 </tr>
               </tbody>
