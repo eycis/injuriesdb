@@ -6,8 +6,8 @@ import { FormData } from '@/models/form';
 
 const InjuryFormExample = () => {
   const [formData, setFormData] = useState({
-    employer: 'A',
-    entity: 'ABC Corporation',
+    employer: 'Zamestnavatel_vzor',
+    entity: '654321',
     insurance: 'XYZ Insurance',
     name: 'Jan Novák',
     birthDate: '1985-07-23',
@@ -66,7 +66,7 @@ const InjuryFormExample = () => {
         </div>
         </div>
         <div className="bg-white max-w-4xl mx-auto mt-1 pt-5 shadow-lg rounded-lg h-auto print:pt-0" >
-        <div className="grid grid-cols-2 gap-1 px-[1rem]">
+        <div className="grid grid-cols-2 gap-0 px-[1rem]">
         <div>
             <label className='form-text'>Zaměstnavatel:</label>
             <input 
@@ -237,7 +237,7 @@ const InjuryFormExample = () => {
         </div>
 
         <h3 className="form-text px-[1rem]">Druh pracovního úrazu:</h3>
-          <div className="grid grid-cols-2 gap-1 px-[1rem]">
+          <div className="grid grid-cols-2 gap-0 px-[1rem]">
             <label className="flex items-center checkbox-label">
               <input
                 type="checkbox"
@@ -282,7 +282,7 @@ const InjuryFormExample = () => {
           </div>
 
           <h3 className="form-text px-[1rem]">Co bylo zdrojem úrazu?</h3>
-          <div className="grid grid-cols-2 gap-1 px-[1rem]">
+          <div className="grid grid-cols-2 gap-0 px-[1rem]">
             <label className="flex items-center checkbox-label">
               <input
                 type="checkbox"
@@ -375,7 +375,7 @@ const InjuryFormExample = () => {
           </div>
 
           <h3 className="form-text px-[1rem]">Proč k úrazu došlo?</h3>
-          <div className="grid grid-cols-2 gap-1  px-[1rem] ">
+          <div className="grid grid-cols-2 gap-0  px-[1rem] ">
             <label className="flex items-center checkbox-label">
               <input
                 type="checkbox"
@@ -497,8 +497,7 @@ const InjuryFormExample = () => {
           onChange={handleInputChange} 
           placeholder="Popis úrazu"/>
 
-      
-      <div className='print:hidden'>
+    
         <h3 className="form-text">Zapsal - jméno, přijmení, funkce:</h3>
         <textarea 
           className="form-grid px-[1rem]" 
@@ -510,9 +509,9 @@ const InjuryFormExample = () => {
           placeholder="Popis úrazu" 
           />
 
-        <h3 className="form-text">Zapsal - e-mail:</h3>
+        <h3 className="form-text print:hidden">Zapsal - e-mail:</h3>
         <textarea 
-          className="form-grid px-[1rem]" 
+          className="form-grid px-[1rem] print:hidden" 
           rows={1} 
           name = "supervisorEmail"
           value = {formData.supervisorEmail}
@@ -520,7 +519,6 @@ const InjuryFormExample = () => {
           onChange={handleInputChange}
           placeholder="Popis úrazu" 
           />
-          </div>
           </div>
     
     <div className='mb-12 print:hidden py-8 flex justify-center items-center'>

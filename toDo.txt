@@ -9,10 +9,7 @@ upravit tailwind css
 tokeny
 
 ---
-zkontrolovat jeho obsah
-zkontrolovat jeho funkcionalitu
-
-----
-Přidat další filtr za zaměstnavatele.   -zkontrolovat funkcionalitu
---
+-
+datum sepsání o úrazu- tuto řádku doplnit do injuryForm - zmínit mirce, že tato informace není třeba vyplnit, protože
+jsem schopná jí ze systému vzít sama.
 
