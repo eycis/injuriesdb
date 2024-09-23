@@ -23,6 +23,7 @@ const InjuryFormExample = () => {
               <input
                 type="checkbox"
                 className="mr-2"
+                disabled
               />
               S hospitalizací delší než 5 dnů
             </label>
@@ -32,7 +33,7 @@ const InjuryFormExample = () => {
               <input
                 type="checkbox"
                 className="mr-2"
-                readOnly
+                disabled
               />
               Ostatním
             </label>
@@ -611,7 +612,7 @@ const InjuryFormExample = () => {
               className="form-grid" 
               value="Vzor" 
               readOnly 
-              rows={10}/>
+              rows={11}/>
             <div className="flex justify-end">
             <div className="grid grid-cols-4 gap-0">
               <div className="border border-black w-5 h-5"></div>
