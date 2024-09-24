@@ -6,7 +6,7 @@ import { FormData } from '@/models/form';
 const InjuryForm = () => {
     
   const [formData, setFormData] = useState<FormData>({
-    recordId:'',
+    recordId: 0,
     employer: '',
     entity: '',
     insurance: '',
@@ -52,7 +52,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
 
         
       </form>
-      <div className='mb-[3rem] print:hidden py-[2rem] flex justify-center items-center'>
+      <div className='mb-12 print:hidden py-8 flex justify-center items-center'>
       <Link to="/">
         <button 
           type="submit" 

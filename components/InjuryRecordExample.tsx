@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-const InjuryFormExample = () => {
+const InjuryRecordExample = () => {
     return (
         <div className="bg-white max-w-4xl mx-auto mt-7 pt-20 shadow-lg rounded-lg h-auto print:pt-0">
         <form>
-            <h1 className="text-lg form-text uppercase px-[2rem] mb-[0.25rem]">
+            <h1 className="text-lg form-text uppercase px-8 mb-2">
               Záznam o úrazu:
               </h1>
-            <div className='px-[1rem]'>
+            <div className='px-4'>
             <label className="text-sm">
               <input
                 type="checkbox"
@@ -18,7 +18,7 @@ const InjuryFormExample = () => {
               Smrtelném
             </label>
             </div>
-            <div className='px-[1rem]'>
+            <div className='px-4'>
             <label className="text-sm">
               <input
                 type="checkbox"
@@ -28,7 +28,7 @@ const InjuryFormExample = () => {
               S hospitalizací delší než 5 dnů
             </label>
             </div>
-            <div className='px-[1rem]'>
+            <div className='px-4'>
             <label className="text-sm">
               <input
                 type="checkbox"
@@ -38,7 +38,7 @@ const InjuryFormExample = () => {
               Ostatním
             </label>
               </div>
-            <div className="grid grid-cols-2 gap-4 px-[1rem]">
+            <div className="grid grid-cols-2 gap-4 px-4">
             <div>
                 <label className='form-text'>Evidenční číslo záznamu:</label> 
             </div>
@@ -66,7 +66,7 @@ const InjuryFormExample = () => {
             </div>
             {/* --------- */}
               <label className='record-header'> A. Údaje o zaměstnavateli, u kterého je urázem postižený zaměstnanec v základním pracovněprávním vztahu</label>
-              <div className="grid grid-cols-2 gap-1 px-[1rem]">
+              <div className="grid grid-cols-2 gap-1 px-4">
                 <div>
                   <label className="form-text">1. IČ:</label>
                   <input
@@ -97,7 +97,7 @@ const InjuryFormExample = () => {
                   disabled
                   value = "Kuchyň"/>
                 <label className='form-text'>4. Bylo místo úrazu pravidelným pracovištěm úrazem postiženého zaměstnance:</label>
-                <div className="grid grid-cols-2 gap-1]">
+                <div className="grid grid-cols-2 gap-1">
                 <div>
                 <label className="flex items-center">
                   <input
@@ -124,7 +124,7 @@ const InjuryFormExample = () => {
                 </div>
                 {/* ----- */}
                 <label className='record-header'> B. Údaje o zaměstnavateli, u kterého k úrazu došlo (pokud se nejedná o zaměstnavatele uvedeného v části A záznamu)</label>
-            <div className="grid grid-cols-2 gap-1 px-[1rem]">
+            <div className="grid grid-cols-2 gap-1 px-4">
               <div>
                 <label className='form-text'>1. IČ:</label>
                 <input
@@ -142,7 +142,7 @@ const InjuryFormExample = () => {
                   value = ""
                   />
               </div>
-              <div className='grid grid-cols-1 px-[1rem]'>
+              <div className='grid grid-cols-1 px-4'>
               <div>
                 <label className='form-text'>2. Hlavní činnost (CZ-NACE), v jejímž rámci k úrazu došlo:</label>
                 <input 
@@ -164,7 +164,7 @@ const InjuryFormExample = () => {
     
             {/* ------ */}
             <label className='record-header'> C. Údaje o úrazem postiženém zaměstnanci</label>
-            <div className="grid grid-cols-2 px-[1rem]">
+            <div className="grid grid-cols-2 px-4">
               <div>
                 <label className='form-text'>1. Jméno a přijmení:</label>
                 <input 
@@ -175,7 +175,7 @@ const InjuryFormExample = () => {
               </div>
               <div>
                 <label className='form-text'>Pohlaví:</label>
-                <div className="grid grid-cols-2 px-[1rem]">
+                <div className="grid grid-cols-2 px-4">
                 <label className="flex items-center">
                   <input
                     type="checkbox"
@@ -212,7 +212,7 @@ const InjuryFormExample = () => {
                   readOnly/>
               </div>
               </div>
-              <div className='px-[1rem]'>
+              <div className='px-4'>
                 <label className='form-text'>4. Adresa pro doručování:</label>
                 <input 
                   type="text" 
@@ -220,7 +220,7 @@ const InjuryFormExample = () => {
                   value = "Jeronýmova 5, Praha 4"
                   readOnly/>
               </div>
-              <div className="grid grid-cols-2 gap-4 px-[1rem] pt-3">
+              <div className="grid grid-cols-2 gap-4 px-4 pt-3">
               <div>
                 <label className='form-text'>5. Klasifikace zaměstnání (CZ-ISCO):</label>
                 <input 
@@ -238,9 +238,9 @@ const InjuryFormExample = () => {
                   readOnly/>
               </div>
               </div>
-              <div className='px-[1rem]'>
+              <div className='px-4'>
                 <label className='form-text'>7. Délka trvání základního pracovněprávního vztahu u zaměstnavatele:</label>
-                <div className="grid grid-cols-4 gap-4 px-[1rem]">
+                <div className="grid grid-cols-4 gap-4 px-4">
                 <div>
                 <label  className='form-text'>Roků: </label></div>
                 <div>
@@ -262,7 +262,7 @@ const InjuryFormExample = () => {
                 </div>
                 </div>
               </div>
-              <div className='px-[1rem]'>
+              <div className='px-4'>
                 <label className='form-text'>8. Úrazem postižený je:</label>
                 <label className="flex items-center checkbox-label">
                   <input
@@ -290,7 +290,7 @@ const InjuryFormExample = () => {
                   osoba vykonávající činnosti nebo poskytující služby mimo pracovněprávní vztahy (§ 12 zákona č. 309/2006 Sb.)
                 </label>
               </div>
-              <div className='px-[1rem]'>
+              <div className='px-4'>
                 <label className='form-text'>9. Trvání pracovní neschopnosti následkem úrazu</label>
                 <div className="grid grid-cols-6 gap-0">
                 <label  className='form-text py-2'>od: </label>
@@ -315,8 +315,8 @@ const InjuryFormExample = () => {
               </div>
     
                 <label className='record-header'>D. Údaje o úrazu</label>
-                <div className="grid grid-cols-2 gap-0 px-[1rem]">
-                <div className="grid grid-cols-2 gap-0 px-[1rem]">
+                <div className="grid grid-cols-2 gap-0 px-4">
+                <div className="grid grid-cols-2 gap-0 px-4">
                 <div className='colspan-1'>
                 <label  className='form-text'>1. Datum úrazu: </label></div>
                 <div className='colspan-1'>
@@ -345,7 +345,7 @@ const InjuryFormExample = () => {
                   readOnly/>
                 </div>
                 </div>
-                <div className="grid grid-cols-2 px-[1rem]">
+                <div className="grid grid-cols-2 px-4">
                   <div className="col-span-2">
                 <label  className='form-text'>2. Počet hodin odpracovaných bezprostředně před vznikem úrazu: </label>
                 <input 
@@ -357,7 +357,7 @@ const InjuryFormExample = () => {
                 </div>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4 px-[1rem] mt-4">
+                <div className="grid grid-cols-2 gap-4 px-4 mt-4">
               <div className="col-span-1">
                 <label className="form-text">3. Druh zranění:</label>
                 <div className="flex">
@@ -390,7 +390,7 @@ const InjuryFormExample = () => {
               </div>
             </div>
 
-                <div className='px-[1rem]'>
+                <div className='px-4'>
                 <label  className='form-text'>5. Počet zraněných osob: </label>
                 <input 
                   type="text" 
@@ -400,8 +400,8 @@ const InjuryFormExample = () => {
                 </div>
     
                 
-              <h3 className="form-text px-[1rem]">Co bylo zdrojem úrazu?</h3>
-              <div className="grid grid-cols-2 gap-1 px-[1rem]">
+              <h3 className="form-text px-4">Co bylo zdrojem úrazu?</h3>
+              <div className="grid grid-cols-2 gap-1 px-4">
                 <label className="flex items-center checkbox-label">
                   <input
                     type="checkbox"
@@ -511,8 +511,8 @@ const InjuryFormExample = () => {
               </div>
 
     
-              <h3 className="form-text px-[1rem]">Proč k úrazu došlo? (příčiny)</h3>
-              <div className="grid grid-cols-2 gap-1 px-[1rem]">
+              <h3 className="form-text px-4">Proč k úrazu došlo? (příčiny)</h3>
+              <div className="grid grid-cols-2 gap-1 px-4">
                 <label className="flex items-center checkbox-label">
                   <input
                     type="checkbox"
@@ -577,7 +577,7 @@ const InjuryFormExample = () => {
                 </div>
               </div>
               </div>
-              <div className='px-[1rem]'>
+              <div className='px-4'>
                 <label className='form-text'>8. Byla u úrazem postiženého zaměstnance provedena kontrola přítomnosti
                   alkoholu nebo jiných návykových látek a pokud ano, s jakým výsledkem? 
                 </label>
@@ -606,7 +606,7 @@ const InjuryFormExample = () => {
                 value="Negativní"/>
                 </div>
             </div>
-            <div className='px-[1rem]'>
+            <div className='px-4'>
             <label className='form-text'>9. Popis úrazového děje, rozvedení popisu místa, příčin a okolností, za nichž došlo k úrazu:</label>
             <textarea 
               className="form-grid" 
@@ -743,7 +743,7 @@ const InjuryFormExample = () => {
                 </table>
               </div>
     
-            <div className='print:hidden px-[1rem]'>
+            <div className='print:hidden px-4'>
             <h3 className="form-text mt-10">Zapsal - jméno, přijmení, funkce</h3>
             <textarea className="form-grid" rows={1} readOnly value="Anna Nováková"/>
        
@@ -762,4 +762,4 @@ const InjuryFormExample = () => {
 );
 };
 
-export default InjuryFormExample
+export default InjuryRecordExample

@@ -1,21 +1,21 @@
-import { exportToExcel } from '@/Services/exportToExcelService';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { FormData } from '@/models/form';
   
 
 const InjuryFormExample = () => {
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<FormData>({
+    recordId: 654116,
     employer: 'Zamestnavatel_vzor',
     entity: '654321',
     insurance: 'XYZ Insurance',
     name: 'Jan Novák',
-    birthDate: '1985-07-23',
-    personalNumber: '123456',
+    birthDate: new Date('1990-03-05'),
+    personalNumber: 123456,
     address: 'Praha 4, Česká republika',
     position: 'Technik',
-    hoursWorked: '6 hodin',
-    injuryDateTime: '2024-09-10T14:30',
+    hoursWorked: 6,
+    injuryDateTime: new Date('2024-12-06'),
     injuryDescription: 'Řezná rána na ruce',
     doctorVisit: 'Ano',
     alcoholTest: 'Ne',
@@ -29,7 +29,7 @@ const InjuryFormExample = () => {
     preventionMeasures: 'Zvýšení kontroly bezpečnostních postupů.',
     witnessInfo: 'Petr Dvořák',
     supervisor: 'Anna Nováková',
-    numberOfInjuredPeople: '1 osoba',
+    numberOfInjuredPeople: 1,
     supervisorEmail: 'example@gmail.com',
     injuredBodypart:"Řezná rána na ruce",
   });
@@ -66,7 +66,7 @@ const InjuryFormExample = () => {
         </div>
         </div>
         <div className="bg-white max-w-4xl mx-auto mt-1 pt-5 shadow-lg rounded-lg h-auto print:pt-0" >
-        <div className="grid grid-cols-2 gap-0 px-[1rem]">
+        <div className="grid grid-cols-2 gap-0 px-4">
         <div>
             <label className='form-text'>Zaměstnavatel:</label>
             <input 
@@ -117,7 +117,7 @@ const InjuryFormExample = () => {
               type="date" 
               name = "birthDate"
               className="form-grid h-5"
-              value = {formData.birthDate}
+              value = {formData.birthDate.toISOString().slice(0,10)}
               disabled={!isAdmin}
               onChange={handleInputChange}
               placeholder="Datum narození"/>
@@ -172,24 +172,24 @@ const InjuryFormExample = () => {
               type="datetime-local" 
               name="injuryDateTime"
               className="form-grid h-5"
-              value = {formData.injuryDateTime}
+              value = {formData.injuryDateTime.toISOString().slice(0,10)}
               disabled={!isAdmin}
               onChange={handleInputChange}
               placeholder="Datum a čas úrazu"/>
           </div>
         </div>
 
-        <h2 className="form-text px-[1rem]">Druh zranění a zraněná část těla:</h2>
+        <h2 className="form-text px-4">Druh zranění a zraněná část těla:</h2>
         <input 
           type="text" 
-          className="form-grid h-5 px-[1rem]" 
+          className="form-grid h-5 px-4" 
           value={formData.injuredBodypart}
           disabled={!isAdmin} 
           name="injuredBodypart" 
           onChange={handleInputChange}
           placeholder="Popis zranění"/>
         
-        <div className="grid grid-cols-4 gap-2 px-[1rem]">
+        <div className="grid grid-cols-4 gap-2 px-4">
         <div>
             <label className='form-text'>Počet zraněných osob:</label>
             <input 
@@ -236,8 +236,8 @@ const InjuryFormExample = () => {
         </div>
         </div>
 
-        <h3 className="form-text px-[1rem]">Druh pracovního úrazu:</h3>
-          <div className="grid grid-cols-2 gap-0 px-[1rem]">
+        <h3 className="form-text px-4">Druh pracovního úrazu:</h3>
+          <div className="grid grid-cols-2 gap-0 px-4">
             <label className="flex items-center checkbox-label">
               <input
                 type="checkbox"
@@ -281,8 +281,8 @@ const InjuryFormExample = () => {
             </label>
           </div>
 
-          <h3 className="form-text px-[1rem]">Co bylo zdrojem úrazu?</h3>
-          <div className="grid grid-cols-2 gap-0 px-[1rem]">
+          <h3 className="form-text px-4">Co bylo zdrojem úrazu?</h3>
+          <div className="grid grid-cols-2 gap-0 px-4">
             <label className="flex items-center checkbox-label">
               <input
                 type="checkbox"
@@ -374,8 +374,8 @@ const InjuryFormExample = () => {
             </label>
           </div>
 
-          <h3 className="form-text px-[1rem]">Proč k úrazu došlo?</h3>
-          <div className="grid grid-cols-2 gap-0  px-[1rem] ">
+          <h3 className="form-text px-4">Proč k úrazu došlo?</h3>
+          <div className="grid grid-cols-2 gap-0  px-4 ">
             <label className="flex items-center checkbox-label">
               <input
                 type="checkbox"
@@ -436,7 +436,7 @@ const InjuryFormExample = () => {
           </div>
 
        
-        <div className="px-[1rem]">
+        <div className="px-4">
         <h3 className="form-text">Činnost, při níž k úrazu došlo:</h3>
         <textarea 
           className="form-grid py-0" 
@@ -449,7 +449,7 @@ const InjuryFormExample = () => {
 
         <h3 className="form-text">Místo úrazu:</h3>
         <textarea 
-          className="form-grid px-[1rem] py-0" 
+          className="form-grid px-4 py-0" 
           rows={1} 
           name= "location"
           value = {formData.location}
@@ -459,7 +459,7 @@ const InjuryFormExample = () => {
 
         <h3 className="form-text">Popis úrazového děje:</h3>
         <textarea 
-          className="form-grid px-[1rem] py-0" 
+          className="form-grid px-4 py-0" 
           rows={1} 
           name = "injuryDescription"
           value = {formData.injuryDescription}
@@ -469,7 +469,7 @@ const InjuryFormExample = () => {
 
         <h3 className="form-text">Jaké předpisy byly v souvislosti s úrazem porušeny a kým:</h3>
         <textarea 
-          className="form-grid px-[1rem] py-0" 
+          className="form-grid px-4 py-0" 
           rows={1}
           name = "violation"
           value = {formData.violation}
@@ -479,7 +479,7 @@ const InjuryFormExample = () => {
 
         <h3 className="form-text">Opatření přijatá k zabránění opakování pracovního úrazu:</h3>
         <textarea 
-          className="form-grid px-[1rem] py-0" 
+          className="form-grid px-4 py-0" 
           rows={1} 
           name = "preventionMeasures"
           value = {formData.preventionMeasures}
@@ -489,7 +489,7 @@ const InjuryFormExample = () => {
 
         <h3 className="form-text">Jména svědků úrazu:</h3>
         <textarea 
-          className="form-grid px-[1rem] py-0" 
+          className="form-grid px-4 py-0" 
           rows={1} 
           name = "witnessInfo"
           value = {formData.witnessInfo}
@@ -500,7 +500,7 @@ const InjuryFormExample = () => {
     
         <h3 className="form-text">Zapsal - jméno, přijmení, funkce:</h3>
         <textarea 
-          className="form-grid px-[1rem]" 
+          className="form-grid px-4" 
           rows={1} 
           name = "supervisor"
           value = {formData.supervisor}
@@ -511,7 +511,7 @@ const InjuryFormExample = () => {
 
         <h3 className="form-text print:hidden">Zapsal - e-mail:</h3>
         <textarea 
-          className="form-grid px-[1rem] print:hidden" 
+          className="form-grid px-4 print:hidden" 
           rows={1} 
           name = "supervisorEmail"
           value = {formData.supervisorEmail}

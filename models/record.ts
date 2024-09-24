@@ -1,47 +1,46 @@
-export interface InjuryRecordData {
-    entityActivity: string;
-    recordId: string;
-    employer: string;
-    employerInfo: string;
-    entity: string;
-    insurance: string;
-    name: string;
-    birthDate: string;
-    personalNumber: string;
-    address: string;
-    position: string;
-    hoursWorked: string;
-    injuryDateTime: string;
-    injuryDescription: string;
-    doctorVisit: string;
-    alcoholTest: string;
-    alcoholTestResult: string;
-    injuryType: string;
-    injuryCause: string;
-    activity: string;
-    location: string;
-    injuryEventDescription: string;
-    violation: string;
-    preventionMeasures: string;
-    witnessInfo: string;
-    supervisor: string;
-    numberOfInjuredPeople: string;
-    supervisorEmail: string;
-    injuredBodypart: string;
-    mainActivity: string;
-    IC: string;
-    mainActivityB: string;
-    locationB: string;
-    employerInfoB: string;
-    ICB: string;
-    deliveryAddress: string;
-    nationality: string;
-    From: string;
-    Until: string;
-    dateOfDeath: string;
-    bodyPart: string;
-    yearsWorked: string;
-    monthsWorked: string;
-    dayCount: string;
-  }
-  
+export const InjuryRecordData = {
+  entityActivity: '',
+  recordId: 0,
+  employer: '',
+  employerInfo: '',
+  entity: '',
+  insurance: '',
+  name: '',
+  birthDate: new Date(),
+  personalNumber: 0,
+  address: '',
+  position: '',
+  hoursWorked: 0,
+  injuryDateTime: new Date(),
+  injuryDescription: '',
+  doctorVisit: false,
+  alcoholTest: false,
+  alcoholTestResult: '',
+  injuryType: '',
+  injuryCause: '',
+  activity: '',
+  location: '',
+  injuryEventDescription: '',
+  violation: '',
+  preventionMeasures: '',
+  witnessInfo: '',
+  supervisor: '',
+  numberOfInjuredPeople: 0,
+  supervisorEmail: '',
+  injuredBodypart: '',
+  mainActivity: '',
+  IC: '',
+  mainActivityB: '',
+  locationB: '',
+  employerInfoB: '',
+  ICB: '',
+  deliveryAddress: '',
+  nationality: '',
+  From: new Date(),
+  Until: new Date(),
+  dateOfDeath: undefined,
+  bodyPart: '',
+  yearsWorked: 0,
+  monthsWorked: 0,
+  dayCount: 0,
+}
