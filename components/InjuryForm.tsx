@@ -5,41 +5,16 @@ import { FormData } from '@/models/form';
 
 const InjuryForm = () => {
     
-  const [formData, setFormData] = useState<FormData>({
-    recordId:'',
-    employer: '',
-    entity: '',
-    insurance: '',
-    name: '',
-    birthDate: new Date(),
-    personalNumber: 0,
-    address: '',
-    position: '',
-    hoursWorked: 0,
-    injuryDateTime: new Date(),
-    injuryDescription: '',
-    doctorVisit: '',
-    alcoholTest: '',
-    alcoholTestResult: '',
-    injuryType: '',
-    injuryCause: '',
-    activity: '',
-    location: '',
-    injuryEventDescription: '',
-    violation: '',
-    preventionMeasures: '',
-    witnessInfo: '',
-    supervisor: '',
-    numberOfInjuredPeople: 0,
-    supervisorEmail: '',
-    injuredBodypart: '',
+  const [formData, setFormData] = useState<typeof FormData>({
+    ...FormData
   });
+  
 
-const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value, type } = e.target;
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
     
-    setFormData((prevState) => ({
-      ...prevState,
+    setFormData((prevFormData) => ({
+      ...prevFormData,
       [name]: value,
     }));
 };
@@ -52,7 +27,7 @@ const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElemen
 
         
       </form>
-      <div className='mb-[3rem] print:hidden py-[2rem] flex justify-center items-center'>
+      <div className='mb-12 print:hidden py-8 flex justify-center items-center'>
       <Link to="/">
         <button 
           type="submit" 

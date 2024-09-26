@@ -1,71 +1,27 @@
 import React, { useState } from 'react'
-import BasicInfo from './BasicFormInfo'
 import { InjuryRecordData } from '@/models/record';
 
 export const InjuryRecord = () => {
-    const [formData, setFormData] = useState({
-      entityActivity:'654321',
-      recordId: '',
-      employer: 'Zamestnavatel_vzor',
-      employerInfo:'',
-      entity: 'ABC Corporation',
-      insurance: 'XYZ Insurance',
-      name: 'Jan Novák',
-      birthDate: '1985-07-23',
-      personalNumber: '123456',
-      address: 'Praha 4, Česká republika',
-      position: 'Technik',
-      hoursWorked: '6 hodin',
-      injuryDateTime: '2024-09-10T14:30',
-      injuryDescription: 'Řezná rána na ruce',
-      doctorVisit: 'Ano',
-      alcoholTest: 'Ne',
-      alcoholTestResult: 'Negativní',
-      injuryType: '',
-      injuryCause: '',
-      activity: 'Údržba stroje',
-      location: 'sklad',
-      injuryEventDescription: 'Při údržbě stroje došlo k nečekanému spuštění.',
-      violation: 'Porušení bezpečnostních předpisů.',
-      preventionMeasures: 'Zvýšení kontroly bezpečnostních postupů.',
-      witnessInfo: 'Petr Dvořák',
-      supervisor: 'Anna Nováková',
-      numberOfInjuredPeople: '1 osoba',
-      supervisorEmail: 'example@gmail.com',
-      injuredBodypart:"Řezná rána na ruce",
-      mainActivity:'',
-      IC:'',
-      mainActivityB:'',
-      locationB:'',
-      employerInfoB:'',
-      ICB:'',
-      deliveryAddress:'',
-      nationality:'',
-      From:'',
-      Until:'',
-      dateOfDeath:'',
-      bodyPart:'',
-      yearsWorked: '', 
-      monthsWorked: '', 
-      dayCount: '' 
-      });
 
-      const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)  => {
+  const [recordData, setRecordData] = useState<typeof InjuryRecordData>({
+    ...InjuryRecordData
+  });    
+
+      const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)  => {
         const { name, value } = e.target;
-        setFormData((prevFormData) => ({
-          ...prevFormData,
+        setRecordData((prevRecordData) => ({
+          ...prevRecordData,
           [name]: value,
         }));
     };
   
-
   return (
     <div className="bg-white max-w-4xl mx-auto mt-7 pt-20 shadow-lg rounded-lg h-auto print:pt-0">
     <form>
-        <h1 className="text-lg form-text uppercase px-[2rem] mb-[0.25rem]">
+        <h1 className="text-lg form-text uppercase mx-10 mb-2">
           Záznam o úrazu:
           </h1>
-        <div className='px-[1rem]'>
+        <div className='px-4'>
         <label className=" text-sm">
           <input
             type="checkbox"
@@ -74,7 +30,7 @@ export const InjuryRecord = () => {
           Smrtelném
         </label>
         </div>
-        <div className='px-[1rem]'>
+        <div className='px-4'>
         <label className="text-sm">
           <input
             type="checkbox"
@@ -83,7 +39,7 @@ export const InjuryRecord = () => {
           S hospitalizací delší než 5 dnů
         </label>
         </div >
-        <div className='px-[1rem]'>
+        <div className='px-4'>
         <label className="text-sm">
           <input
             type="checkbox"
@@ -92,7 +48,7 @@ export const InjuryRecord = () => {
           Ostatním
         </label>
         </div>
-        <div className="grid grid-cols-2 gap-4 px-[1rem]">
+        <div className="grid grid-cols-2 gap-4 px-4">
         <div>
             <label className='form-text'>Evidenční číslo záznamu:</label> 
         </div>
@@ -110,29 +66,30 @@ export const InjuryRecord = () => {
             <input 
               type="text" 
               className="form-grid"
-              value={formData.employer}
+              value={recordData.employer}
               name= "employer"
+              onChange={handleChange}
               placeholder="Doplňte"/>
         </div>
         </div>
         {/* --------- */}
           <label className='record-header'> A. Údaje o zaměstnavateli, u kterého je urázem postižený zaměstnanec v základním pracovněprávním vztahu</label>
-          <div className="grid grid-cols-2 gap-1 px-[1rem]">
+          <div className="grid grid-cols-2 gap-1 px-4">
             <div>
               <label className="form-text">1. IČ:</label>
               <input
                 type="text"
                 name="IC" 
                 className="form-grid" 
-                onChange={handleInputChange}
-                value={formData.IC}/>
+                onChange={handleChange}
+                value={recordData.IC}/>
 
               <label className="form-text">Název zaměstnavatele a jeho sídlo:</label>
               <textarea 
                 name="employerInfo" 
                 className="form-grid"
-                onChange={handleInputChange}
-                value={formData.employerInfo}
+                onChange={handleChange}
+                value={recordData.employerInfo}
                 rows={3}  />
             </div>
           <div>
@@ -140,18 +97,18 @@ export const InjuryRecord = () => {
             <input 
               type="text" 
               className="form-grid"
-              onChange={handleInputChange}
-              value={formData.mainActivity}
+              onChange={handleChange}
+              value={recordData.mainActivity}
               name= "mainActivity"/>
             <label className='form-text'>3. Místo, kde k úrazu došlo:</label>
             <input 
               type="text"
               name = "location"
-              onChange={handleInputChange}
-              value={formData.location}
+              onChange={handleChange}
+              value={recordData.location}
               className="form-grid" />
             <label className='form-text'>4. Bylo místo úrazu pravidelným pracovištěm úrazem postiženého zaměstnance:</label>
-            <div className="grid grid-cols-2 gap-1]">
+            <div className="grid grid-cols-2 gap-1">
             <div>
             <label className="flex items-center">
               <input
@@ -175,33 +132,33 @@ export const InjuryRecord = () => {
             </div>
             {/* ----- */}
             <label className='record-header'> B. Údaje o zaměstnavateli, u kterého k úrazu došlo (pokud se nejedná o zaměstnavatele uvedeného v části A záznamu)</label>
-        <div className="grid grid-cols-2 gap-1 px-[1rem]">
+        <div className="grid grid-cols-2 gap-1 px-4">
           <div>
             <label className='form-text'>1. IČ:</label>
             <input
               type="text"
               name="ICB" 
               className="form-grid" 
-              onChange={handleInputChange}
-              value={formData.ICB}
+              onChange={handleChange}
+              value={recordData.ICB}
               />
           <label className='form-text'>Název zaměstnavatele a jeho sídlo (adresa):</label>
             <textarea  
                 name="employerInfoB" 
                 className="form-grid"
-                onChange={handleInputChange}
-                value={formData.employerInfoB}
+                onChange={handleChange}
+                value={recordData.employerInfoB}
                 rows={2} 
               />
           </div>
-          <div className='grid grid-cols-1 px-[1rem] '>
+          <div className='grid grid-cols-1 px-4 '>
           <div>
             <label className='form-text'>2. Hlavní činnost (CZ-NACE), v jejímž rámci k úrazu došlo:</label>
             <input 
               type="text" 
               className="form-grid"
-              onChange={handleInputChange}
-              value={formData.mainActivityB}
+              onChange={handleChange}
+              value={recordData.mainActivityB}
               name= "mainActivityB"/>
           </div>
           <div>
@@ -209,8 +166,8 @@ export const InjuryRecord = () => {
             <input 
               type="text"
               name = "locationB"
-              onChange={handleInputChange}
-              value={formData.locationB}
+              onChange={handleChange}
+              value={recordData.locationB}
               className="form-grid" />
           </div>
           </div>
@@ -218,7 +175,7 @@ export const InjuryRecord = () => {
 
         {/* ------ */}
         <label className='record-header'> C. Údaje o úrazem postiženém zaměstnanci</label>
-        <div className="grid grid-cols-2 px-[1rem]">
+        <div className="grid grid-cols-2 px-4">
           <div>
             <label className='form-text'>1. Jméno a přijmení:</label>
             <input 
@@ -229,7 +186,7 @@ export const InjuryRecord = () => {
           </div>
           <div>
             <label className='form-text'>Pohlaví:</label>
-            <div className="grid grid-cols-2 px-[1rem]">
+            <div className="grid grid-cols-2 px-4">
             <label className="flex items-center">
               <input
                 type="checkbox"
@@ -260,20 +217,20 @@ export const InjuryRecord = () => {
               type="text" 
               className="form-grid" 
               name= "nationality"
-              onChange={handleInputChange}
-              value={formData.nationality}/>
+              onChange={handleChange}
+              value={recordData.nationality}/>
           </div>
           </div>
-          <div className='px-[1rem]'>
+          <div className='px-4'>
             <label className='form-text'>4. Adresa pro doručování:</label>
             <input 
               type="text" 
               className="form-grid" 
               name= "deliveryAddress"
-              onChange={handleInputChange}
-              value={formData.deliveryAddress}/>
+              onChange={handleChange}
+              value={recordData.deliveryAddress}/>
           </div>
-          <div className="grid grid-cols-2 gap-4 px-[1rem]">
+          <div className="grid grid-cols-2 gap-4 px-4">
           <div>
             <label className='form-text'>5. Klasifikace zaměstnání (CZ-ISCO):</label>
             <input 
@@ -291,9 +248,9 @@ export const InjuryRecord = () => {
               />
           </div>
           </div>
-          <div className='px-[1rem]'>
+          <div className='px-4'>
             <label className='form-text'>7. Délka trvání základního pracovněprávního vztahu u zaměstnavatele:</label>
-            <div className="grid grid-cols-4 gap-4 px-[1rem] pt-3">
+            <div className="grid grid-cols-4 gap-4 px-4 pt-3">
             <div className='pt-2'>
             <label  
               className='form-text'>Roků: </label></div>
@@ -302,8 +259,8 @@ export const InjuryRecord = () => {
               type="text" 
               className="form-grid" 
               name= "yearsWorked"
-              onChange={handleInputChange}
-              value={formData.yearsWorked}/>
+              onChange={handleChange}
+              value={recordData.yearsWorked}/>
             </div>
             <div className='pt-2'>
              <label  className='form-text'>Měsíců:</label>
@@ -313,12 +270,12 @@ export const InjuryRecord = () => {
               type="text" 
               className="form-grid" 
               name= "monthsWorked"
-              onChange={handleInputChange}
-              value={formData.monthsWorked}/>
+              onChange={handleChange}
+              value={recordData.monthsWorked}/>
             </div>
             </div>
           </div>
-          <div className='px-[1rem]'>
+          <div className='px-4'>
             <label className='form-text'>8. Úrazem postižený je:</label>
             <label className="flex items-center checkbox-label">
               <input
@@ -342,7 +299,7 @@ export const InjuryRecord = () => {
               osoba vykonávající činnosti nebo poskytující služby mimo pracovněprávní vztahy (§ 12 zákona č. 309/2006 Sb.)
             </label>
           </div>
-          <div className='px-[1rem]'>
+          <div className='px-4'>
             <label className='form-text'>9. Trvání pracovní neschopnosti následkem úrazu</label>
             <div className="grid grid-cols-6 gap-4">
             <label  
@@ -351,28 +308,28 @@ export const InjuryRecord = () => {
               type="text" 
               className="form-grid h-8"  
               name= "From"
-              onChange={handleInputChange}
-              value={formData.From}/>
+              onChange={handleChange}
+              value={recordData.From.toISOString().slice(0,10)}/>
              <label  className='form-text py-2' >do:</label>
             <input 
               type="text" 
               className="form-grid h-8" 
               name= "Until"
-              onChange={handleInputChange}
-              value={formData.Until}/>
+              onChange={handleChange}
+              value={recordData.Until.toISOString().slice(0,10)}/>
              <label  className='form-text py-2'>celkem kalendářní dnů:</label>
             <input 
               type="text" 
               className="form-grid h-8" 
               name= "dayCount"
-              onChange={handleInputChange}
-              value={formData.dayCount}/>
+              onChange={handleChange}
+              value={recordData.dayCount}/>
               </div>
           </div>
 
           <label className='record-header'>D. Údaje o úrazu</label>
-          <div className="grid grid-cols-2 gap-0 px-[1rem]">
-          <div className="grid grid-cols-2 gap-0 px-[1rem]">
+          <div className="grid grid-cols-2 gap-0 px-4">
+          <div className="grid grid-cols-2 gap-0 px-4">
             <div className='col-span-1'>
               <label className='form-text'>1. Datum úrazu:</label></div>
               <div className='colspan-1'>
@@ -395,14 +352,16 @@ export const InjuryRecord = () => {
                 <label className='form-text'>Datum úmrtí úrazem postiženého zaměstnance:</label></div>
                 <div>
                 <input 
-                type="date" 
+                type="text" 
                 className="border w-full" 
                 name="dateOfDeath"
-                onChange={handleInputChange}
-                value={formData.dateOfDeath}/>
+                value=" "
+                //onChange={handleChange}
+                //value={recordData.dateOfDeath}
+                />
             </div>
             </div>
-            <div className="grid grid-cols-2 px-[1rem]">
+            <div className="grid grid-cols-2 px-4">
               <div className="col-span-2">
               <label className='form-text'>2. Počet hodin odpracovaných bezprostředně před vznikem úrazu:</label>
               <input 
@@ -414,7 +373,7 @@ export const InjuryRecord = () => {
             </div>
             </div>
             
-            <div className="grid grid-cols-2 gap-4 px-[1rem] mt-4">
+            <div className="grid grid-cols-2 gap-4 px-4 mt-4">
               <div className="col-span-1">
                 <label className="form-text">3. Druh zranění:</label>
                 <div className="flex">
@@ -438,7 +397,7 @@ export const InjuryRecord = () => {
                     type="text" 
                     className="form-grid w-full" 
                     name="bodyPart" 
-                    onChange={handleInputChange} value={formData.bodyPart} />
+                    onChange={handleChange} value={recordData.bodyPart} />
                   <div className="grid grid-cols-2 gap-0">
                     <div className="border border-black w-6 h-6"></div>
                     <div className="border border-black w-6 h-6"></div>
@@ -447,7 +406,7 @@ export const InjuryRecord = () => {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-1 px-[1rem]">
+            <div className="grid grid-cols-1 gap-1 px-4">
               <label className='form-text'>5. Počet zraněných osob:</label>
               <input 
                 type="text" 
@@ -456,8 +415,8 @@ export const InjuryRecord = () => {
                 value="1"/>
             </div>     
 
-          <h3 className="form-text px-[1rem]">6. Co bylo zdrojem úrazu?</h3>
-            <div className="grid grid-cols-2 gap-1 px-[1rem]">
+          <h3 className="form-text px-4">6. Co bylo zdrojem úrazu?</h3>
+            <div className="grid grid-cols-2 gap-1 px-4">
             <label className="flex items-center checkbox-label">
                 <input type="checkbox" className="mr-2" />
                 Dopravní prostředek
@@ -467,7 +426,7 @@ export const InjuryRecord = () => {
                 Stroje a zařízení přenosná nebo mobilní
               </label>
               <label className="flex items-center checkbox-label">
-                <input type="checkbox" className="mr-2" />
+                <input type="checkbox" className="mr-2" checked/>
                 Materiál, břemena, předměty (pád, přiražení, odlétnutí, náraz, zavalení)
               </label>
               <label className="flex items-center checkbox-label">
@@ -517,8 +476,8 @@ export const InjuryRecord = () => {
               </div>
             </div>
 
-          <h3 className="form-text px-[1rem]">Proč k úrazu došlo? (příčiny)</h3>
-          <div className="grid grid-cols-2 gap-1 px-[1rem]">
+          <h3 className="form-text px-4">Proč k úrazu došlo? (příčiny)</h3>
+          <div className="grid grid-cols-2 gap-1 px-4">
             <label className="flex items-center checkbox-label">
               <input
                 type="checkbox"
@@ -576,7 +535,7 @@ export const InjuryRecord = () => {
                 </div>
             </div>
           </div>
-          <div className='pt-6 px-[1rem]'>
+          <div className='pt-6 px-4'>
             <label className='form-text'>8. Byla u úrazem postiženého zaměstnance provedena kontrola přítomnosti
               alkoholu nebo jiných návykových látek a pokud ano, s jakým výsledkem? 
             </label>
@@ -585,6 +544,7 @@ export const InjuryRecord = () => {
               <input
                 type="checkbox"
                 className="mr-2"
+                checked
               />
               ANO
             </label>
@@ -599,18 +559,21 @@ export const InjuryRecord = () => {
             <input 
             type="text" 
             className="form-grid h-8" 
-            name= "alcoholTestResult"
-            onChange={handleInputChange}
-            value={formData.alcoholTestResult}/>
+            //name= "alcoholTestResult"
+            //onChange={handleChange}
+            //value={recordData.alcoholTestResult}
+            value="Negativní"
+            />
             </div>
         </div>
-        <div className='py-3 px-[1rem]'>
+        <div className='py-3 px-4'>
         <label className='form-text'>9. Popis úrazového děje, rozvedení popisu místa, příčin a okolností, za nichž došlo k úrazu:</label>
         <textarea 
           className="form-grid" 
           name= "injuryEventDescription"
-          onChange={handleInputChange}
-          value={formData.injuryEventDescription}
+          onChange={handleChange}
+          value={recordData.injuryEventDescription}
+          placeholder='Doplňte'
           rows={10}/>
           <div className="flex justify-end">
             <div className="grid grid-cols-4 gap-0">
@@ -632,15 +595,17 @@ export const InjuryRecord = () => {
         <textarea 
           className="form-grid"  
           name= "violation"
-          onChange={handleInputChange}
-          value={formData.violation} 
+          onChange={handleChange}
+          value={recordData.violation} 
+          placeholder='Doplňte'
           rows={4}/>
         <label className='form-text'>11. Opatření přijatá k zabránění opakování pracovního úrazu:</label>
         <textarea 
           className="form-grid" 
           name= "preventionMeasures"
-          onChange={handleInputChange}
-          value={formData.preventionMeasures} 
+          onChange={handleChange}
+          value={recordData.preventionMeasures} 
+          placeholder='Doplňte'
           rows={4}/>
         </div>
         <label className='record-header'> E. Vyjádření úrazem postiženého zaměstnance a svědků úrazu případně dalších osob</label>
@@ -751,7 +716,7 @@ export const InjuryRecord = () => {
               </tbody>
             </table>
           </div>
-        <div className='print:hidden px-[1rem] pt-10'>
+        <div className='print:hidden px-4 pt-10'>
         <h3 className="form-text">Zapsal - jméno, přijmení, funkce</h3>
         <textarea className="form-grid" rows={1} value="Anna Nováková" placeholder="Doplňte"/>
    
@@ -759,17 +724,17 @@ export const InjuryRecord = () => {
         <textarea className="form-grid" name="mail"rows={1} value="example@gmail.com" placeholder="Doplňte"/>
         </div>   
     </form>
-    <div className='mb-[3rem] py-[2rem] flex justify-center items-center print:hidden '>
+    <div className='mb-12 py-8 flex justify-center items-center print:hidden '>
         <button 
           type="submit" 
-          className="bg-green-600 text-white mx-[1rem] w-[200px] h-[40px] rounded hover:bg-blue-700"
+          className="bg-green-600 text-white mx-4 w-56 h-10 rounded hover:bg-blue-700"
           onClick = {() => {
             window.alert("Záznam o zranění byl uložen.")
             }}>
           Potvrdit a uložit
         </button>
         <button type="button" 
-          className="bg-blue-500 text-white mx-[1rem] w-[200px] h-[40px] rounded hover:bg-blue-700"
+          className="bg-blue-500 text-white mx-4 w-60 h-10 rounded hover:bg-blue-700"
           onClick = {() => window.print()}>
           Vytisknout záznam o úrazu
         </button>

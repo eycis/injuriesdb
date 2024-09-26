@@ -1,47 +1,46 @@
-export interface InjuryRecordData {
-    entityActivity: string;
-    recordId: string;
-    employer: string;
-    employerInfo: string;
-    entity: string;
-    insurance: string;
-    name: string;
-    birthDate: string;
-    personalNumber: string;
-    address: string;
-    position: string;
-    hoursWorked: string;
-    injuryDateTime: string;
-    injuryDescription: string;
-    doctorVisit: string;
-    alcoholTest: string;
-    alcoholTestResult: string;
-    injuryType: string;
-    injuryCause: string;
-    activity: string;
-    location: string;
-    injuryEventDescription: string;
-    violation: string;
-    preventionMeasures: string;
-    witnessInfo: string;
-    supervisor: string;
-    numberOfInjuredPeople: string;
-    supervisorEmail: string;
-    injuredBodypart: string;
-    mainActivity: string;
-    IC: string;
-    mainActivityB: string;
-    locationB: string;
-    employerInfoB: string;
-    ICB: string;
-    deliveryAddress: string;
-    nationality: string;
-    From: string;
-    Until: string;
-    dateOfDeath: string;
-    bodyPart: string;
-    yearsWorked: string;
-    monthsWorked: string;
-    dayCount: string;
-  }
-  
+export const InjuryRecordData = {
+  entityActivity: '' as string,
+  recordId: 0 as number,
+  employer: '' as string,
+  employerInfo: '' as string,
+  entity: '' as string,
+  insurance: '' as string,
+  name: '' as string,
+  birthDate: new Date() as Date,
+  personalNumber: 0 as number,
+  address: '' as string,
+  position: '' as string,
+  hoursWorked: 0 as number,
+  injuryDateTime: new Date() as Date,
+  injuryDescription: '' as string,
+  doctorVisit: false as boolean,
+  alcoholTest: false as boolean,
+  alcoholTestResult: '' as string,
+  injuryType: '' as string,
+  injuryCause: '' as string,
+  activity: '' as string,
+  location: '' as string,
+  injuryEventDescription: '' as string,
+  violation: '' as string,
+  preventionMeasures: '' as string,
+  witnessInfo: '' as string,
+  supervisor: '' as string,
+  numberOfInjuredPeople: 0 as number,
+  supervisorEmail: '' as string,
+  injuredBodypart: '' as string,
+  mainActivity: '' as string,
+  IC: '' as string,
+  mainActivityB: '' as string,
+  locationB: '' as string,
+  employerInfoB: '' as string,
+  ICB: '' as string,
+  deliveryAddress: '' as string,
+  nationality: '' as string,
+  From: new Date() as Date,
+  Until: new Date() as Date,
+  dateOfDeath: undefined as Date | undefined,
+  bodyPart: '' as string,
+  yearsWorked: 0 as number,
+  monthsWorked: 0 as number,
+  dayCount: 0 as number,
+};

@@ -1,8 +1,8 @@
 import React from 'react'
 
 const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: any }) => (
-    <div className="px-[1rem]">
-    <div className="grid grid-cols-2 gap-4 px-[1rem]">
+    <div className="px-4">
+    <div className="grid grid-cols-2 gap-4 px-4">
             <div>
             <label className='form-text'>Zaměstnavatel:</label>
             <input 
@@ -17,7 +17,7 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
             <label className='form-text'>Provoz:</label>
             <input 
               type="text" 
-              name = "employer"
+              name = "entity"
               className="form-grid h-5"
               value = {formData.entity}
               onChange = {handleChange} 
@@ -103,7 +103,7 @@ const BasicInfo = ({ formData, handleChange }: { formData: any, handleChange: an
           </div>
         </div>
 
-        <div className="px-[1rem]">
+        <div className="px-4">
         <h2 className="form-text">Druh zranění a zraněná část těla:</h2>
         <input type="text" className="form-grid h-5" placeholder="Popis zranění"/>
         <div className="grid grid-cols-4 gap-2 ">

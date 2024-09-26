@@ -1,31 +1,29 @@
-
-export interface FormData {
-    recordId:string;
-    employer: string;
-    entity: string;
-    insurance: string;
-    name: string;
-    birthDate: Date;
-    personalNumber: number;
-    address: string;
-    position: string;
-    hoursWorked: number;
-    injuryDateTime: Date;
-    injuryDescription: string;
-    doctorVisit: string;
-    alcoholTest: string;
-    alcoholTestResult: string;
-    injuryType: string;
-    injuryCause: string;
-    activity: string;
-    location: string;
-    injuryEventDescription: string;
-    violation: string;
-    preventionMeasures: string;
-    witnessInfo: string;
-    supervisor: string;
-    numberOfInjuredPeople: number;
-    supervisorEmail: string,
-    injuredBodypart: string,
-  }
-  
+export const FormData = {
+  recordId: 0 as number,
+  employer: '' as string,
+  entity: '' as string,
+  insurance: '' as string,
+  name: '' as string,
+  birthDate: new Date() as Date,
+  personalNumber: 0 as number,
+  address: '' as string,
+  position: '' as string,
+  hoursWorked: 0 as number,
+  injuryDateTime: new Date() as Date,
+  injuryDescription: '' as string,
+  doctorVisit: '' as string,
+  alcoholTest: '' as string,
+  alcoholTestResult: '' as string,
+  injuryType: '' as string,
+  injuryCause: '' as string,
+  activity: '' as string,
+  location: '' as string,
+  injuryEventDescription: '' as string,
+  violation: '' as string,
+  preventionMeasures: '' as string,
+  witnessInfo: '' as string,
+  supervisor: '' as string,
+  numberOfInjuredPeople: 0 as number,
+  supervisorEmail: '' as string,
+  injuredBodypart: '' as string,
+};
