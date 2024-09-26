@@ -36,7 +36,7 @@ const InjuryList = () => {
       injuryType: 'Řezná rána',
       status: 'Čeká na zpracování',
       injury: true,
-      record: true,
+      record: false,
     },
     {
       employer: "B",
@@ -46,7 +46,7 @@ const InjuryList = () => {
       injuryType: 'Řezná rána',
       status: 'Čeká na zpracování',
       injury: true,
-      record: true,
+      record: false,
     },
     {
       employer: "B",
@@ -54,9 +54,9 @@ const InjuryList = () => {
       name: 'Petr Dvořák',
       injuryDate: '2024-01-8 12:00',
       injuryType: 'Úder předmětem',
-      status: 'Čeká na zpracování',
+      status: 'Zpracován',
       injury: true,
-      record: true,
+      record: false,
     },
   ];
 

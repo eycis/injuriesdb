@@ -4,7 +4,7 @@ import { FormData } from '@/models/form';
   
 
 const InjuryFormExample = () => {
-  const [formData, setFormData] = useState<FormData>({
+  const [formData, setFormData] = useState<typeof FormData>({
     recordId: 654116,
     employer: 'Zamestnavatel_vzor',
     entity: '654321',
@@ -15,7 +15,7 @@ const InjuryFormExample = () => {
     address: 'Praha 4, Česká republika',
     position: 'Technik',
     hoursWorked: 6,
-    injuryDateTime: new Date('2024-12-06'),
+    injuryDateTime: new Date('2024-12-06T10:30:00'),
     injuryDescription: 'Řezná rána na ruce',
     doctorVisit: 'Ano',
     alcoholTest: 'Ne',
@@ -36,7 +36,7 @@ const InjuryFormExample = () => {
 
     const [isAdmin, setIsAdmin] = useState(false);
 
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)  => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)  => {
       const { name, value } = e.target;
       setFormData((prevFormData) => ({
         ...prevFormData,
@@ -75,7 +75,7 @@ const InjuryFormExample = () => {
               className="form-grid h-5"
               value = {formData.employer}
               disabled={!isAdmin}
-              onChange={handleInputChange}
+              onChange={handleChange}
               placeholder="Zaměstnavatel"/>
           </div>
           <div>
@@ -86,7 +86,7 @@ const InjuryFormExample = () => {
               className="form-grid h-5"
               value = {formData.entity}
               disabled={!isAdmin}
-              onChange={handleInputChange}
+              onChange={handleChange}
               placeholder="Provoz"/>
           </div>
           <div>
@@ -96,7 +96,7 @@ const InjuryFormExample = () => {
               name = "insurance"
               className="form-grid h-5"
               value = {formData.insurance}
-              onChange={handleInputChange}
+              onChange={handleChange}
               disabled={!isAdmin}
               placeholder="Evidenční číslo"/>
           </div>
@@ -108,7 +108,7 @@ const InjuryFormExample = () => {
               className="form-grid h-5" 
               value = {formData.name}
               disabled={!isAdmin}
-              onChange={handleInputChange}
+              onChange={handleChange}
               placeholder="Jméno"/>
           </div>
           <div>
@@ -119,7 +119,7 @@ const InjuryFormExample = () => {
               className="form-grid h-5"
               value = {formData.birthDate.toISOString().slice(0,10)}
               disabled={!isAdmin}
-              onChange={handleInputChange}
+              onChange={handleChange}
               placeholder="Datum narození"/>
           </div>
           <div>
@@ -130,7 +130,7 @@ const InjuryFormExample = () => {
               className="form-grid h-5" 
               value = {formData.personalNumber}
               disabled={!isAdmin}
-              onChange={handleInputChange}
+              onChange={handleChange}
               placeholder="Osobní číslo"/>
           </div>
           <div>
@@ -141,7 +141,7 @@ const InjuryFormExample = () => {
               className="form-grid h-5" 
               value = {formData.address}
               disabled={!isAdmin}
-              onChange={handleInputChange}
+              onChange={handleChange}
               placeholder="Bydliště"/>
           </div>
           <div>
@@ -152,7 +152,7 @@ const InjuryFormExample = () => {
               className="form-grid h-5" 
               value = {formData.position}
               disabled={!isAdmin}
-              onChange={handleInputChange}
+              onChange={handleChange}
               placeholder="Pracovní pozice"/>
           </div>
           <div>
@@ -163,18 +163,18 @@ const InjuryFormExample = () => {
               className="form-grid h-5" 
               value = {formData.hoursWorked}
               disabled={!isAdmin}
-              onChange={handleInputChange}
+              onChange={handleChange}
               placeholder="Odpracované hodiny"/>
           </div>
           <div >
             <label className='form-text'>Datum a čas úrazu:</label>
             <input 
-              type="datetime-local" 
+              type="text" 
               name="injuryDateTime"
               className="form-grid h-5"
-              value = {formData.injuryDateTime.toISOString().slice(0,10)}
+              value = {formData.injuryDateTime.toLocaleString()}
               disabled={!isAdmin}
-              onChange={handleInputChange}
+              onChange={handleChange}
               placeholder="Datum a čas úrazu"/>
           </div>
         </div>
@@ -186,7 +186,7 @@ const InjuryFormExample = () => {
           value={formData.injuredBodypart}
           disabled={!isAdmin} 
           name="injuredBodypart" 
-          onChange={handleInputChange}
+          onChange={handleChange}
           placeholder="Popis zranění"/>
         
         <div className="grid grid-cols-4 gap-2 px-4">
@@ -198,7 +198,7 @@ const InjuryFormExample = () => {
             className="form-grid h-5" 
             value = {formData.numberOfInjuredPeople}
             disabled={!isAdmin}
-            onChange={handleInputChange}
+            onChange={handleChange}
             placeholder="Počet zraněných"/>
         </div>
         <div>
@@ -209,7 +209,7 @@ const InjuryFormExample = () => {
             className="form-grid h-5" 
             value = {formData.doctorVisit}
             disabled={!isAdmin}
-            onChange={handleInputChange}
+            onChange={handleChange}
             placeholder="Ano/Ne"/>
         </div>
         <div>
@@ -220,7 +220,7 @@ const InjuryFormExample = () => {
             className="form-grid h-5" 
             value = {formData.alcoholTest}
             disabled={!isAdmin}
-            onChange={handleInputChange}
+            onChange={handleChange}
             placeholder="Ano/Ne"/>
         </div>
         <div>
@@ -231,7 +231,7 @@ const InjuryFormExample = () => {
             className="form-grid h-5" 
             value = {formData.alcoholTestResult}
             disabled={!isAdmin}
-            onChange={handleInputChange}
+            onChange={handleChange}
             placeholder="Výsledek"/>
         </div>
         </div>
@@ -439,12 +439,12 @@ const InjuryFormExample = () => {
         <div className="px-4">
         <h3 className="form-text">Činnost, při níž k úrazu došlo:</h3>
         <textarea 
-          className="form-grid py-0" 
+          className="form-grid py-0 px-4" 
           rows={1}
           name = "activity" 
           value = {formData.activity}
           disabled={!isAdmin}
-          onChange={handleInputChange} 
+          onChange={handleChange} 
           placeholder="Doplňte"/>
 
         <h3 className="form-text">Místo úrazu:</h3>
@@ -454,7 +454,7 @@ const InjuryFormExample = () => {
           name= "location"
           value = {formData.location}
           disabled={!isAdmin}
-          onChange={handleInputChange} 
+          onChange={handleChange} 
           placeholder="Doplňte"/>
 
         <h3 className="form-text">Popis úrazového děje:</h3>
@@ -464,7 +464,7 @@ const InjuryFormExample = () => {
           name = "injuryDescription"
           value = {formData.injuryDescription}
           disabled={!isAdmin}
-          onChange={handleInputChange} 
+          onChange={handleChange} 
           placeholder="Popis úrazu"/>
 
         <h3 className="form-text">Jaké předpisy byly v souvislosti s úrazem porušeny a kým:</h3>
@@ -474,7 +474,7 @@ const InjuryFormExample = () => {
           name = "violation"
           value = {formData.violation}
           disabled={!isAdmin}
-          onChange={handleInputChange}
+          onChange={handleChange}
           placeholder="Popis úrazu"/>
 
         <h3 className="form-text">Opatření přijatá k zabránění opakování pracovního úrazu:</h3>
@@ -484,7 +484,7 @@ const InjuryFormExample = () => {
           name = "preventionMeasures"
           value = {formData.preventionMeasures}
           disabled={!isAdmin}
-          onChange={handleInputChange}
+          onChange={handleChange}
           placeholder="Popis úrazu"/>
 
         <h3 className="form-text">Jména svědků úrazu:</h3>
@@ -494,7 +494,7 @@ const InjuryFormExample = () => {
           name = "witnessInfo"
           value = {formData.witnessInfo}
           disabled={!isAdmin}
-          onChange={handleInputChange} 
+          onChange={handleChange} 
           placeholder="Popis úrazu"/>
 
     
@@ -505,7 +505,7 @@ const InjuryFormExample = () => {
           name = "supervisor"
           value = {formData.supervisor}
           disabled={!isAdmin}
-          onChange={handleInputChange}
+          onChange={handleChange}
           placeholder="Popis úrazu" 
           />
 
@@ -516,7 +516,7 @@ const InjuryFormExample = () => {
           name = "supervisorEmail"
           value = {formData.supervisorEmail}
           disabled={!isAdmin}
-          onChange={handleInputChange}
+          onChange={handleChange}
           placeholder="Popis úrazu" 
           />
           </div>

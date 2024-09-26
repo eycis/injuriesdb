@@ -7,7 +7,7 @@ export const InjuryRecord = () => {
     ...InjuryRecordData
   });    
 
-      const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)  => {
+      const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>)  => {
         const { name, value } = e.target;
         setRecordData((prevRecordData) => ({
           ...prevRecordData,
@@ -68,6 +68,7 @@ export const InjuryRecord = () => {
               className="form-grid"
               value={recordData.employer}
               name= "employer"
+              onChange={handleChange}
               placeholder="Doplňte"/>
         </div>
         </div>
@@ -80,14 +81,14 @@ export const InjuryRecord = () => {
                 type="text"
                 name="IC" 
                 className="form-grid" 
-                onChange={handleInputChange}
+                onChange={handleChange}
                 value={recordData.IC}/>
 
               <label className="form-text">Název zaměstnavatele a jeho sídlo:</label>
               <textarea 
                 name="employerInfo" 
                 className="form-grid"
-                onChange={handleInputChange}
+                onChange={handleChange}
                 value={recordData.employerInfo}
                 rows={3}  />
             </div>
@@ -96,14 +97,14 @@ export const InjuryRecord = () => {
             <input 
               type="text" 
               className="form-grid"
-              onChange={handleInputChange}
+              onChange={handleChange}
               value={recordData.mainActivity}
               name= "mainActivity"/>
             <label className='form-text'>3. Místo, kde k úrazu došlo:</label>
             <input 
               type="text"
               name = "location"
-              onChange={handleInputChange}
+              onChange={handleChange}
               value={recordData.location}
               className="form-grid" />
             <label className='form-text'>4. Bylo místo úrazu pravidelným pracovištěm úrazem postiženého zaměstnance:</label>
@@ -138,14 +139,14 @@ export const InjuryRecord = () => {
               type="text"
               name="ICB" 
               className="form-grid" 
-              onChange={handleInputChange}
+              onChange={handleChange}
               value={recordData.ICB}
               />
           <label className='form-text'>Název zaměstnavatele a jeho sídlo (adresa):</label>
             <textarea  
                 name="employerInfoB" 
                 className="form-grid"
-                onChange={handleInputChange}
+                onChange={handleChange}
                 value={recordData.employerInfoB}
                 rows={2} 
               />
@@ -156,7 +157,7 @@ export const InjuryRecord = () => {
             <input 
               type="text" 
               className="form-grid"
-              onChange={handleInputChange}
+              onChange={handleChange}
               value={recordData.mainActivityB}
               name= "mainActivityB"/>
           </div>
@@ -165,7 +166,7 @@ export const InjuryRecord = () => {
             <input 
               type="text"
               name = "locationB"
-              onChange={handleInputChange}
+              onChange={handleChange}
               value={recordData.locationB}
               className="form-grid" />
           </div>
@@ -216,7 +217,7 @@ export const InjuryRecord = () => {
               type="text" 
               className="form-grid" 
               name= "nationality"
-              onChange={handleInputChange}
+              onChange={handleChange}
               value={recordData.nationality}/>
           </div>
           </div>
@@ -226,7 +227,7 @@ export const InjuryRecord = () => {
               type="text" 
               className="form-grid" 
               name= "deliveryAddress"
-              onChange={handleInputChange}
+              onChange={handleChange}
               value={recordData.deliveryAddress}/>
           </div>
           <div className="grid grid-cols-2 gap-4 px-4">
@@ -258,7 +259,7 @@ export const InjuryRecord = () => {
               type="text" 
               className="form-grid" 
               name= "yearsWorked"
-              onChange={handleInputChange}
+              onChange={handleChange}
               value={recordData.yearsWorked}/>
             </div>
             <div className='pt-2'>
@@ -269,7 +270,7 @@ export const InjuryRecord = () => {
               type="text" 
               className="form-grid" 
               name= "monthsWorked"
-              onChange={handleInputChange}
+              onChange={handleChange}
               value={recordData.monthsWorked}/>
             </div>
             </div>
@@ -307,21 +308,21 @@ export const InjuryRecord = () => {
               type="text" 
               className="form-grid h-8"  
               name= "From"
-              onChange={handleInputChange}
+              onChange={handleChange}
               value={recordData.From.toISOString().slice(0,10)}/>
              <label  className='form-text py-2' >do:</label>
             <input 
               type="text" 
               className="form-grid h-8" 
               name= "Until"
-              onChange={handleInputChange}
+              onChange={handleChange}
               value={recordData.Until.toISOString().slice(0,10)}/>
              <label  className='form-text py-2'>celkem kalendářní dnů:</label>
             <input 
               type="text" 
               className="form-grid h-8" 
               name= "dayCount"
-              onChange={handleInputChange}
+              onChange={handleChange}
               value={recordData.dayCount}/>
               </div>
           </div>
@@ -351,10 +352,11 @@ export const InjuryRecord = () => {
                 <label className='form-text'>Datum úmrtí úrazem postiženého zaměstnance:</label></div>
                 <div>
                 <input 
-                type="date" 
+                type="text" 
                 className="border w-full" 
                 name="dateOfDeath"
-                onChange={handleInputChange}
+                value=" "
+                //onChange={handleChange}
                 //value={recordData.dateOfDeath}
                 />
             </div>
@@ -395,7 +397,7 @@ export const InjuryRecord = () => {
                     type="text" 
                     className="form-grid w-full" 
                     name="bodyPart" 
-                    onChange={handleInputChange} value={recordData.bodyPart} />
+                    onChange={handleChange} value={recordData.bodyPart} />
                   <div className="grid grid-cols-2 gap-0">
                     <div className="border border-black w-6 h-6"></div>
                     <div className="border border-black w-6 h-6"></div>
@@ -424,7 +426,7 @@ export const InjuryRecord = () => {
                 Stroje a zařízení přenosná nebo mobilní
               </label>
               <label className="flex items-center checkbox-label">
-                <input type="checkbox" className="mr-2" />
+                <input type="checkbox" className="mr-2" checked/>
                 Materiál, břemena, předměty (pád, přiražení, odlétnutí, náraz, zavalení)
               </label>
               <label className="flex items-center checkbox-label">
@@ -542,6 +544,7 @@ export const InjuryRecord = () => {
               <input
                 type="checkbox"
                 className="mr-2"
+                checked
               />
               ANO
             </label>
@@ -556,9 +559,11 @@ export const InjuryRecord = () => {
             <input 
             type="text" 
             className="form-grid h-8" 
-            name= "alcoholTestResult"
-            onChange={handleInputChange}
-            value={recordData.alcoholTestResult}/>
+            //name= "alcoholTestResult"
+            //onChange={handleChange}
+            //value={recordData.alcoholTestResult}
+            value="Negativní"
+            />
             </div>
         </div>
         <div className='py-3 px-4'>
@@ -566,8 +571,9 @@ export const InjuryRecord = () => {
         <textarea 
           className="form-grid" 
           name= "injuryEventDescription"
-          onChange={handleInputChange}
+          onChange={handleChange}
           value={recordData.injuryEventDescription}
+          placeholder='Doplňte'
           rows={10}/>
           <div className="flex justify-end">
             <div className="grid grid-cols-4 gap-0">
@@ -589,15 +595,17 @@ export const InjuryRecord = () => {
         <textarea 
           className="form-grid"  
           name= "violation"
-          onChange={handleInputChange}
+          onChange={handleChange}
           value={recordData.violation} 
+          placeholder='Doplňte'
           rows={4}/>
         <label className='form-text'>11. Opatření přijatá k zabránění opakování pracovního úrazu:</label>
         <textarea 
           className="form-grid" 
           name= "preventionMeasures"
-          onChange={handleInputChange}
+          onChange={handleChange}
           value={recordData.preventionMeasures} 
+          placeholder='Doplňte'
           rows={4}/>
         </div>
         <label className='record-header'> E. Vyjádření úrazem postiženého zaměstnance a svědků úrazu případně dalších osob</label>
