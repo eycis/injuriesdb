@@ -82,7 +82,7 @@ const InjuryFormExample = () => {
             <label className='form-text'>Provoz:</label>
             <input 
               type="text" 
-              name = "employer"
+              name = "entity"
               className="form-grid h-5"
               value = {formData.entity}
               disabled={!isAdmin}

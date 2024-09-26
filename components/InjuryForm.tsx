@@ -8,6 +8,7 @@ const InjuryForm = () => {
   const [formData, setFormData] = useState<typeof FormData>({
     ...FormData
   });
+  
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;

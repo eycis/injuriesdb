@@ -9,7 +9,7 @@ export const exportBook = () => {
 
 4
   worksheet.columns = [
-    { header: 'Pobočka', key: 'employer', width: 30 },
+    { header: 'Provoz', key: 'employer', width: 30 },
     { header: 'Pojišťovna postiženého', key: 'insurance', width: 30 },
     { header: 'Jméno', key: 'name', width: 30 },
     { header: 'Datum narození', key: 'birthDate', width: 20 },
